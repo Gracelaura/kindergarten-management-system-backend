@@ -165,6 +165,7 @@ GEM
     zeitwerk (2.6.6)
 
 PLATFORMS
+  ruby
   x86_64-darwin-19
   x86_64-linux
 
@@ -178,7 +179,7 @@ DEPENDENCIES
   tzinfo-data
 
 RUBY VERSION
-   ruby 3.0.0p0
+   ruby 2.7.0p0
 
 BUNDLED WITH
    2.3.26
