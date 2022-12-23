@@ -1,3 +1,3 @@
 class AttendanceSerializer < ActiveModel::Serializer
-  attributes :id
+  attributes :teacher_id, :student_name, :status, :date
 end

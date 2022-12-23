@@ -10,7 +10,7 @@ class TeachersController < ApplicationController
     end
     
     def create
-        teacher = Teacher.create(teacher_params)
+        teacher = Teacher.create!(teacher_params)
         render json: teacher, status: :created
     end
 

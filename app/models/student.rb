@@ -1,5 +1,5 @@
 class Student < ApplicationRecord
-    has_many :grades
-    has_many :teachers, through: :grades
+    belongs_to :grade
+    belongs_to :teacher
     has_many :disciplines
 end
