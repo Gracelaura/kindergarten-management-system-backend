@@ -1,3 +1,3 @@
 class DisciplineSerializer < ActiveModel::Serializer
-  attributes :id
+  attributes :id, :student_id, :title, :description
 end

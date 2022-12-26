@@ -1,4 +1,6 @@
 class ParentsController < ApplicationController
+rescue_from ActiveRecord::RecordInvalid, with: :invalid_message
+rescue_from ActiveRecord::RecordNotFound, with: :not_found_message
     def index
         parents = Parent.all
         render json: parents, status: :ok
@@ -6,11 +8,11 @@ class ParentsController < ApplicationController
 
     def show
         parent = find_parent
-        render json: parent, status: :ok
+        render json: parent
     end
     
     def create
-        parent = Parent.create(parent_params)
+        parent = Parent.create!(parent_params)
         render json: parent, status: :created
     end
 
@@ -21,6 +23,14 @@ class ParentsController < ApplicationController
 
     def parent_params
         params.permit(:first_name, :last_name, :phone_number, :password, :role)
+    end
+
+    def invalid_message(invalid)
+        render json: {errors: invalid.record.errors.full_messages}, status: :unprocessable_entity
+    end
+
+    def not_found_message
+        render json: {error: "Parent not Found"}, status: :not_found
     end
 
 end

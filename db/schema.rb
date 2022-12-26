@@ -29,8 +29,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_21_091026) do
   end
 
   create_table "grades", force: :cascade do |t|
-    t.integer "teacher_id"
-    t.integer "student_id"
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -60,6 +58,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_21_091026) do
     t.string "description"
     t.integer "admission_number"
     t.string "role"
+    t.integer "grade_id"
+    t.integer "teacher_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

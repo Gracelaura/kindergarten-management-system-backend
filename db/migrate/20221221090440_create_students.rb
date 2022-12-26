@@ -7,6 +7,8 @@ class CreateStudents < ActiveRecord::Migration[7.0]
       t.string :description
       t.integer :admission_number
       t.string :role
+      t.integer :grade_id
+      t.integer :teacher_id
       t.timestamps
     end
   end
