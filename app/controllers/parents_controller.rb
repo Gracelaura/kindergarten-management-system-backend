@@ -13,7 +13,8 @@ rescue_from ActiveRecord::RecordNotFound, with: :not_found_message
     
     def create
         parent = Parent.create!(parent_params)
-        render json: parent, status: :created
+        token = encode_token({parent_id: parent.id})
+        render json: [parent, {token: token}], status: :created
     end
 
     private
