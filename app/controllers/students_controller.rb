@@ -1,5 +1,6 @@
 class StudentsController < ApplicationController
 rescue_from ActiveRecord::RecordNotFound, with: :not_found_message
+before_action :authorize
     def index
         render json: Student.all
     end

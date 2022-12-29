@@ -1,7 +1,7 @@
 class ParentsController < ApplicationController
 rescue_from ActiveRecord::RecordInvalid, with: :invalid_message
 rescue_from ActiveRecord::RecordNotFound, with: :not_found_message
-skip_before_action :authorize, only: [:create, :index]
+skip_before_action :authorize, only: [:create]
     def index
         parents = Parent.all
         render json: parents, status: :ok
@@ -18,10 +18,7 @@ skip_before_action :authorize, only: [:create, :index]
         render json: [ParentSerializer.new(parent), {jwt: token}], status: :created
     end
 
-    def parent_profile
-        render json: [ParentSerializer.new(current_user)], status: :accepted
-    end
-
+    
     private
     def find_parent
         Parent.find_by(id: params[:id])

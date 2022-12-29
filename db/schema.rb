@@ -12,7 +12,7 @@
 
 ActiveRecord::Schema[7.0].define(version: 2022_12_21_091026) do
   create_table "attendances", force: :cascade do |t|
-    t.integer "teacher_id"
+    t.integer "grade_id"
     t.string "student_name"
     t.string "status"
     t.integer "date"

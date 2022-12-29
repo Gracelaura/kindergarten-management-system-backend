@@ -1,7 +1,7 @@
 class TeachersController < ApplicationController
     rescue_from ActiveRecord::RecordInvalid, with: :invalid_message
     rescue_from ActiveRecord::RecordNotFound, with: :not_found_message
-     skip_before_action :authorize, only: [:create, :index]
+     skip_before_action :authorize, only: [:create]
     def index
         teachers = Teacher.all
         render json: teachers, status: :ok
@@ -18,9 +18,7 @@ class TeachersController < ApplicationController
         render json: [TeacherSerializer.new(teacher), {token: token}], status: :created
     end
 
-    def profile
-        render json: [TeacherSerializer.new(current_user)], status: :accepted
-    end
+    
 
     private
     def find_teacher

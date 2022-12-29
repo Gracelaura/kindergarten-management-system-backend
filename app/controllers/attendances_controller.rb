@@ -1,4 +1,5 @@
 class AttendancesController < ApplicationController
+ 
     def index
         render json: Attendance.all
     end

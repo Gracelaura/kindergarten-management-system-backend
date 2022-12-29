@@ -7,8 +7,8 @@ Rails.application.routes.draw do
   resources :teachers, only: [:index, :show, :create]
   resources :parent_students, only: [:index]
   get '/profile', to: 'teachers#profile'
-  get '/parent', to: 'parents#parent_profile'
   post '/login', to: 'auth#create'
+  post '/parent_login', to: 'parent_auth#create'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
