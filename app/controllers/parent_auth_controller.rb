@@ -2,6 +2,7 @@ class ParentAuthController < ApplicationController
     skip_before_action :authorize, only: [:create]
 
     def create
+        byebug
         parent = Parent.find_by(phone_number: params[:phone_number])
         if parent && parent.authenticate(params[:password])
             token = encode_token({parent_id: parent.id})
