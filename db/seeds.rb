@@ -166,43 +166,43 @@ teacher3 = Teacher.create(
         role: "parent",
     )
 
-    attendances = Attendance.create([{
-        teacher_id: teacher1.id,
+    attendance1 = Attendance.create(
+        grade_id: grade1.id,
         student_name: "Glory Sparks",
         status: "Present",
         date: 1142022,
-    },
-    {
-        teacher_id: teacher1.id,
+    )
+    attendance2 = Attendance.create(
+        grade_id: grade2.id,
         student_name: "James Martin",
         status: "Present",
         date: 1142022,
 
-    },
-    {
-        teacher_id: teacher2.id,
+    )
+    attendance3 = Attendance.create(
+        grade_id: grade3.id,
         student_name: "Adams Smith",
         status: "Present",
         date: 1142022,
-    },
-    {
-        teacher_id: teacher2.id,
+    )
+    attendance4 = Attendance.create(
+        grade_id: grade4.id,
         student_name: "Aisha Barracks",
         status: "Present",
         date: 1142022,
-    },
-    {
-        teacher_id: teacher2.id,
+    )
+    attendance5 = Attendance.create(
+        grade_id: grade5.id,
         student_name: "Dan Daniels",
         status: "Present",
         date: 1142022,
-    },
-    {
-        teacher_id: teacher1.id,
+    )
+    attendance6 = Attendance.create(
+        grade_id: grade1.id,
         student_name: "Angie Angel",
         status: "Present",
         date: 1142022,
-    }])
+    )
 
     disciplines = Discipline.create([{
         student_id: student1.id,

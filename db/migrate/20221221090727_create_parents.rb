@@ -4,7 +4,7 @@ class CreateParents < ActiveRecord::Migration[7.0]
       t.string :first_name
       t.string :last_name
       t.integer :phone_number
-      t.string :password
+      t.string :password_digest
       t.string :role
       t.timestamps
     end

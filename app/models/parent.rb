@@ -7,4 +7,5 @@ class Parent < ApplicationRecord
     validates :password, length: {minimum: 5}
     validates :phone_number, length: {maximum: 10}
     validates :role, presence: true 
+    has_secure_password
 end

@@ -12,7 +12,7 @@
 
 ActiveRecord::Schema[7.0].define(version: 2022_12_21_091026) do
   create_table "attendances", force: :cascade do |t|
-    t.integer "teacher_id"
+    t.integer "grade_id"
     t.string "student_name"
     t.string "status"
     t.integer "date"
@@ -45,7 +45,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_21_091026) do
     t.string "first_name"
     t.string "last_name"
     t.integer "phone_number"
-    t.string "password"
+    t.string "password_digest"
     t.string "role"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -67,7 +67,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_21_091026) do
   create_table "teachers", force: :cascade do |t|
     t.string "fullname"
     t.string "career_name"
-    t.string "password"
+    t.string "password_digest"
     t.string "phone_number"
     t.string "email"
     t.string "gender"

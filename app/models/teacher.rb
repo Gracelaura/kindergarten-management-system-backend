@@ -10,4 +10,5 @@ class Teacher < ApplicationRecord
     validates :phone_number, length: {maximum: 10}
     validates :gender, presence: true
     validates :role, presence: true
+    has_secure_password
 end
