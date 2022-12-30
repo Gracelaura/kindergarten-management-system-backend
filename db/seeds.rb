@@ -174,7 +174,7 @@ teacher3 = Teacher.create(
     )
     attendance2 = Attendance.create(
         grade_id: grade2.id,
-        student_name: "James Martin",
+        student_name: "James Martins",
         status: "Present",
         date: 1142022,
 
