@@ -15,7 +15,7 @@ skip_before_action :authorize, only: [:create]
     def create
         parent = Parent.create!(parent_params)
         token = encode_token({parent_id: parent.id})
-        render json: [ParentSerializer.new(parent), {jwt: token}], status: :created
+        render json: {parent: ParentSerializer.new(parent), jwt: token}, status: :created
     end
 
     
