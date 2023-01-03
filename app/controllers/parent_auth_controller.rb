@@ -1,0 +1,2 @@
+class ParentAuthController < ApplicationController
+end
