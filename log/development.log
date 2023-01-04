@@ -41,3 +41,639 @@ Migrating to CreateAttendances (20230103131610)
   [1m[36mActiveRecord::InternalMetadata Create (0.6ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2023-01-04 08:22:03.157952"], ["updated_at", "2023-01-04 08:22:03.157952"]]
   [1m[36mTRANSACTION (4.7ms)[0m  [1m[36mcommit transaction[0m
   [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers"[0m
+  [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT "students".* FROM "students"[0m
+  [1m[36mClassroom Load (0.2ms)[0m  [1m[34mSELECT "classrooms".* FROM "classrooms"[0m
+  [1m[36mParent Load (0.2ms)[0m  [1m[34mSELECT "parents".* FROM "parents"[0m
+  [1m[36mAttendance Load (0.2ms)[0m  [1m[34mSELECT "attendances".* FROM "attendances"[0m
+  [1m[36mDiscipline Load (0.3ms)[0m  [1m[34mSELECT "disciplines".* FROM "disciplines"[0m
+  [1m[36mParentStudent Load (0.2ms)[0m  [1m[34mSELECT "parent_students".* FROM "parent_students"[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTeacher Create (7.7ms)[0m  [1m[32mINSERT INTO "teachers" ("first_name", "last_name", "career_name", "password_digest", "phone_number", "email", "gender", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "Luke"], ["last_name", "Shaw"], ["career_name", "English"], ["password_digest", "[FILTERED]"], ["phone_number", "07867465376"], ["email", "lukeshaw@gmail.com"], ["gender", "male"], ["created_at", "2023-01-04 09:15:08.369961"], ["updated_at", "2023-01-04 09:15:08.369961"]]
+  [1m[36mTRANSACTION (10.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTeacher Create (0.4ms)[0m  [1m[32mINSERT INTO "teachers" ("first_name", "last_name", "career_name", "password_digest", "phone_number", "email", "gender", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "Darwin"], ["last_name", "Ken"], ["career_name", "Play group leader"], ["password_digest", "[FILTERED]"], ["phone_number", "0754372656"], ["email", "lewisdarwin@gmail.com"], ["gender", "male"], ["created_at", "2023-01-04 09:15:08.695051"], ["updated_at", "2023-01-04 09:15:08.695051"]]
+  [1m[36mTRANSACTION (10.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTeacher Create (0.8ms)[0m  [1m[32mINSERT INTO "teachers" ("first_name", "last_name", "career_name", "password_digest", "phone_number", "email", "gender", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "Timothy"], ["last_name", "Rogers"], ["career_name", "Math"], ["password_digest", "[FILTERED]"], ["phone_number", "0754372656"], ["email", "timothy@gmail.com"], ["gender", "male"], ["created_at", "2023-01-04 09:15:09.022719"], ["updated_at", "2023-01-04 09:15:09.022719"]]
+  [1m[36mTRANSACTION (9.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTeacher Destroy (0.5ms)[0m  [1m[31mDELETE FROM "teachers" WHERE "teachers"."id" = ?[0m  [["id", 1]]
+  [1m[36mTRANSACTION (8.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTeacher Destroy (0.3ms)[0m  [1m[31mDELETE FROM "teachers" WHERE "teachers"."id" = ?[0m  [["id", 2]]
+  [1m[36mTRANSACTION (4.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTeacher Destroy (0.6ms)[0m  [1m[31mDELETE FROM "teachers" WHERE "teachers"."id" = ?[0m  [["id", 3]]
+  [1m[36mTRANSACTION (4.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students"[0m
+  [1m[36mClassroom Load (0.2ms)[0m  [1m[34mSELECT "classrooms".* FROM "classrooms"[0m
+  [1m[36mParent Load (0.2ms)[0m  [1m[34mSELECT "parents".* FROM "parents"[0m
+  [1m[36mAttendance Load (0.2ms)[0m  [1m[34mSELECT "attendances".* FROM "attendances"[0m
+  [1m[36mDiscipline Load (0.2ms)[0m  [1m[34mSELECT "disciplines".* FROM "disciplines"[0m
+  [1m[36mParentStudent Load (0.2ms)[0m  [1m[34mSELECT "parent_students".* FROM "parent_students"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTeacher Create (0.3ms)[0m  [1m[32mINSERT INTO "teachers" ("first_name", "last_name", "career_name", "password_digest", "phone_number", "email", "gender", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "Luke"], ["last_name", "Shaw"], ["career_name", "English"], ["password_digest", "[FILTERED]"], ["phone_number", "07867465376"], ["email", "lukeshaw@gmail.com"], ["gender", "male"], ["created_at", "2023-01-04 09:15:51.711975"], ["updated_at", "2023-01-04 09:15:51.711975"]]
+  [1m[36mTRANSACTION (10.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTeacher Create (0.4ms)[0m  [1m[32mINSERT INTO "teachers" ("first_name", "last_name", "career_name", "password_digest", "phone_number", "email", "gender", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "Darwin"], ["last_name", "Ken"], ["career_name", "Play group leader"], ["password_digest", "[FILTERED]"], ["phone_number", "0754372656"], ["email", "lewisdarwin@gmail.com"], ["gender", "male"], ["created_at", "2023-01-04 09:15:52.016464"], ["updated_at", "2023-01-04 09:15:52.016464"]]
+  [1m[36mTRANSACTION (9.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTeacher Create (0.4ms)[0m  [1m[32mINSERT INTO "teachers" ("first_name", "last_name", "career_name", "password_digest", "phone_number", "email", "gender", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "Timothy"], ["last_name", "Rogers"], ["career_name", "Math"], ["password_digest", "[FILTERED]"], ["phone_number", "0754372656"], ["email", "timothy@gmail.com"], ["gender", "male"], ["created_at", "2023-01-04 09:15:52.327351"], ["updated_at", "2023-01-04 09:15:52.327351"]]
+  [1m[36mTRANSACTION (9.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mClassroom Create (0.3ms)[0m  [1m[32mINSERT INTO "classrooms" ("name", "teacher_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "PP1"], ["teacher_id", 4], ["created_at", "2023-01-04 09:15:52.380443"], ["updated_at", "2023-01-04 09:15:52.380443"]]
+  [1m[36mTRANSACTION (3.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mClassroom Create (0.3ms)[0m  [1m[32mINSERT INTO "classrooms" ("name", "teacher_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "PP2"], ["teacher_id", 5], ["created_at", "2023-01-04 09:15:52.389140"], ["updated_at", "2023-01-04 09:15:52.389140"]]
+  [1m[36mTRANSACTION (7.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mClassroom Create (0.4ms)[0m  [1m[32mINSERT INTO "classrooms" ("name", "teacher_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "PP3"], ["teacher_id", 6], ["created_at", "2023-01-04 09:15:52.402386"], ["updated_at", "2023-01-04 09:15:52.402386"]]
+  [1m[36mTRANSACTION (4.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mStudent Create (0.3ms)[0m  [1m[32mINSERT INTO "students" ("first_name", "second_name", "surname", "age", "description", "admission_number", "classroom_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "Faith"], ["second_name", "shahh"], ["surname", "Martind"], ["age", 3], ["description", " Faith is is an active learner who loves to get hands-on and throw herself into a task with enthusiasm"], ["admission_number", 4567], ["classroom_id", 1], ["created_at", "2023-01-04 09:15:52.431942"], ["updated_at", "2023-01-04 09:15:52.431942"]]
+  [1m[36mTRANSACTION (4.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mStudent Create (0.3ms)[0m  [1m[32mINSERT INTO "students" ("first_name", "second_name", "surname", "age", "description", "admission_number", "classroom_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "Glory"], ["second_name", "Dermen"], ["surname", "Cox"], ["age", 4], ["description", " Glory is an ambitious student who will push herself to meet her personal best at all times"], ["admission_number", 4568], ["classroom_id", 2], ["created_at", "2023-01-04 09:15:52.440848"], ["updated_at", "2023-01-04 09:15:52.440848"]]
+  [1m[36mTRANSACTION (4.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mStudent Create (0.3ms)[0m  [1m[32mINSERT INTO "students" ("first_name", "second_name", "surname", "age", "description", "admission_number", "classroom_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "Peter"], ["second_name", "Drury"], ["surname", "Fisher"], ["age", 5], ["description", " Peter is hardworking student"], ["admission_number", 4569], ["classroom_id", 3], ["created_at", "2023-01-04 09:15:52.449800"], ["updated_at", "2023-01-04 09:15:52.449800"]]
+  [1m[36mTRANSACTION (3.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mStudent Create (0.4ms)[0m  [1m[32mINSERT INTO "students" ("first_name", "second_name", "surname", "age", "description", "admission_number", "classroom_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "James"], ["second_name", "Martin"], ["surname", "Fowler"], ["age", 4], ["description", " James is an average and humble student"], ["admission_number", 4570], ["classroom_id", 3], ["created_at", "2023-01-04 09:15:52.456737"], ["updated_at", "2023-01-04 09:15:52.456737"]]
+  [1m[36mTRANSACTION (3.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTeacher Destroy (0.5ms)[0m  [1m[31mDELETE FROM "teachers" WHERE "teachers"."id" = ?[0m  [["id", 4]]
+  [1m[36mTRANSACTION (4.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTeacher Destroy (0.3ms)[0m  [1m[31mDELETE FROM "teachers" WHERE "teachers"."id" = ?[0m  [["id", 5]]
+  [1m[36mTRANSACTION (3.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTeacher Destroy (0.3ms)[0m  [1m[31mDELETE FROM "teachers" WHERE "teachers"."id" = ?[0m  [["id", 6]]
+  [1m[36mTRANSACTION (3.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mStudent Destroy (0.3ms)[0m  [1m[31mDELETE FROM "students" WHERE "students"."id" = ?[0m  [["id", 1]]
+  [1m[36mTRANSACTION (13.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mStudent Destroy (0.7ms)[0m  [1m[31mDELETE FROM "students" WHERE "students"."id" = ?[0m  [["id", 2]]
+  [1m[36mTRANSACTION (5.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mStudent Destroy (0.3ms)[0m  [1m[31mDELETE FROM "students" WHERE "students"."id" = ?[0m  [["id", 3]]
+  [1m[36mTRANSACTION (3.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mStudent Destroy (0.3ms)[0m  [1m[31mDELETE FROM "students" WHERE "students"."id" = ?[0m  [["id", 4]]
+  [1m[36mTRANSACTION (3.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mClassroom Load (0.3ms)[0m  [1m[34mSELECT "classrooms".* FROM "classrooms"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mClassroom Destroy (0.3ms)[0m  [1m[31mDELETE FROM "classrooms" WHERE "classrooms"."id" = ?[0m  [["id", 1]]
+  [1m[36mTRANSACTION (4.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mClassroom Destroy (0.3ms)[0m  [1m[31mDELETE FROM "classrooms" WHERE "classrooms"."id" = ?[0m  [["id", 2]]
+  [1m[36mTRANSACTION (3.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mClassroom Destroy (0.2ms)[0m  [1m[31mDELETE FROM "classrooms" WHERE "classrooms"."id" = ?[0m  [["id", 3]]
+  [1m[36mTRANSACTION (3.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mParent Load (0.3ms)[0m  [1m[34mSELECT "parents".* FROM "parents"[0m
+  [1m[36mAttendance Load (0.2ms)[0m  [1m[34mSELECT "attendances".* FROM "attendances"[0m
+  [1m[36mDiscipline Load (0.2ms)[0m  [1m[34mSELECT "disciplines".* FROM "disciplines"[0m
+  [1m[36mParentStudent Load (0.2ms)[0m  [1m[34mSELECT "parent_students".* FROM "parent_students"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTeacher Create (0.4ms)[0m  [1m[32mINSERT INTO "teachers" ("first_name", "last_name", "career_name", "password_digest", "phone_number", "email", "gender", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "Luke"], ["last_name", "Shaw"], ["career_name", "English"], ["password_digest", "[FILTERED]"], ["phone_number", "07867465376"], ["email", "lukeshaw@gmail.com"], ["gender", "male"], ["created_at", "2023-01-04 09:16:44.905110"], ["updated_at", "2023-01-04 09:16:44.905110"]]
+  [1m[36mTRANSACTION (11.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTeacher Create (0.3ms)[0m  [1m[32mINSERT INTO "teachers" ("first_name", "last_name", "career_name", "password_digest", "phone_number", "email", "gender", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "Darwin"], ["last_name", "Ken"], ["career_name", "Play group leader"], ["password_digest", "[FILTERED]"], ["phone_number", "0754372656"], ["email", "lewisdarwin@gmail.com"], ["gender", "male"], ["created_at", "2023-01-04 09:16:45.203151"], ["updated_at", "2023-01-04 09:16:45.203151"]]
+  [1m[36mTRANSACTION (10.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTeacher Create (0.4ms)[0m  [1m[32mINSERT INTO "teachers" ("first_name", "last_name", "career_name", "password_digest", "phone_number", "email", "gender", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "Timothy"], ["last_name", "Rogers"], ["career_name", "Math"], ["password_digest", "[FILTERED]"], ["phone_number", "0754372656"], ["email", "timothy@gmail.com"], ["gender", "male"], ["created_at", "2023-01-04 09:16:45.498733"], ["updated_at", "2023-01-04 09:16:45.498733"]]
+  [1m[36mTRANSACTION (15.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mClassroom Create (0.7ms)[0m  [1m[32mINSERT INTO "classrooms" ("name", "teacher_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "PP1"], ["teacher_id", 7], ["created_at", "2023-01-04 09:16:45.519410"], ["updated_at", "2023-01-04 09:16:45.519410"]]
+  [1m[36mTRANSACTION (4.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mClassroom Create (0.5ms)[0m  [1m[32mINSERT INTO "classrooms" ("name", "teacher_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "PP2"], ["teacher_id", 8], ["created_at", "2023-01-04 09:16:45.532417"], ["updated_at", "2023-01-04 09:16:45.532417"]]
+  [1m[36mTRANSACTION (6.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mClassroom Create (0.4ms)[0m  [1m[32mINSERT INTO "classrooms" ("name", "teacher_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "PP3"], ["teacher_id", 9], ["created_at", "2023-01-04 09:16:45.544754"], ["updated_at", "2023-01-04 09:16:45.544754"]]
+  [1m[36mTRANSACTION (6.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mStudent Create (0.4ms)[0m  [1m[32mINSERT INTO "students" ("first_name", "second_name", "surname", "age", "description", "admission_number", "classroom_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "Faith"], ["second_name", "shahh"], ["surname", "Martind"], ["age", 3], ["description", " Faith is is an active learner who loves to get hands-on and throw herself into a task with enthusiasm"], ["admission_number", 4567], ["classroom_id", 4], ["created_at", "2023-01-04 09:16:45.555323"], ["updated_at", "2023-01-04 09:16:45.555323"]]
+  [1m[36mTRANSACTION (3.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mStudent Create (0.4ms)[0m  [1m[32mINSERT INTO "students" ("first_name", "second_name", "surname", "age", "description", "admission_number", "classroom_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "Glory"], ["second_name", "Dermen"], ["surname", "Cox"], ["age", 4], ["description", " Glory is an ambitious student who will push herself to meet her personal best at all times"], ["admission_number", 4568], ["classroom_id", 5], ["created_at", "2023-01-04 09:16:45.563952"], ["updated_at", "2023-01-04 09:16:45.563952"]]
+  [1m[36mTRANSACTION (3.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mStudent Create (0.3ms)[0m  [1m[32mINSERT INTO "students" ("first_name", "second_name", "surname", "age", "description", "admission_number", "classroom_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "Peter"], ["second_name", "Drury"], ["surname", "Fisher"], ["age", 5], ["description", " Peter is hardworking student"], ["admission_number", 4569], ["classroom_id", 6], ["created_at", "2023-01-04 09:16:45.572510"], ["updated_at", "2023-01-04 09:16:45.572510"]]
+  [1m[36mTRANSACTION (3.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mStudent Create (1.5ms)[0m  [1m[32mINSERT INTO "students" ("first_name", "second_name", "surname", "age", "description", "admission_number", "classroom_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "James"], ["second_name", "Martin"], ["surname", "Fowler"], ["age", 4], ["description", " James is an average and humble student"], ["admission_number", 4570], ["classroom_id", 6], ["created_at", "2023-01-04 09:16:45.581307"], ["updated_at", "2023-01-04 09:16:45.581307"]]
+  [1m[36mTRANSACTION (3.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mParent Create (1.5ms)[0m  [1m[32mINSERT INTO "parents" ("first_name", "last_name", "phone_number", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["first_name", "Jancy"], ["last_name", "Mongy"], ["phone_number", 765478643], ["password_digest", "[FILTERED]"], ["created_at", "2023-01-04 09:16:45.879131"], ["updated_at", "2023-01-04 09:16:45.879131"]]
+  [1m[36mTRANSACTION (10.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mParent Create (0.4ms)[0m  [1m[32mINSERT INTO "parents" ("first_name", "last_name", "phone_number", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["first_name", "David"], ["last_name", "Makali"], ["phone_number", 743564786], ["password_digest", "[FILTERED]"], ["created_at", "2023-01-04 09:16:46.176155"], ["updated_at", "2023-01-04 09:16:46.176155"]]
+  [1m[36mTRANSACTION (9.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mParent Create (0.3ms)[0m  [1m[32mINSERT INTO "parents" ("first_name", "last_name", "phone_number", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["first_name", "Rehema"], ["last_name", "Angela"], ["phone_number", 765473564], ["password_digest", "[FILTERED]"], ["created_at", "2023-01-04 09:16:46.472690"], ["updated_at", "2023-01-04 09:16:46.472690"]]
+  [1m[36mTRANSACTION (10.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mParent Create (0.3ms)[0m  [1m[32mINSERT INTO "parents" ("first_name", "last_name", "phone_number", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["first_name", "James"], ["last_name", "Aquine"], ["phone_number", 789657463], ["password_digest", "[FILTERED]"], ["created_at", "2023-01-04 09:16:46.769471"], ["updated_at", "2023-01-04 09:16:46.769471"]]
+  [1m[36mTRANSACTION (10.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mParent Create (0.3ms)[0m  [1m[32mINSERT INTO "parents" ("first_name", "last_name", "phone_number", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["first_name", "Steve"], ["last_name", "Havey"], ["phone_number", 7107896457], ["password_digest", "[FILTERED]"], ["created_at", "2023-01-04 09:16:47.065680"], ["updated_at", "2023-01-04 09:16:47.065680"]]
+  [1m[36mTRANSACTION (10.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAttendance Create (0.4ms)[0m  [1m[32mINSERT INTO "attendances" ("classroom_id", "student_id", "student_name", "status", "date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["classroom_id", 4], ["student_id", 5], ["student_name", "Glory Sparks"], ["status", "Present"], ["date", 1142022], ["created_at", "2023-01-04 09:16:47.094446"], ["updated_at", "2023-01-04 09:16:47.094446"]]
+  [1m[36mTRANSACTION (3.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAttendance Create (0.5ms)[0m  [1m[32mINSERT INTO "attendances" ("classroom_id", "student_id", "student_name", "status", "date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["classroom_id", 4], ["student_id", 6], ["student_name", "James Martins"], ["status", "Present"], ["date", 1142022], ["created_at", "2023-01-04 09:16:47.102535"], ["updated_at", "2023-01-04 09:16:47.102535"]]
+  [1m[36mTRANSACTION (3.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAttendance Create (0.3ms)[0m  [1m[32mINSERT INTO "attendances" ("classroom_id", "student_id", "student_name", "status", "date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["classroom_id", 4], ["student_id", 7], ["student_name", "Adams Smith"], ["status", "Present"], ["date", 1142022], ["created_at", "2023-01-04 09:16:47.111035"], ["updated_at", "2023-01-04 09:16:47.111035"]]
+  [1m[36mTRANSACTION (3.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAttendance Create (0.3ms)[0m  [1m[32mINSERT INTO "attendances" ("classroom_id", "student_id", "student_name", "status", "date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["classroom_id", 4], ["student_id", 8], ["student_name", "Aisha Barracks"], ["status", "Present"], ["date", 1142022], ["created_at", "2023-01-04 09:16:47.119014"], ["updated_at", "2023-01-04 09:16:47.119014"]]
+  [1m[36mTRANSACTION (3.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTeacher Destroy (0.5ms)[0m  [1m[31mDELETE FROM "teachers" WHERE "teachers"."id" = ?[0m  [["id", 7]]
+  [1m[36mTRANSACTION (14.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTeacher Destroy (0.3ms)[0m  [1m[31mDELETE FROM "teachers" WHERE "teachers"."id" = ?[0m  [["id", 8]]
+  [1m[36mTRANSACTION (4.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTeacher Destroy (0.3ms)[0m  [1m[31mDELETE FROM "teachers" WHERE "teachers"."id" = ?[0m  [["id", 9]]
+  [1m[36mTRANSACTION (3.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT "students".* FROM "students"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mStudent Destroy (0.3ms)[0m  [1m[31mDELETE FROM "students" WHERE "students"."id" = ?[0m  [["id", 5]]
+  [1m[36mTRANSACTION (9.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mStudent Destroy (0.3ms)[0m  [1m[31mDELETE FROM "students" WHERE "students"."id" = ?[0m  [["id", 6]]
+  [1m[36mTRANSACTION (7.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mStudent Destroy (0.3ms)[0m  [1m[31mDELETE FROM "students" WHERE "students"."id" = ?[0m  [["id", 7]]
+  [1m[36mTRANSACTION (4.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mStudent Destroy (0.3ms)[0m  [1m[31mDELETE FROM "students" WHERE "students"."id" = ?[0m  [["id", 8]]
+  [1m[36mTRANSACTION (8.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mClassroom Load (0.3ms)[0m  [1m[34mSELECT "classrooms".* FROM "classrooms"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mClassroom Destroy (0.3ms)[0m  [1m[31mDELETE FROM "classrooms" WHERE "classrooms"."id" = ?[0m  [["id", 4]]
+  [1m[36mTRANSACTION (3.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mClassroom Destroy (0.3ms)[0m  [1m[31mDELETE FROM "classrooms" WHERE "classrooms"."id" = ?[0m  [["id", 5]]
+  [1m[36mTRANSACTION (5.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mClassroom Destroy (0.3ms)[0m  [1m[31mDELETE FROM "classrooms" WHERE "classrooms"."id" = ?[0m  [["id", 6]]
+  [1m[36mTRANSACTION (5.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mParent Load (0.3ms)[0m  [1m[34mSELECT "parents".* FROM "parents"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mParent Destroy (0.3ms)[0m  [1m[31mDELETE FROM "parents" WHERE "parents"."id" = ?[0m  [["id", 1]]
+  [1m[36mTRANSACTION (3.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mParent Destroy (0.3ms)[0m  [1m[31mDELETE FROM "parents" WHERE "parents"."id" = ?[0m  [["id", 2]]
+  [1m[36mTRANSACTION (3.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mParent Destroy (0.2ms)[0m  [1m[31mDELETE FROM "parents" WHERE "parents"."id" = ?[0m  [["id", 3]]
+  [1m[36mTRANSACTION (3.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mParent Destroy (0.3ms)[0m  [1m[31mDELETE FROM "parents" WHERE "parents"."id" = ?[0m  [["id", 4]]
+  [1m[36mTRANSACTION (7.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mParent Destroy (0.3ms)[0m  [1m[31mDELETE FROM "parents" WHERE "parents"."id" = ?[0m  [["id", 5]]
+  [1m[36mTRANSACTION (5.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mAttendance Load (0.2ms)[0m  [1m[34mSELECT "attendances".* FROM "attendances"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAttendance Destroy (0.2ms)[0m  [1m[31mDELETE FROM "attendances" WHERE "attendances"."id" = ?[0m  [["id", 1]]
+  [1m[36mTRANSACTION (3.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAttendance Destroy (0.3ms)[0m  [1m[31mDELETE FROM "attendances" WHERE "attendances"."id" = ?[0m  [["id", 2]]
+  [1m[36mTRANSACTION (3.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAttendance Destroy (0.3ms)[0m  [1m[31mDELETE FROM "attendances" WHERE "attendances"."id" = ?[0m  [["id", 3]]
+  [1m[36mTRANSACTION (5.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAttendance Destroy (0.2ms)[0m  [1m[31mDELETE FROM "attendances" WHERE "attendances"."id" = ?[0m  [["id", 4]]
+  [1m[36mTRANSACTION (6.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mDiscipline Load (0.2ms)[0m  [1m[34mSELECT "disciplines".* FROM "disciplines"[0m
+  [1m[36mParentStudent Load (0.2ms)[0m  [1m[34mSELECT "parent_students".* FROM "parent_students"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTeacher Create (1.0ms)[0m  [1m[32mINSERT INTO "teachers" ("first_name", "last_name", "career_name", "password_digest", "phone_number", "email", "gender", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "Luke"], ["last_name", "Shaw"], ["career_name", "English"], ["password_digest", "[FILTERED]"], ["phone_number", "07867465376"], ["email", "lukeshaw@gmail.com"], ["gender", "male"], ["created_at", "2023-01-04 09:17:39.874368"], ["updated_at", "2023-01-04 09:17:39.874368"]]
+  [1m[36mTRANSACTION (237.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTeacher Create (0.4ms)[0m  [1m[32mINSERT INTO "teachers" ("first_name", "last_name", "career_name", "password_digest", "phone_number", "email", "gender", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "Darwin"], ["last_name", "Ken"], ["career_name", "Play group leader"], ["password_digest", "[FILTERED]"], ["phone_number", "0754372656"], ["email", "lewisdarwin@gmail.com"], ["gender", "male"], ["created_at", "2023-01-04 09:17:40.486282"], ["updated_at", "2023-01-04 09:17:40.486282"]]
+  [1m[36mTRANSACTION (12.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTeacher Create (0.5ms)[0m  [1m[32mINSERT INTO "teachers" ("first_name", "last_name", "career_name", "password_digest", "phone_number", "email", "gender", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "Timothy"], ["last_name", "Rogers"], ["career_name", "Math"], ["password_digest", "[FILTERED]"], ["phone_number", "0754372656"], ["email", "timothy@gmail.com"], ["gender", "male"], ["created_at", "2023-01-04 09:17:40.801354"], ["updated_at", "2023-01-04 09:17:40.801354"]]
+  [1m[36mTRANSACTION (10.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mClassroom Create (0.4ms)[0m  [1m[32mINSERT INTO "classrooms" ("name", "teacher_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "PP1"], ["teacher_id", 10], ["created_at", "2023-01-04 09:17:40.816666"], ["updated_at", "2023-01-04 09:17:40.816666"]]
+  [1m[36mTRANSACTION (3.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mClassroom Create (0.4ms)[0m  [1m[32mINSERT INTO "classrooms" ("name", "teacher_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "PP2"], ["teacher_id", 11], ["created_at", "2023-01-04 09:17:40.825051"], ["updated_at", "2023-01-04 09:17:40.825051"]]
+  [1m[36mTRANSACTION (3.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mClassroom Create (0.3ms)[0m  [1m[32mINSERT INTO "classrooms" ("name", "teacher_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "PP3"], ["teacher_id", 12], ["created_at", "2023-01-04 09:17:40.834376"], ["updated_at", "2023-01-04 09:17:40.834376"]]
+  [1m[36mTRANSACTION (3.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mStudent Create (0.4ms)[0m  [1m[32mINSERT INTO "students" ("first_name", "second_name", "surname", "age", "description", "admission_number", "classroom_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "Faith"], ["second_name", "shahh"], ["surname", "Martind"], ["age", 3], ["description", " Faith is is an active learner who loves to get hands-on and throw herself into a task with enthusiasm"], ["admission_number", 4567], ["classroom_id", 7], ["created_at", "2023-01-04 09:17:40.843127"], ["updated_at", "2023-01-04 09:17:40.843127"]]
+  [1m[36mTRANSACTION (3.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mStudent Create (0.4ms)[0m  [1m[32mINSERT INTO "students" ("first_name", "second_name", "surname", "age", "description", "admission_number", "classroom_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "Glory"], ["second_name", "Dermen"], ["surname", "Cox"], ["age", 4], ["description", " Glory is an ambitious student who will push herself to meet her personal best at all times"], ["admission_number", 4568], ["classroom_id", 8], ["created_at", "2023-01-04 09:17:40.851663"], ["updated_at", "2023-01-04 09:17:40.851663"]]
+  [1m[36mTRANSACTION (3.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mStudent Create (0.4ms)[0m  [1m[32mINSERT INTO "students" ("first_name", "second_name", "surname", "age", "description", "admission_number", "classroom_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "Peter"], ["second_name", "Drury"], ["surname", "Fisher"], ["age", 5], ["description", " Peter is hardworking student"], ["admission_number", 4569], ["classroom_id", 9], ["created_at", "2023-01-04 09:17:40.860031"], ["updated_at", "2023-01-04 09:17:40.860031"]]
+  [1m[36mTRANSACTION (3.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mStudent Create (0.3ms)[0m  [1m[32mINSERT INTO "students" ("first_name", "second_name", "surname", "age", "description", "admission_number", "classroom_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "James"], ["second_name", "Martin"], ["surname", "Fowler"], ["age", 4], ["description", " James is an average and humble student"], ["admission_number", 4570], ["classroom_id", 9], ["created_at", "2023-01-04 09:17:40.869461"], ["updated_at", "2023-01-04 09:17:40.869461"]]
+  [1m[36mTRANSACTION (5.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mParent Create (0.4ms)[0m  [1m[32mINSERT INTO "parents" ("first_name", "last_name", "phone_number", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["first_name", "Jancy"], ["last_name", "Mongy"], ["phone_number", 765478643], ["password_digest", "[FILTERED]"], ["created_at", "2023-01-04 09:17:41.164608"], ["updated_at", "2023-01-04 09:17:41.164608"]]
+  [1m[36mTRANSACTION (3.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mParent Create (0.3ms)[0m  [1m[32mINSERT INTO "parents" ("first_name", "last_name", "phone_number", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["first_name", "David"], ["last_name", "Makali"], ["phone_number", 743564786], ["password_digest", "[FILTERED]"], ["created_at", "2023-01-04 09:17:41.460584"], ["updated_at", "2023-01-04 09:17:41.460584"]]
+  [1m[36mTRANSACTION (4.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mParent Create (0.3ms)[0m  [1m[32mINSERT INTO "parents" ("first_name", "last_name", "phone_number", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["first_name", "Rehema"], ["last_name", "Angela"], ["phone_number", 765473564], ["password_digest", "[FILTERED]"], ["created_at", "2023-01-04 09:17:41.756085"], ["updated_at", "2023-01-04 09:17:41.756085"]]
+  [1m[36mTRANSACTION (9.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mParent Create (0.3ms)[0m  [1m[32mINSERT INTO "parents" ("first_name", "last_name", "phone_number", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["first_name", "James"], ["last_name", "Aquine"], ["phone_number", 789657463], ["password_digest", "[FILTERED]"], ["created_at", "2023-01-04 09:17:42.047279"], ["updated_at", "2023-01-04 09:17:42.047279"]]
+  [1m[36mTRANSACTION (9.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mParent Create (0.3ms)[0m  [1m[32mINSERT INTO "parents" ("first_name", "last_name", "phone_number", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["first_name", "Steve"], ["last_name", "Havey"], ["phone_number", 7107896457], ["password_digest", "[FILTERED]"], ["created_at", "2023-01-04 09:17:42.343696"], ["updated_at", "2023-01-04 09:17:42.343696"]]
+  [1m[36mTRANSACTION (9.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAttendance Create (0.3ms)[0m  [1m[32mINSERT INTO "attendances" ("classroom_id", "student_id", "student_name", "status", "date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["classroom_id", 7], ["student_id", 9], ["student_name", "Glory Sparks"], ["status", "Present"], ["date", 1142022], ["created_at", "2023-01-04 09:17:42.358050"], ["updated_at", "2023-01-04 09:17:42.358050"]]
+  [1m[36mTRANSACTION (3.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAttendance Create (0.3ms)[0m  [1m[32mINSERT INTO "attendances" ("classroom_id", "student_id", "student_name", "status", "date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["classroom_id", 7], ["student_id", 10], ["student_name", "James Martins"], ["status", "Present"], ["date", 1142022], ["created_at", "2023-01-04 09:17:42.366259"], ["updated_at", "2023-01-04 09:17:42.366259"]]
+  [1m[36mTRANSACTION (4.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAttendance Create (0.3ms)[0m  [1m[32mINSERT INTO "attendances" ("classroom_id", "student_id", "student_name", "status", "date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["classroom_id", 7], ["student_id", 11], ["student_name", "Adams Smith"], ["status", "Present"], ["date", 1142022], ["created_at", "2023-01-04 09:17:42.375584"], ["updated_at", "2023-01-04 09:17:42.375584"]]
+  [1m[36mTRANSACTION (3.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAttendance Create (0.4ms)[0m  [1m[32mINSERT INTO "attendances" ("classroom_id", "student_id", "student_name", "status", "date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["classroom_id", 7], ["student_id", 12], ["student_name", "Aisha Barracks"], ["status", "Present"], ["date", 1142022], ["created_at", "2023-01-04 09:17:42.384417"], ["updated_at", "2023-01-04 09:17:42.384417"]]
+  [1m[36mTRANSACTION (3.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAttendance Create (0.4ms)[0m  [1m[32mINSERT INTO "attendances" ("classroom_id", "student_id", "student_name", "status", "date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["classroom_id", 7], ["student_id", 11], ["student_name", "Dan Daniels"], ["status", "Present"], ["date", 1142022], ["created_at", "2023-01-04 09:17:42.393086"], ["updated_at", "2023-01-04 09:17:42.393086"]]
+  [1m[36mTRANSACTION (3.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAttendance Create (0.4ms)[0m  [1m[32mINSERT INTO "attendances" ("classroom_id", "student_id", "student_name", "status", "date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["classroom_id", 7], ["student_id", 10], ["student_name", "Angie Angel"], ["status", "Present"], ["date", 1142022], ["created_at", "2023-01-04 09:17:42.400665"], ["updated_at", "2023-01-04 09:17:42.400665"]]
+  [1m[36mTRANSACTION (3.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTeacher Destroy (0.3ms)[0m  [1m[31mDELETE FROM "teachers" WHERE "teachers"."id" = ?[0m  [["id", 10]]
+  [1m[36mTRANSACTION (7.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTeacher Destroy (1.2ms)[0m  [1m[31mDELETE FROM "teachers" WHERE "teachers"."id" = ?[0m  [["id", 11]]
+  [1m[36mTRANSACTION (4.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTeacher Destroy (0.8ms)[0m  [1m[31mDELETE FROM "teachers" WHERE "teachers"."id" = ?[0m  [["id", 12]]
+  [1m[36mTRANSACTION (3.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mStudent Load (2.2ms)[0m  [1m[34mSELECT "students".* FROM "students"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mStudent Destroy (0.3ms)[0m  [1m[31mDELETE FROM "students" WHERE "students"."id" = ?[0m  [["id", 9]]
+  [1m[36mTRANSACTION (10.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mStudent Destroy (0.3ms)[0m  [1m[31mDELETE FROM "students" WHERE "students"."id" = ?[0m  [["id", 10]]
+  [1m[36mTRANSACTION (3.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mStudent Destroy (0.2ms)[0m  [1m[31mDELETE FROM "students" WHERE "students"."id" = ?[0m  [["id", 11]]
+  [1m[36mTRANSACTION (3.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mStudent Destroy (0.3ms)[0m  [1m[31mDELETE FROM "students" WHERE "students"."id" = ?[0m  [["id", 12]]
+  [1m[36mTRANSACTION (3.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mClassroom Load (0.2ms)[0m  [1m[34mSELECT "classrooms".* FROM "classrooms"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mClassroom Destroy (0.3ms)[0m  [1m[31mDELETE FROM "classrooms" WHERE "classrooms"."id" = ?[0m  [["id", 7]]
+  [1m[36mTRANSACTION (3.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mClassroom Destroy (0.3ms)[0m  [1m[31mDELETE FROM "classrooms" WHERE "classrooms"."id" = ?[0m  [["id", 8]]
+  [1m[36mTRANSACTION (3.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mClassroom Destroy (0.3ms)[0m  [1m[31mDELETE FROM "classrooms" WHERE "classrooms"."id" = ?[0m  [["id", 9]]
+  [1m[36mTRANSACTION (4.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mParent Load (0.4ms)[0m  [1m[34mSELECT "parents".* FROM "parents"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mParent Destroy (0.3ms)[0m  [1m[31mDELETE FROM "parents" WHERE "parents"."id" = ?[0m  [["id", 6]]
+  [1m[36mTRANSACTION (3.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mParent Destroy (0.3ms)[0m  [1m[31mDELETE FROM "parents" WHERE "parents"."id" = ?[0m  [["id", 7]]
+  [1m[36mTRANSACTION (3.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mParent Destroy (0.3ms)[0m  [1m[31mDELETE FROM "parents" WHERE "parents"."id" = ?[0m  [["id", 8]]
+  [1m[36mTRANSACTION (3.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mParent Destroy (0.2ms)[0m  [1m[31mDELETE FROM "parents" WHERE "parents"."id" = ?[0m  [["id", 9]]
+  [1m[36mTRANSACTION (3.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mParent Destroy (0.3ms)[0m  [1m[31mDELETE FROM "parents" WHERE "parents"."id" = ?[0m  [["id", 10]]
+  [1m[36mTRANSACTION (3.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mAttendance Load (0.3ms)[0m  [1m[34mSELECT "attendances".* FROM "attendances"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAttendance Destroy (0.2ms)[0m  [1m[31mDELETE FROM "attendances" WHERE "attendances"."id" = ?[0m  [["id", 5]]
+  [1m[36mTRANSACTION (4.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAttendance Destroy (0.3ms)[0m  [1m[31mDELETE FROM "attendances" WHERE "attendances"."id" = ?[0m  [["id", 6]]
+  [1m[36mTRANSACTION (4.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAttendance Destroy (0.3ms)[0m  [1m[31mDELETE FROM "attendances" WHERE "attendances"."id" = ?[0m  [["id", 7]]
+  [1m[36mTRANSACTION (3.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAttendance Destroy (0.3ms)[0m  [1m[31mDELETE FROM "attendances" WHERE "attendances"."id" = ?[0m  [["id", 8]]
+  [1m[36mTRANSACTION (3.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAttendance Destroy (0.3ms)[0m  [1m[31mDELETE FROM "attendances" WHERE "attendances"."id" = ?[0m  [["id", 9]]
+  [1m[36mTRANSACTION (3.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAttendance Destroy (0.3ms)[0m  [1m[31mDELETE FROM "attendances" WHERE "attendances"."id" = ?[0m  [["id", 10]]
+  [1m[36mTRANSACTION (3.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mDiscipline Load (0.2ms)[0m  [1m[34mSELECT "disciplines".* FROM "disciplines"[0m
+  [1m[36mParentStudent Load (0.2ms)[0m  [1m[34mSELECT "parent_students".* FROM "parent_students"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTeacher Create (0.4ms)[0m  [1m[32mINSERT INTO "teachers" ("first_name", "last_name", "career_name", "password_digest", "phone_number", "email", "gender", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "Luke"], ["last_name", "Shaw"], ["career_name", "English"], ["password_digest", "[FILTERED]"], ["phone_number", "07867465376"], ["email", "lukeshaw@gmail.com"], ["gender", "male"], ["created_at", "2023-01-04 09:18:10.408638"], ["updated_at", "2023-01-04 09:18:10.408638"]]
+  [1m[36mTRANSACTION (10.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTeacher Create (0.5ms)[0m  [1m[32mINSERT INTO "teachers" ("first_name", "last_name", "career_name", "password_digest", "phone_number", "email", "gender", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "Darwin"], ["last_name", "Ken"], ["career_name", "Play group leader"], ["password_digest", "[FILTERED]"], ["phone_number", "0754372656"], ["email", "lewisdarwin@gmail.com"], ["gender", "male"], ["created_at", "2023-01-04 09:18:10.715972"], ["updated_at", "2023-01-04 09:18:10.715972"]]
+  [1m[36mTRANSACTION (10.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTeacher Create (0.8ms)[0m  [1m[32mINSERT INTO "teachers" ("first_name", "last_name", "career_name", "password_digest", "phone_number", "email", "gender", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "Timothy"], ["last_name", "Rogers"], ["career_name", "Math"], ["password_digest", "[FILTERED]"], ["phone_number", "0754372656"], ["email", "timothy@gmail.com"], ["gender", "male"], ["created_at", "2023-01-04 09:18:11.015027"], ["updated_at", "2023-01-04 09:18:11.015027"]]
+  [1m[36mTRANSACTION (4.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mClassroom Create (0.6ms)[0m  [1m[32mINSERT INTO "classrooms" ("name", "teacher_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "PP1"], ["teacher_id", 13], ["created_at", "2023-01-04 09:18:11.025111"], ["updated_at", "2023-01-04 09:18:11.025111"]]
+  [1m[36mTRANSACTION (3.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mClassroom Create (0.3ms)[0m  [1m[32mINSERT INTO "classrooms" ("name", "teacher_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "PP2"], ["teacher_id", 14], ["created_at", "2023-01-04 09:18:11.034925"], ["updated_at", "2023-01-04 09:18:11.034925"]]
+  [1m[36mTRANSACTION (3.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mClassroom Create (0.3ms)[0m  [1m[32mINSERT INTO "classrooms" ("name", "teacher_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "PP3"], ["teacher_id", 15], ["created_at", "2023-01-04 09:18:11.041622"], ["updated_at", "2023-01-04 09:18:11.041622"]]
+  [1m[36mTRANSACTION (3.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mStudent Create (0.3ms)[0m  [1m[32mINSERT INTO "students" ("first_name", "second_name", "surname", "age", "description", "admission_number", "classroom_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "Faith"], ["second_name", "shahh"], ["surname", "Martind"], ["age", 3], ["description", " Faith is is an active learner who loves to get hands-on and throw herself into a task with enthusiasm"], ["admission_number", 4567], ["classroom_id", 10], ["created_at", "2023-01-04 09:18:11.048512"], ["updated_at", "2023-01-04 09:18:11.048512"]]
+  [1m[36mTRANSACTION (3.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mStudent Create (0.3ms)[0m  [1m[32mINSERT INTO "students" ("first_name", "second_name", "surname", "age", "description", "admission_number", "classroom_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "Glory"], ["second_name", "Dermen"], ["surname", "Cox"], ["age", 4], ["description", " Glory is an ambitious student who will push herself to meet her personal best at all times"], ["admission_number", 4568], ["classroom_id", 11], ["created_at", "2023-01-04 09:18:11.055973"], ["updated_at", "2023-01-04 09:18:11.055973"]]
+  [1m[36mTRANSACTION (6.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mStudent Create (0.4ms)[0m  [1m[32mINSERT INTO "students" ("first_name", "second_name", "surname", "age", "description", "admission_number", "classroom_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "Peter"], ["second_name", "Drury"], ["surname", "Fisher"], ["age", 5], ["description", " Peter is hardworking student"], ["admission_number", 4569], ["classroom_id", 12], ["created_at", "2023-01-04 09:18:11.065807"], ["updated_at", "2023-01-04 09:18:11.065807"]]
+  [1m[36mTRANSACTION (4.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mStudent Create (0.3ms)[0m  [1m[32mINSERT INTO "students" ("first_name", "second_name", "surname", "age", "description", "admission_number", "classroom_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "James"], ["second_name", "Martin"], ["surname", "Fowler"], ["age", 4], ["description", " James is an average and humble student"], ["admission_number", 4570], ["classroom_id", 12], ["created_at", "2023-01-04 09:18:11.076937"], ["updated_at", "2023-01-04 09:18:11.076937"]]
+  [1m[36mTRANSACTION (3.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mParent Create (0.4ms)[0m  [1m[32mINSERT INTO "parents" ("first_name", "last_name", "phone_number", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["first_name", "Jancy"], ["last_name", "Mongy"], ["phone_number", 765478643], ["password_digest", "[FILTERED]"], ["created_at", "2023-01-04 09:18:11.367187"], ["updated_at", "2023-01-04 09:18:11.367187"]]
+  [1m[36mTRANSACTION (9.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mParent Create (0.3ms)[0m  [1m[32mINSERT INTO "parents" ("first_name", "last_name", "phone_number", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["first_name", "David"], ["last_name", "Makali"], ["phone_number", 743564786], ["password_digest", "[FILTERED]"], ["created_at", "2023-01-04 09:18:11.660508"], ["updated_at", "2023-01-04 09:18:11.660508"]]
+  [1m[36mTRANSACTION (9.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mParent Create (0.3ms)[0m  [1m[32mINSERT INTO "parents" ("first_name", "last_name", "phone_number", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["first_name", "Rehema"], ["last_name", "Angela"], ["phone_number", 765473564], ["password_digest", "[FILTERED]"], ["created_at", "2023-01-04 09:18:11.952791"], ["updated_at", "2023-01-04 09:18:11.952791"]]
+  [1m[36mTRANSACTION (9.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mParent Create (0.3ms)[0m  [1m[32mINSERT INTO "parents" ("first_name", "last_name", "phone_number", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["first_name", "James"], ["last_name", "Aquine"], ["phone_number", 789657463], ["password_digest", "[FILTERED]"], ["created_at", "2023-01-04 09:18:12.245353"], ["updated_at", "2023-01-04 09:18:12.245353"]]
+  [1m[36mTRANSACTION (10.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mParent Create (0.4ms)[0m  [1m[32mINSERT INTO "parents" ("first_name", "last_name", "phone_number", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["first_name", "Steve"], ["last_name", "Havey"], ["phone_number", 7107896457], ["password_digest", "[FILTERED]"], ["created_at", "2023-01-04 09:18:12.543918"], ["updated_at", "2023-01-04 09:18:12.543918"]]
+  [1m[36mTRANSACTION (9.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAttendance Create (0.5ms)[0m  [1m[32mINSERT INTO "attendances" ("classroom_id", "student_id", "student_name", "status", "date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["classroom_id", 10], ["student_id", 13], ["student_name", "Glory Sparks"], ["status", "Present"], ["date", 1142022], ["created_at", "2023-01-04 09:18:12.558655"], ["updated_at", "2023-01-04 09:18:12.558655"]]
+  [1m[36mTRANSACTION (3.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAttendance Create (0.4ms)[0m  [1m[32mINSERT INTO "attendances" ("classroom_id", "student_id", "student_name", "status", "date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["classroom_id", 10], ["student_id", 14], ["student_name", "James Martins"], ["status", "Present"], ["date", 1142022], ["created_at", "2023-01-04 09:18:12.567383"], ["updated_at", "2023-01-04 09:18:12.567383"]]
+  [1m[36mTRANSACTION (4.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAttendance Create (0.3ms)[0m  [1m[32mINSERT INTO "attendances" ("classroom_id", "student_id", "student_name", "status", "date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["classroom_id", 10], ["student_id", 15], ["student_name", "Adams Smith"], ["status", "Present"], ["date", 1142022], ["created_at", "2023-01-04 09:18:12.576651"], ["updated_at", "2023-01-04 09:18:12.576651"]]
+  [1m[36mTRANSACTION (4.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAttendance Create (0.3ms)[0m  [1m[32mINSERT INTO "attendances" ("classroom_id", "student_id", "student_name", "status", "date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["classroom_id", 10], ["student_id", 16], ["student_name", "Aisha Barracks"], ["status", "Present"], ["date", 1142022], ["created_at", "2023-01-04 09:18:12.586389"], ["updated_at", "2023-01-04 09:18:12.586389"]]
+  [1m[36mTRANSACTION (3.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAttendance Create (0.3ms)[0m  [1m[32mINSERT INTO "attendances" ("classroom_id", "student_id", "student_name", "status", "date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["classroom_id", 10], ["student_id", 15], ["student_name", "Dan Daniels"], ["status", "Present"], ["date", 1142022], ["created_at", "2023-01-04 09:18:12.594012"], ["updated_at", "2023-01-04 09:18:12.594012"]]
+  [1m[36mTRANSACTION (3.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAttendance Create (0.3ms)[0m  [1m[32mINSERT INTO "attendances" ("classroom_id", "student_id", "student_name", "status", "date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["classroom_id", 10], ["student_id", 14], ["student_name", "Angie Angel"], ["status", "Present"], ["date", 1142022], ["created_at", "2023-01-04 09:18:12.602161"], ["updated_at", "2023-01-04 09:18:12.602161"]]
+  [1m[36mTRANSACTION (3.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDiscipline Create (0.3ms)[0m  [1m[32mINSERT INTO "disciplines" ("student_id", "title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["student_id", 13], ["title", "Student"], ["description", "Excellent"], ["created_at", "2023-01-04 09:18:12.621917"], ["updated_at", "2023-01-04 09:18:12.621917"]]
+  [1m[36mTRANSACTION (3.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDiscipline Create (0.8ms)[0m  [1m[32mINSERT INTO "disciplines" ("student_id", "title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["student_id", 14], ["title", "Student"], ["description", "Average"], ["created_at", "2023-01-04 09:18:12.629803"], ["updated_at", "2023-01-04 09:18:12.629803"]]
+  [1m[36mTRANSACTION (3.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDiscipline Create (0.4ms)[0m  [1m[32mINSERT INTO "disciplines" ("student_id", "title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["student_id", 15], ["title", "Student"], ["description", "Excellent"], ["created_at", "2023-01-04 09:18:12.639828"], ["updated_at", "2023-01-04 09:18:12.639828"]]
+  [1m[36mTRANSACTION (3.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDiscipline Create (0.3ms)[0m  [1m[32mINSERT INTO "disciplines" ("student_id", "title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["student_id", 16], ["title", "Student"], ["description", "Very good"], ["created_at", "2023-01-04 09:18:12.648335"], ["updated_at", "2023-01-04 09:18:12.648335"]]
+  [1m[36mTRANSACTION (3.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDiscipline Create (0.3ms)[0m  [1m[32mINSERT INTO "disciplines" ("student_id", "title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["student_id", 15], ["title", "Student"], ["description", "Excellent"], ["created_at", "2023-01-04 09:18:12.656355"], ["updated_at", "2023-01-04 09:18:12.656355"]]
+  [1m[36mTRANSACTION (3.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTeacher Destroy (0.6ms)[0m  [1m[31mDELETE FROM "teachers" WHERE "teachers"."id" = ?[0m  [["id", 13]]
+  [1m[36mTRANSACTION (4.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (2.8ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTeacher Destroy (0.5ms)[0m  [1m[31mDELETE FROM "teachers" WHERE "teachers"."id" = ?[0m  [["id", 14]]
+  [1m[36mTRANSACTION (3.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTeacher Destroy (0.4ms)[0m  [1m[31mDELETE FROM "teachers" WHERE "teachers"."id" = ?[0m  [["id", 15]]
+  [1m[36mTRANSACTION (3.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mStudent Destroy (0.3ms)[0m  [1m[31mDELETE FROM "students" WHERE "students"."id" = ?[0m  [["id", 13]]
+  [1m[36mTRANSACTION (3.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mStudent Destroy (0.3ms)[0m  [1m[31mDELETE FROM "students" WHERE "students"."id" = ?[0m  [["id", 14]]
+  [1m[36mTRANSACTION (3.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mStudent Destroy (0.2ms)[0m  [1m[31mDELETE FROM "students" WHERE "students"."id" = ?[0m  [["id", 15]]
+  [1m[36mTRANSACTION (3.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mStudent Destroy (0.3ms)[0m  [1m[31mDELETE FROM "students" WHERE "students"."id" = ?[0m  [["id", 16]]
+  [1m[36mTRANSACTION (3.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mClassroom Load (0.2ms)[0m  [1m[34mSELECT "classrooms".* FROM "classrooms"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mClassroom Destroy (0.3ms)[0m  [1m[31mDELETE FROM "classrooms" WHERE "classrooms"."id" = ?[0m  [["id", 10]]
+  [1m[36mTRANSACTION (3.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mClassroom Destroy (0.3ms)[0m  [1m[31mDELETE FROM "classrooms" WHERE "classrooms"."id" = ?[0m  [["id", 11]]
+  [1m[36mTRANSACTION (3.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mClassroom Destroy (0.3ms)[0m  [1m[31mDELETE FROM "classrooms" WHERE "classrooms"."id" = ?[0m  [["id", 12]]
+  [1m[36mTRANSACTION (3.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mParent Load (0.3ms)[0m  [1m[34mSELECT "parents".* FROM "parents"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mParent Destroy (0.3ms)[0m  [1m[31mDELETE FROM "parents" WHERE "parents"."id" = ?[0m  [["id", 11]]
+  [1m[36mTRANSACTION (3.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mParent Destroy (0.3ms)[0m  [1m[31mDELETE FROM "parents" WHERE "parents"."id" = ?[0m  [["id", 12]]
+  [1m[36mTRANSACTION (3.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mParent Destroy (0.3ms)[0m  [1m[31mDELETE FROM "parents" WHERE "parents"."id" = ?[0m  [["id", 13]]
+  [1m[36mTRANSACTION (3.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mParent Destroy (0.3ms)[0m  [1m[31mDELETE FROM "parents" WHERE "parents"."id" = ?[0m  [["id", 14]]
+  [1m[36mTRANSACTION (3.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mParent Destroy (0.3ms)[0m  [1m[31mDELETE FROM "parents" WHERE "parents"."id" = ?[0m  [["id", 15]]
+  [1m[36mTRANSACTION (3.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mAttendance Load (0.3ms)[0m  [1m[34mSELECT "attendances".* FROM "attendances"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAttendance Destroy (0.3ms)[0m  [1m[31mDELETE FROM "attendances" WHERE "attendances"."id" = ?[0m  [["id", 11]]
+  [1m[36mTRANSACTION (3.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAttendance Destroy (0.2ms)[0m  [1m[31mDELETE FROM "attendances" WHERE "attendances"."id" = ?[0m  [["id", 12]]
+  [1m[36mTRANSACTION (3.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAttendance Destroy (0.3ms)[0m  [1m[31mDELETE FROM "attendances" WHERE "attendances"."id" = ?[0m  [["id", 13]]
+  [1m[36mTRANSACTION (3.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAttendance Destroy (0.3ms)[0m  [1m[31mDELETE FROM "attendances" WHERE "attendances"."id" = ?[0m  [["id", 14]]
+  [1m[36mTRANSACTION (3.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAttendance Destroy (0.3ms)[0m  [1m[31mDELETE FROM "attendances" WHERE "attendances"."id" = ?[0m  [["id", 15]]
+  [1m[36mTRANSACTION (3.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAttendance Destroy (0.3ms)[0m  [1m[31mDELETE FROM "attendances" WHERE "attendances"."id" = ?[0m  [["id", 16]]
+  [1m[36mTRANSACTION (3.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mDiscipline Load (0.2ms)[0m  [1m[34mSELECT "disciplines".* FROM "disciplines"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDiscipline Destroy (0.3ms)[0m  [1m[31mDELETE FROM "disciplines" WHERE "disciplines"."id" = ?[0m  [["id", 1]]
+  [1m[36mTRANSACTION (3.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDiscipline Destroy (0.3ms)[0m  [1m[31mDELETE FROM "disciplines" WHERE "disciplines"."id" = ?[0m  [["id", 2]]
+  [1m[36mTRANSACTION (3.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDiscipline Destroy (0.3ms)[0m  [1m[31mDELETE FROM "disciplines" WHERE "disciplines"."id" = ?[0m  [["id", 3]]
+  [1m[36mTRANSACTION (3.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDiscipline Destroy (0.3ms)[0m  [1m[31mDELETE FROM "disciplines" WHERE "disciplines"."id" = ?[0m  [["id", 4]]
+  [1m[36mTRANSACTION (4.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDiscipline Destroy (0.4ms)[0m  [1m[31mDELETE FROM "disciplines" WHERE "disciplines"."id" = ?[0m  [["id", 5]]
+  [1m[36mTRANSACTION (3.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mParentStudent Load (0.2ms)[0m  [1m[34mSELECT "parent_students".* FROM "parent_students"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTeacher Create (0.7ms)[0m  [1m[32mINSERT INTO "teachers" ("first_name", "last_name", "career_name", "password_digest", "phone_number", "email", "gender", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "Luke"], ["last_name", "Shaw"], ["career_name", "English"], ["password_digest", "[FILTERED]"], ["phone_number", "07867465376"], ["email", "lukeshaw@gmail.com"], ["gender", "male"], ["created_at", "2023-01-04 09:18:35.967361"], ["updated_at", "2023-01-04 09:18:35.967361"]]
+  [1m[36mTRANSACTION (9.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTeacher Create (0.4ms)[0m  [1m[32mINSERT INTO "teachers" ("first_name", "last_name", "career_name", "password_digest", "phone_number", "email", "gender", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "Darwin"], ["last_name", "Ken"], ["career_name", "Play group leader"], ["password_digest", "[FILTERED]"], ["phone_number", "0754372656"], ["email", "lewisdarwin@gmail.com"], ["gender", "male"], ["created_at", "2023-01-04 09:18:36.266246"], ["updated_at", "2023-01-04 09:18:36.266246"]]
+  [1m[36mTRANSACTION (4.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTeacher Create (0.3ms)[0m  [1m[32mINSERT INTO "teachers" ("first_name", "last_name", "career_name", "password_digest", "phone_number", "email", "gender", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "Timothy"], ["last_name", "Rogers"], ["career_name", "Math"], ["password_digest", "[FILTERED]"], ["phone_number", "0754372656"], ["email", "timothy@gmail.com"], ["gender", "male"], ["created_at", "2023-01-04 09:18:36.553753"], ["updated_at", "2023-01-04 09:18:36.553753"]]
+  [1m[36mTRANSACTION (9.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mClassroom Create (1.0ms)[0m  [1m[32mINSERT INTO "classrooms" ("name", "teacher_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "PP1"], ["teacher_id", 16], ["created_at", "2023-01-04 09:18:36.567715"], ["updated_at", "2023-01-04 09:18:36.567715"]]
+  [1m[36mTRANSACTION (3.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mClassroom Create (0.3ms)[0m  [1m[32mINSERT INTO "classrooms" ("name", "teacher_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "PP2"], ["teacher_id", 17], ["created_at", "2023-01-04 09:18:36.577106"], ["updated_at", "2023-01-04 09:18:36.577106"]]
+  [1m[36mTRANSACTION (3.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mClassroom Create (0.4ms)[0m  [1m[32mINSERT INTO "classrooms" ("name", "teacher_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "PP3"], ["teacher_id", 18], ["created_at", "2023-01-04 09:18:36.585237"], ["updated_at", "2023-01-04 09:18:36.585237"]]
+  [1m[36mTRANSACTION (3.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mStudent Create (0.4ms)[0m  [1m[32mINSERT INTO "students" ("first_name", "second_name", "surname", "age", "description", "admission_number", "classroom_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "Faith"], ["second_name", "shahh"], ["surname", "Martind"], ["age", 3], ["description", " Faith is is an active learner who loves to get hands-on and throw herself into a task with enthusiasm"], ["admission_number", 4567], ["classroom_id", 13], ["created_at", "2023-01-04 09:18:36.593652"], ["updated_at", "2023-01-04 09:18:36.593652"]]
+  [1m[36mTRANSACTION (3.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mStudent Create (0.4ms)[0m  [1m[32mINSERT INTO "students" ("first_name", "second_name", "surname", "age", "description", "admission_number", "classroom_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "Glory"], ["second_name", "Dermen"], ["surname", "Cox"], ["age", 4], ["description", " Glory is an ambitious student who will push herself to meet her personal best at all times"], ["admission_number", 4568], ["classroom_id", 14], ["created_at", "2023-01-04 09:18:36.602329"], ["updated_at", "2023-01-04 09:18:36.602329"]]
+  [1m[36mTRANSACTION (3.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mStudent Create (0.5ms)[0m  [1m[32mINSERT INTO "students" ("first_name", "second_name", "surname", "age", "description", "admission_number", "classroom_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "Peter"], ["second_name", "Drury"], ["surname", "Fisher"], ["age", 5], ["description", " Peter is hardworking student"], ["admission_number", 4569], ["classroom_id", 15], ["created_at", "2023-01-04 09:18:36.610326"], ["updated_at", "2023-01-04 09:18:36.610326"]]
+  [1m[36mTRANSACTION (5.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mStudent Create (0.3ms)[0m  [1m[32mINSERT INTO "students" ("first_name", "second_name", "surname", "age", "description", "admission_number", "classroom_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "James"], ["second_name", "Martin"], ["surname", "Fowler"], ["age", 4], ["description", " James is an average and humble student"], ["admission_number", 4570], ["classroom_id", 15], ["created_at", "2023-01-04 09:18:36.621991"], ["updated_at", "2023-01-04 09:18:36.621991"]]
+  [1m[36mTRANSACTION (3.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mParent Create (0.3ms)[0m  [1m[32mINSERT INTO "parents" ("first_name", "last_name", "phone_number", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["first_name", "Jancy"], ["last_name", "Mongy"], ["phone_number", 765478643], ["password_digest", "[FILTERED]"], ["created_at", "2023-01-04 09:18:36.912900"], ["updated_at", "2023-01-04 09:18:36.912900"]]
+  [1m[36mTRANSACTION (10.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mParent Create (0.3ms)[0m  [1m[32mINSERT INTO "parents" ("first_name", "last_name", "phone_number", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["first_name", "David"], ["last_name", "Makali"], ["phone_number", 743564786], ["password_digest", "[FILTERED]"], ["created_at", "2023-01-04 09:18:37.207762"], ["updated_at", "2023-01-04 09:18:37.207762"]]
+  [1m[36mTRANSACTION (10.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mParent Create (0.3ms)[0m  [1m[32mINSERT INTO "parents" ("first_name", "last_name", "phone_number", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["first_name", "Rehema"], ["last_name", "Angela"], ["phone_number", 765473564], ["password_digest", "[FILTERED]"], ["created_at", "2023-01-04 09:18:37.503507"], ["updated_at", "2023-01-04 09:18:37.503507"]]
+  [1m[36mTRANSACTION (10.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mParent Create (0.3ms)[0m  [1m[32mINSERT INTO "parents" ("first_name", "last_name", "phone_number", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["first_name", "James"], ["last_name", "Aquine"], ["phone_number", 789657463], ["password_digest", "[FILTERED]"], ["created_at", "2023-01-04 09:18:37.797222"], ["updated_at", "2023-01-04 09:18:37.797222"]]
+  [1m[36mTRANSACTION (9.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mParent Create (0.3ms)[0m  [1m[32mINSERT INTO "parents" ("first_name", "last_name", "phone_number", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["first_name", "Steve"], ["last_name", "Havey"], ["phone_number", 7107896457], ["password_digest", "[FILTERED]"], ["created_at", "2023-01-04 09:18:38.092834"], ["updated_at", "2023-01-04 09:18:38.092834"]]
+  [1m[36mTRANSACTION (9.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAttendance Create (0.3ms)[0m  [1m[32mINSERT INTO "attendances" ("classroom_id", "student_id", "student_name", "status", "date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["classroom_id", 13], ["student_id", 17], ["student_name", "Glory Sparks"], ["status", "Present"], ["date", 1142022], ["created_at", "2023-01-04 09:18:38.107196"], ["updated_at", "2023-01-04 09:18:38.107196"]]
+  [1m[36mTRANSACTION (3.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAttendance Create (0.3ms)[0m  [1m[32mINSERT INTO "attendances" ("classroom_id", "student_id", "student_name", "status", "date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["classroom_id", 13], ["student_id", 18], ["student_name", "James Martins"], ["status", "Present"], ["date", 1142022], ["created_at", "2023-01-04 09:18:38.115627"], ["updated_at", "2023-01-04 09:18:38.115627"]]
+  [1m[36mTRANSACTION (3.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAttendance Create (0.3ms)[0m  [1m[32mINSERT INTO "attendances" ("classroom_id", "student_id", "student_name", "status", "date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["classroom_id", 13], ["student_id", 19], ["student_name", "Adams Smith"], ["status", "Present"], ["date", 1142022], ["created_at", "2023-01-04 09:18:38.123899"], ["updated_at", "2023-01-04 09:18:38.123899"]]
+  [1m[36mTRANSACTION (12.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAttendance Create (0.3ms)[0m  [1m[32mINSERT INTO "attendances" ("classroom_id", "student_id", "student_name", "status", "date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["classroom_id", 13], ["student_id", 20], ["student_name", "Aisha Barracks"], ["status", "Present"], ["date", 1142022], ["created_at", "2023-01-04 09:18:38.140686"], ["updated_at", "2023-01-04 09:18:38.140686"]]
+  [1m[36mTRANSACTION (4.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAttendance Create (0.3ms)[0m  [1m[32mINSERT INTO "attendances" ("classroom_id", "student_id", "student_name", "status", "date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["classroom_id", 13], ["student_id", 19], ["student_name", "Dan Daniels"], ["status", "Present"], ["date", 1142022], ["created_at", "2023-01-04 09:18:38.150503"], ["updated_at", "2023-01-04 09:18:38.150503"]]
+  [1m[36mTRANSACTION (4.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAttendance Create (0.3ms)[0m  [1m[32mINSERT INTO "attendances" ("classroom_id", "student_id", "student_name", "status", "date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["classroom_id", 13], ["student_id", 18], ["student_name", "Angie Angel"], ["status", "Present"], ["date", 1142022], ["created_at", "2023-01-04 09:18:38.159366"], ["updated_at", "2023-01-04 09:18:38.159366"]]
+  [1m[36mTRANSACTION (3.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDiscipline Create (0.4ms)[0m  [1m[32mINSERT INTO "disciplines" ("student_id", "title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["student_id", 17], ["title", "Student"], ["description", "Excellent"], ["created_at", "2023-01-04 09:18:38.167841"], ["updated_at", "2023-01-04 09:18:38.167841"]]
+  [1m[36mTRANSACTION (3.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDiscipline Create (0.3ms)[0m  [1m[32mINSERT INTO "disciplines" ("student_id", "title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["student_id", 18], ["title", "Student"], ["description", "Average"], ["created_at", "2023-01-04 09:18:38.176706"], ["updated_at", "2023-01-04 09:18:38.176706"]]
+  [1m[36mTRANSACTION (4.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDiscipline Create (0.4ms)[0m  [1m[32mINSERT INTO "disciplines" ("student_id", "title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["student_id", 19], ["title", "Student"], ["description", "Excellent"], ["created_at", "2023-01-04 09:18:38.185856"], ["updated_at", "2023-01-04 09:18:38.185856"]]
+  [1m[36mTRANSACTION (3.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDiscipline Create (0.3ms)[0m  [1m[32mINSERT INTO "disciplines" ("student_id", "title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["student_id", 20], ["title", "Student"], ["description", "Very good"], ["created_at", "2023-01-04 09:18:38.194300"], ["updated_at", "2023-01-04 09:18:38.194300"]]
+  [1m[36mTRANSACTION (3.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDiscipline Create (0.3ms)[0m  [1m[32mINSERT INTO "disciplines" ("student_id", "title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["student_id", 19], ["title", "Student"], ["description", "Excellent"], ["created_at", "2023-01-04 09:18:38.202893"], ["updated_at", "2023-01-04 09:18:38.202893"]]
+  [1m[36mTRANSACTION (3.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mParentStudent Create (0.4ms)[0m  [1m[32mINSERT INTO "parent_students" ("parent_id", "student_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["parent_id", 16], ["student_id", 17], ["created_at", "2023-01-04 09:18:38.222267"], ["updated_at", "2023-01-04 09:18:38.222267"]]
+  [1m[36mTRANSACTION (3.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mParentStudent Create (1.0ms)[0m  [1m[32mINSERT INTO "parent_students" ("parent_id", "student_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["parent_id", 17], ["student_id", 18], ["created_at", "2023-01-04 09:18:38.230555"], ["updated_at", "2023-01-04 09:18:38.230555"]]
+  [1m[36mTRANSACTION (4.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mParentStudent Create (0.4ms)[0m  [1m[32mINSERT INTO "parent_students" ("parent_id", "student_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["parent_id", 16], ["student_id", 17], ["created_at", "2023-01-04 09:18:38.241683"], ["updated_at", "2023-01-04 09:18:38.241683"]]
+  [1m[36mTRANSACTION (4.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mParentStudent Create (0.4ms)[0m  [1m[32mINSERT INTO "parent_students" ("parent_id", "student_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["parent_id", 18], ["student_id", 19], ["created_at", "2023-01-04 09:18:38.251466"], ["updated_at", "2023-01-04 09:18:38.251466"]]
+  [1m[36mTRANSACTION (3.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mParentStudent Create (0.4ms)[0m  [1m[32mINSERT INTO "parent_students" ("parent_id", "student_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["parent_id", 19], ["student_id", 20], ["created_at", "2023-01-04 09:18:38.261428"], ["updated_at", "2023-01-04 09:18:38.261428"]]
+  [1m[36mTRANSACTION (3.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mParentStudent Create (0.4ms)[0m  [1m[32mINSERT INTO "parent_students" ("parent_id", "student_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["parent_id", 20], ["student_id", 19], ["created_at", "2023-01-04 09:18:38.270259"], ["updated_at", "2023-01-04 09:18:38.270259"]]
+  [1m[36mTRANSACTION (4.8ms)[0m  [1m[36mcommit transaction[0m
