@@ -177,7 +177,7 @@ teacher3 = Teacher.create(
         student_name: "Adams Smith",
         student_id: student3.id,
         status: "Present",
-        date: 1142022,
+        date: 1042022,
     )
     attendance4 = Attendance.create(
         classroom_id: classroom1.id,

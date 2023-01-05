@@ -1,3 +1,4 @@
 class ParentSerializer < ActiveModel::Serializer
-  attributes :id
+  attributes :id,:first_name, :last_name, :phone_number, :password
+  has_many :students
 end
