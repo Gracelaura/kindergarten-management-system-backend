@@ -3000,3 +3000,1634 @@ Processing by AttendancesController#index as */*
 Completed 200 OK in 6ms (Views: 4.8ms | ActiveRecord: 0.4ms | Allocations: 1479)
 
 
+Started POST "/parents" for 127.0.0.1 at 2023-01-06 15:40:50 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ParentsController#create as */*
+  Parameters: {"firstname"=>"", "last_name"=>"Kibata", "phone_number"=>"07988756", "password"=>"[FILTERED]", "role"=>"", "first_name"=>"Muriithi", "parent"=>{"first_name"=>"Muriithi", "last_name"=>"Kibata", "phone_number"=>"07988756"}}
+[31mUnpermitted parameters: :firstname, :phone_number, :role, :parent. Context: { controller: ParentsController, action: create, request: #<ActionDispatch::Request:0x00007fcb0c50f670>, params: {"firstname"=>"", "last_name"=>"Kibata", "phone_number"=>"07988756", "password"=>"[FILTERED]", "role"=>"", "first_name"=>"Muriithi", "controller"=>"parents", "action"=>"create", "parent"=>{"first_name"=>"Muriithi", "last_name"=>"Kibata", "phone_number"=>"07988756"}} }[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/parents_controller.rb:6:in `create'
+  [1m[36mParent Create (1.3ms)[0m  [1m[32mINSERT INTO "parents" ("first_name", "last_name", "phone_number", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["first_name", "Muriithi"], ["last_name", "Kibata"], ["phone_number", nil], ["password_digest", "[FILTERED]"], ["created_at", "2023-01-06 12:40:50.759886"], ["updated_at", "2023-01-06 12:40:50.759886"]]
+  ↳ app/controllers/parents_controller.rb:6:in `create'
+  [1m[36mTRANSACTION (6.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/parents_controller.rb:6:in `create'
+[active_model_serializers]   [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT "students".* FROM "students" INNER JOIN "parent_students" ON "students"."id" = "parent_students"."student_id" WHERE "parent_students"."parent_id" = ?[0m  [["parent_id", 11]]
+[active_model_serializers]   ↳ app/controllers/parents_controller.rb:8:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (47.75ms)
+Completed 201 Created in 429ms (Views: 49.4ms | ActiveRecord: 10.2ms | Allocations: 61932)
+
+
+Started POST "/parent_login" for 127.0.0.1 at 2023-01-06 15:41:35 +0300
+Processing by ParentAuthController#create as */*
+  Parameters: {"phone_number"=>"07988756", "password"=>"[FILTERED]", "parent_auth"=>{"phone_number"=>"07988756", "password"=>"[FILTERED]"}}
+  [1m[36mParent Load (1.2ms)[0m  [1m[34mSELECT "parents".* FROM "parents" WHERE "parents"."phone_number" = ? LIMIT ?[0m  [["phone_number", 7988756], ["LIMIT", 1]]
+  ↳ app/controllers/parent_auth_controller.rb:5:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.19ms)
+Completed 401 Unauthorized in 6ms (Views: 1.2ms | ActiveRecord: 1.2ms | Allocations: 996)
+
+
+Started POST "/parent_login" for 127.0.0.1 at 2023-01-06 15:43:55 +0300
+Processing by ParentAuthController#create as */*
+  Parameters: {"phone_number"=>"07988756", "password"=>"[FILTERED]", "parent_auth"=>{"phone_number"=>"07988756", "password"=>"[FILTERED]"}}
+  [1m[36mParent Load (0.2ms)[0m  [1m[34mSELECT "parents".* FROM "parents" WHERE "parents"."phone_number" = ? LIMIT ?[0m  [["phone_number", 7988756], ["LIMIT", 1]]
+  ↳ app/controllers/parent_auth_controller.rb:5:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.12ms)
+Completed 401 Unauthorized in 3ms (Views: 0.9ms | ActiveRecord: 0.2ms | Allocations: 613)
+
+
+Started POST "/parents" for 127.0.0.1 at 2023-01-06 15:47:46 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ParentsController#create as */*
+  Parameters: {"firstname"=>"", "last_name"=>"Kibata", "phone_number"=>"07988756", "password"=>"[FILTERED]", "role"=>"", "first_name"=>"Mithamo", "parent"=>{"first_name"=>"Mithamo", "last_name"=>"Kibata", "phone_number"=>"07988756"}}
+[31mUnpermitted parameters: :firstname, :phone_number, :role, :parent. Context: { controller: ParentsController, action: create, request: #<ActionDispatch::Request:0x00007fdd09367e30>, params: {"firstname"=>"", "last_name"=>"Kibata", "phone_number"=>"07988756", "password"=>"[FILTERED]", "role"=>"", "first_name"=>"Mithamo", "controller"=>"parents", "action"=>"create", "parent"=>{"first_name"=>"Mithamo", "last_name"=>"Kibata", "phone_number"=>"07988756"}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/parents_controller.rb:6:in `create'
+  [1m[36mParent Create (0.8ms)[0m  [1m[32mINSERT INTO "parents" ("first_name", "last_name", "phone_number", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["first_name", "Mithamo"], ["last_name", "Kibata"], ["phone_number", nil], ["password_digest", "[FILTERED]"], ["created_at", "2023-01-06 12:47:46.533407"], ["updated_at", "2023-01-06 12:47:46.533407"]]
+  ↳ app/controllers/parents_controller.rb:6:in `create'
+  [1m[36mTRANSACTION (6.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/parents_controller.rb:6:in `create'
+[active_model_serializers]   [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" INNER JOIN "parent_students" ON "students"."id" = "parent_students"."student_id" WHERE "parent_students"."parent_id" = ?[0m  [["parent_id", 12]]
+[active_model_serializers]   ↳ app/controllers/parents_controller.rb:8:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (28.76ms)
+Completed 201 Created in 445ms (Views: 29.9ms | ActiveRecord: 10.1ms | Allocations: 59947)
+
+
+Started POST "/parents" for 127.0.0.1 at 2023-01-06 15:56:17 +0300
+Processing by ParentsController#create as */*
+  Parameters: {"first_name"=>"Muriithi", "last_name"=>"Kibata", "phone_number"=>"07988756", "password"=>"[FILTERED]", "parent"=>{"first_name"=>"Muriithi", "last_name"=>"Kibata", "phone_number"=>"07988756"}}
+[31mUnpermitted parameters: :phone_number, :parent. Context: { controller: ParentsController, action: create, request: #<ActionDispatch::Request:0x00007fdd0ec61d60>, params: {"first_name"=>"Muriithi", "last_name"=>"Kibata", "phone_number"=>"07988756", "password"=>"[FILTERED]", "controller"=>"parents", "action"=>"create", "parent"=>{"first_name"=>"Muriithi", "last_name"=>"Kibata", "phone_number"=>"07988756"}} }[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/parents_controller.rb:6:in `create'
+  [1m[36mParent Create (0.6ms)[0m  [1m[32mINSERT INTO "parents" ("first_name", "last_name", "phone_number", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["first_name", "Muriithi"], ["last_name", "Kibata"], ["phone_number", nil], ["password_digest", "[FILTERED]"], ["created_at", "2023-01-06 12:56:17.931045"], ["updated_at", "2023-01-06 12:56:17.931045"]]
+  ↳ app/controllers/parents_controller.rb:6:in `create'
+  [1m[36mTRANSACTION (6.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/parents_controller.rb:6:in `create'
+[active_model_serializers]   [1m[36mStudent Load (0.5ms)[0m  [1m[34mSELECT "students".* FROM "students" INNER JOIN "parent_students" ON "students"."id" = "parent_students"."student_id" WHERE "parent_students"."parent_id" = ?[0m  [["parent_id", 13]]
+[active_model_serializers]   ↳ app/controllers/parents_controller.rb:8:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (3.79ms)
+Completed 201 Created in 321ms (Views: 3.8ms | ActiveRecord: 7.6ms | Allocations: 3482)
+
+
+Started POST "/parents" for 127.0.0.1 at 2023-01-06 15:56:52 +0300
+Processing by ParentsController#create as */*
+  Parameters: {"first_name"=>"Muriithi", "last_name"=>"Kibata", "phone_number"=>"07988756", "password"=>"[FILTERED]", "parent"=>{"first_name"=>"Muriithi", "last_name"=>"Kibata", "phone_number"=>"07988756"}}
+[31mUnpermitted parameters: :phone_number, :parent. Context: { controller: ParentsController, action: create, request: #<ActionDispatch::Request:0x00007fdd0ecaa060>, params: {"first_name"=>"Muriithi", "last_name"=>"Kibata", "phone_number"=>"07988756", "password"=>"[FILTERED]", "controller"=>"parents", "action"=>"create", "parent"=>{"first_name"=>"Muriithi", "last_name"=>"Kibata", "phone_number"=>"07988756"}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/parents_controller.rb:6:in `create'
+  [1m[36mParent Create (0.6ms)[0m  [1m[32mINSERT INTO "parents" ("first_name", "last_name", "phone_number", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["first_name", "Muriithi"], ["last_name", "Kibata"], ["phone_number", nil], ["password_digest", "[FILTERED]"], ["created_at", "2023-01-06 12:56:53.198112"], ["updated_at", "2023-01-06 12:56:53.198112"]]
+  ↳ app/controllers/parents_controller.rb:6:in `create'
+  [1m[36mTRANSACTION (6.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/parents_controller.rb:6:in `create'
+[active_model_serializers]   [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" INNER JOIN "parent_students" ON "students"."id" = "parent_students"."student_id" WHERE "parent_students"."parent_id" = ?[0m  [["parent_id", 14]]
+[active_model_serializers]   ↳ app/controllers/parents_controller.rb:8:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (3.3ms)
+Completed 201 Created in 314ms (Views: 3.7ms | ActiveRecord: 6.8ms | Allocations: 3306)
+
+
+Started POST "/parents" for 127.0.0.1 at 2023-01-06 15:59:05 +0300
+Processing by ParentsController#create as */*
+  Parameters: {"first_name"=>"Kevo", "last_name"=>"Kipchumba", "phone_number"=>"079963710", "password"=>"[FILTERED]", "parent"=>{"first_name"=>"Kevo", "last_name"=>"Kipchumba", "phone_number"=>"079963710"}}
+[31mUnpermitted parameters: :phone_number, :parent. Context: { controller: ParentsController, action: create, request: #<ActionDispatch::Request:0x00007fdd0ecd1750>, params: {"first_name"=>"Kevo", "last_name"=>"Kipchumba", "phone_number"=>"079963710", "password"=>"[FILTERED]", "controller"=>"parents", "action"=>"create", "parent"=>{"first_name"=>"Kevo", "last_name"=>"Kipchumba", "phone_number"=>"079963710"}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/parents_controller.rb:6:in `create'
+  [1m[36mParent Create (1.3ms)[0m  [1m[32mINSERT INTO "parents" ("first_name", "last_name", "phone_number", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["first_name", "Kevo"], ["last_name", "Kipchumba"], ["phone_number", nil], ["password_digest", "[FILTERED]"], ["created_at", "2023-01-06 12:59:05.446640"], ["updated_at", "2023-01-06 12:59:05.446640"]]
+  ↳ app/controllers/parents_controller.rb:6:in `create'
+  [1m[36mTRANSACTION (6.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/parents_controller.rb:6:in `create'
+[active_model_serializers]   [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" INNER JOIN "parent_students" ON "students"."id" = "parent_students"."student_id" WHERE "parent_students"."parent_id" = ?[0m  [["parent_id", 15]]
+[active_model_serializers]   ↳ app/controllers/parents_controller.rb:8:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (4.2ms)
+Completed 201 Created in 336ms (Views: 4.9ms | ActiveRecord: 8.0ms | Allocations: 3305)
+
+
+Started POST "/parent_login" for 127.0.0.1 at 2023-01-06 15:59:48 +0300
+Processing by ParentAuthController#create as */*
+  Parameters: {"phone_number"=>"079963710", "password"=>"[FILTERED]", "parent_auth"=>{"phone_number"=>"079963710", "password"=>"[FILTERED]"}}
+  [1m[36mParent Load (0.5ms)[0m  [1m[34mSELECT "parents".* FROM "parents" WHERE "parents"."phone_number" = ? LIMIT ?[0m  [["phone_number", 79963710], ["LIMIT", 1]]
+  ↳ app/controllers/parent_auth_controller.rb:5:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.22ms)
+Completed 401 Unauthorized in 10ms (Views: 3.3ms | ActiveRecord: 0.5ms | Allocations: 990)
+
+
+Started GET "/login" for 127.0.0.1 at 2023-01-06 16:03:28 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/login"):
+  
+Error occurred while parsing request parameters.
+Contents:
+
+{
+  
+        
+         "phone_number": 079963710, 
+         "password": "MacBookpro"
+}
+
+Started POST "/login" for 127.0.0.1 at 2023-01-06 16:03:34 +0300
+Error occurred while parsing request parameters.
+Contents:
+
+{
+  
+        
+         "phone_number": 079963710, 
+         "password": "MacBookpro"
+}
+
+Processing by AuthController#create as */*
+Completed 400 Bad Request in 17ms (ActiveRecord: 0.0ms | Allocations: 1959)
+
+
+  
+ActionDispatch::Http::Parameters::ParseError (Error occurred while parsing request parameters):
+  
+app/controllers/auth_controller.rb:6:in `create'
+Started POST "/parent_login" for 127.0.0.1 at 2023-01-06 16:04:16 +0300
+Error occurred while parsing request parameters.
+Contents:
+
+{
+  
+        
+         "phone_number": 079963710, 
+         "password": "MacBookpro"
+}
+
+Processing by ParentAuthController#create as */*
+Completed 400 Bad Request in 1ms (ActiveRecord: 0.0ms | Allocations: 121)
+
+
+  
+ActionDispatch::Http::Parameters::ParseError (Error occurred while parsing request parameters):
+  
+app/controllers/parent_auth_controller.rb:5:in `create'
+Started GET "/parents" for 127.0.0.1 at 2023-01-06 16:05:33 +0300
+Error occurred while parsing request parameters.
+Contents:
+
+{
+  
+        
+         "phone_number": 079963710,
+         "password": "MacBookpro"
+}
+
+Processing by ParentsController#index as */*
+  [1m[36mTeacher Load (0.7ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+  [1m[36mParent Load (0.9ms)[0m  [1m[34mSELECT "parents".* FROM "parents"[0m
+  ↳ app/controllers/parents_controller.rb:12:in `index'
+[active_model_serializers]   [1m[36mStudent Load (0.8ms)[0m  [1m[34mSELECT "students".* FROM "students" INNER JOIN "parent_students" ON "students"."id" = "parent_students"."student_id" WHERE "parent_students"."parent_id" = ?[0m  [["parent_id", 6]]
+[active_model_serializers]   ↳ app/controllers/parents_controller.rb:12:in `index'
+[active_model_serializers]   [1m[36mStudent Load (0.5ms)[0m  [1m[34mSELECT "students".* FROM "students" INNER JOIN "parent_students" ON "students"."id" = "parent_students"."student_id" WHERE "parent_students"."parent_id" = ?[0m  [["parent_id", 7]]
+[active_model_serializers]   ↳ app/controllers/parents_controller.rb:12:in `index'
+[active_model_serializers]   [1m[36mStudent Load (0.4ms)[0m  [1m[34mSELECT "students".* FROM "students" INNER JOIN "parent_students" ON "students"."id" = "parent_students"."student_id" WHERE "parent_students"."parent_id" = ?[0m  [["parent_id", 8]]
+[active_model_serializers]   ↳ app/controllers/parents_controller.rb:12:in `index'
+[active_model_serializers]   [1m[36mStudent Load (0.4ms)[0m  [1m[34mSELECT "students".* FROM "students" INNER JOIN "parent_students" ON "students"."id" = "parent_students"."student_id" WHERE "parent_students"."parent_id" = ?[0m  [["parent_id", 9]]
+[active_model_serializers]   ↳ app/controllers/parents_controller.rb:12:in `index'
+[active_model_serializers]   [1m[36mStudent Load (0.5ms)[0m  [1m[34mSELECT "students".* FROM "students" INNER JOIN "parent_students" ON "students"."id" = "parent_students"."student_id" WHERE "parent_students"."parent_id" = ?[0m  [["parent_id", 10]]
+[active_model_serializers]   ↳ app/controllers/parents_controller.rb:12:in `index'
+[active_model_serializers]   [1m[36mStudent Load (0.4ms)[0m  [1m[34mSELECT "students".* FROM "students" INNER JOIN "parent_students" ON "students"."id" = "parent_students"."student_id" WHERE "parent_students"."parent_id" = ?[0m  [["parent_id", 11]]
+[active_model_serializers]   ↳ app/controllers/parents_controller.rb:12:in `index'
+[active_model_serializers]   [1m[36mStudent Load (0.4ms)[0m  [1m[34mSELECT "students".* FROM "students" INNER JOIN "parent_students" ON "students"."id" = "parent_students"."student_id" WHERE "parent_students"."parent_id" = ?[0m  [["parent_id", 12]]
+[active_model_serializers]   ↳ app/controllers/parents_controller.rb:12:in `index'
+[active_model_serializers]   [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT "students".* FROM "students" INNER JOIN "parent_students" ON "students"."id" = "parent_students"."student_id" WHERE "parent_students"."parent_id" = ?[0m  [["parent_id", 13]]
+[active_model_serializers]   ↳ app/controllers/parents_controller.rb:12:in `index'
+[active_model_serializers]   [1m[36mStudent Load (0.6ms)[0m  [1m[34mSELECT "students".* FROM "students" INNER JOIN "parent_students" ON "students"."id" = "parent_students"."student_id" WHERE "parent_students"."parent_id" = ?[0m  [["parent_id", 14]]
+[active_model_serializers]   ↳ app/controllers/parents_controller.rb:12:in `index'
+[active_model_serializers]   [1m[36mStudent Load (0.4ms)[0m  [1m[34mSELECT "students".* FROM "students" INNER JOIN "parent_students" ON "students"."id" = "parent_students"."student_id" WHERE "parent_students"."parent_id" = ?[0m  [["parent_id", 15]]
+[active_model_serializers]   ↳ app/controllers/parents_controller.rb:12:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (474.78ms)
+Completed 200 OK in 591ms (Views: 588.3ms | ActiveRecord: 15.5ms | Allocations: 45288)
+
+
+Started POST "/parent_login" for 127.0.0.1 at 2023-01-06 16:07:15 +0300
+Processing by ParentAuthController#create as */*
+  Parameters: {"phone_number"=>765478643, "password"=>"[FILTERED]", "parent_auth"=>{"phone_number"=>765478643, "password"=>"[FILTERED]"}}
+  [1m[36mParent Load (0.5ms)[0m  [1m[34mSELECT "parents".* FROM "parents" WHERE "parents"."phone_number" = ? LIMIT ?[0m  [["phone_number", 765478643], ["LIMIT", 1]]
+  ↳ app/controllers/parent_auth_controller.rb:5:in `create'
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+[active_model_serializers]   [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" INNER JOIN "parent_students" ON "students"."id" = "parent_students"."student_id" WHERE "parent_students"."parent_id" = ?[0m  [["parent_id", 6]]
+[active_model_serializers]   ↳ app/controllers/parent_auth_controller.rb:8:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (3.6ms)
+Completed 202 Accepted in 317ms (Views: 7.1ms | ActiveRecord: 0.9ms | Allocations: 2937)
+
+
+Started POST "/parent_login" for 127.0.0.1 at 2023-01-06 16:08:06 +0300
+Processing by ParentAuthController#create as */*
+  Parameters: {"phone_number"=>"079963710", "password"=>"[FILTERED]", "parent_auth"=>{"phone_number"=>"079963710", "password"=>"[FILTERED]"}}
+  [1m[36mParent Load (0.2ms)[0m  [1m[34mSELECT "parents".* FROM "parents" WHERE "parents"."phone_number" = ? LIMIT ?[0m  [["phone_number", 79963710], ["LIMIT", 1]]
+  ↳ app/controllers/parent_auth_controller.rb:5:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.25ms)
+Completed 401 Unauthorized in 3ms (Views: 1.0ms | ActiveRecord: 0.2ms | Allocations: 601)
+
+
+Started POST "/parent_login" for 127.0.0.1 at 2023-01-06 16:08:28 +0300
+Processing by ParentAuthController#create as */*
+  Parameters: {"phone_number"=>"079963710", "password"=>"[FILTERED]", "parent_auth"=>{"phone_number"=>"079963710", "password"=>"[FILTERED]"}}
+  [1m[36mParent Load (0.2ms)[0m  [1m[34mSELECT "parents".* FROM "parents" WHERE "parents"."phone_number" = ? LIMIT ?[0m  [["phone_number", 79963710], ["LIMIT", 1]]
+  ↳ app/controllers/parent_auth_controller.rb:5:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.19ms)
+Completed 401 Unauthorized in 4ms (Views: 2.3ms | ActiveRecord: 0.2ms | Allocations: 599)
+
+
+Started POST "/parent_login" for 127.0.0.1 at 2023-01-06 16:09:10 +0300
+Processing by ParentAuthController#create as */*
+  Parameters: {"phone_number"=>"765478643", "password"=>"[FILTERED]", "parent_auth"=>{"phone_number"=>"765478643", "password"=>"[FILTERED]"}}
+  [1m[36mParent Load (0.2ms)[0m  [1m[34mSELECT "parents".* FROM "parents" WHERE "parents"."phone_number" = ? LIMIT ?[0m  [["phone_number", 765478643], ["LIMIT", 1]]
+  ↳ app/controllers/parent_auth_controller.rb:5:in `create'
+[active_model_serializers]   [1m[36mStudent Load (0.1ms)[0m  [1m[34mSELECT "students".* FROM "students" INNER JOIN "parent_students" ON "students"."id" = "parent_students"."student_id" WHERE "parent_students"."parent_id" = ?[0m  [["parent_id", 6]]
+[active_model_serializers]   ↳ app/controllers/parent_auth_controller.rb:8:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (4.36ms)
+Completed 202 Accepted in 315ms (Views: 4.8ms | ActiveRecord: 0.4ms | Allocations: 1841)
+
+
+Started POST "/parent_login" for 127.0.0.1 at 2023-01-06 16:10:47 +0300
+Processing by ParentAuthController#create as */*
+  Parameters: {"phone_number"=>"079963710", "password"=>"[FILTERED]", "parent_auth"=>{"phone_number"=>"079963710", "password"=>"[FILTERED]"}}
+  [1m[36mParent Load (0.1ms)[0m  [1m[34mSELECT "parents".* FROM "parents" WHERE "parents"."phone_number" = ? LIMIT ?[0m  [["phone_number", 79963710], ["LIMIT", 1]]
+  ↳ app/controllers/parent_auth_controller.rb:5:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.14ms)
+Completed 401 Unauthorized in 3ms (Views: 1.5ms | ActiveRecord: 0.1ms | Allocations: 599)
+
+
+Started POST "/parent_login" for 127.0.0.1 at 2023-01-06 16:11:59 +0300
+Processing by ParentAuthController#create as */*
+  Parameters: {"phone_number"=>"765478643", "password"=>"[FILTERED]", "parent_auth"=>{"phone_number"=>"765478643", "password"=>"[FILTERED]"}}
+  [1m[36mParent Load (0.2ms)[0m  [1m[34mSELECT "parents".* FROM "parents" WHERE "parents"."phone_number" = ? LIMIT ?[0m  [["phone_number", 765478643], ["LIMIT", 1]]
+  ↳ app/controllers/parent_auth_controller.rb:5:in `create'
+[active_model_serializers]   [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" INNER JOIN "parent_students" ON "students"."id" = "parent_students"."student_id" WHERE "parent_students"."parent_id" = ?[0m  [["parent_id", 6]]
+[active_model_serializers]   ↳ app/controllers/parent_auth_controller.rb:8:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (2.92ms)
+Completed 202 Accepted in 303ms (Views: 3.2ms | ActiveRecord: 0.3ms | Allocations: 1842)
+
+
+Started POST "/parent_login" for 127.0.0.1 at 2023-01-06 16:12:36 +0300
+Processing by ParentAuthController#create as */*
+  Parameters: {"phone_number"=>"765478643", "password"=>"[FILTERED]", "parent_auth"=>{"phone_number"=>"765478643", "password"=>"[FILTERED]"}}
+  [1m[36mParent Load (0.2ms)[0m  [1m[34mSELECT "parents".* FROM "parents" WHERE "parents"."phone_number" = ? LIMIT ?[0m  [["phone_number", 765478643], ["LIMIT", 1]]
+  ↳ app/controllers/parent_auth_controller.rb:5:in `create'
+[active_model_serializers]   [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" INNER JOIN "parent_students" ON "students"."id" = "parent_students"."student_id" WHERE "parent_students"."parent_id" = ?[0m  [["parent_id", 6]]
+[active_model_serializers]   ↳ app/controllers/parent_auth_controller.rb:8:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (2.71ms)
+Completed 202 Accepted in 311ms (Views: 3.0ms | ActiveRecord: 0.3ms | Allocations: 1839)
+
+
+Started POST "/parent_login" for 127.0.0.1 at 2023-01-06 16:13:10 +0300
+Processing by ParentAuthController#create as */*
+  Parameters: {"phone_number"=>"765478643", "password"=>"[FILTERED]", "parent_auth"=>{"phone_number"=>"765478643", "password"=>"[FILTERED]"}}
+  [1m[36mParent Load (0.3ms)[0m  [1m[34mSELECT "parents".* FROM "parents" WHERE "parents"."phone_number" = ? LIMIT ?[0m  [["phone_number", 765478643], ["LIMIT", 1]]
+  ↳ app/controllers/parent_auth_controller.rb:5:in `create'
+[active_model_serializers]   [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" INNER JOIN "parent_students" ON "students"."id" = "parent_students"."student_id" WHERE "parent_students"."parent_id" = ?[0m  [["parent_id", 6]]
+[active_model_serializers]   ↳ app/controllers/parent_auth_controller.rb:8:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (3.68ms)
+Completed 202 Accepted in 302ms (Views: 4.1ms | ActiveRecord: 0.4ms | Allocations: 1841)
+
+
+Started POST "/parent_login" for 127.0.0.1 at 2023-01-06 16:13:41 +0300
+Processing by ParentAuthController#create as */*
+  Parameters: {"phone_number"=>"765478643", "password"=>"[FILTERED]", "parent_auth"=>{"phone_number"=>"765478643", "password"=>"[FILTERED]"}}
+  [1m[36mParent Load (0.2ms)[0m  [1m[34mSELECT "parents".* FROM "parents" WHERE "parents"."phone_number" = ? LIMIT ?[0m  [["phone_number", 765478643], ["LIMIT", 1]]
+  ↳ app/controllers/parent_auth_controller.rb:5:in `create'
+[active_model_serializers]   [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT "students".* FROM "students" INNER JOIN "parent_students" ON "students"."id" = "parent_students"."student_id" WHERE "parent_students"."parent_id" = ?[0m  [["parent_id", 6]]
+[active_model_serializers]   ↳ app/controllers/parent_auth_controller.rb:8:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (9.79ms)
+Completed 202 Accepted in 352ms (Views: 12.2ms | ActiveRecord: 0.6ms | Allocations: 1843)
+
+
+Started POST "/parents" for 127.0.0.1 at 2023-01-06 16:14:23 +0300
+Processing by ParentsController#create as */*
+  Parameters: {"first_name"=>"Muriithi", "last_name"=>"Kibata", "phone_number"=>"765478643", "password"=>"[FILTERED]", "parent"=>{"first_name"=>"Muriithi", "last_name"=>"Kibata", "phone_number"=>"765478643"}}
+[31mUnpermitted parameters: :phone_number, :parent. Context: { controller: ParentsController, action: create, request: #<ActionDispatch::Request:0x00007fdd0e7bec40>, params: {"first_name"=>"Muriithi", "last_name"=>"Kibata", "phone_number"=>"765478643", "password"=>"[FILTERED]", "controller"=>"parents", "action"=>"create", "parent"=>{"first_name"=>"Muriithi", "last_name"=>"Kibata", "phone_number"=>"765478643"}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/parents_controller.rb:6:in `create'
+  [1m[36mParent Create (0.6ms)[0m  [1m[32mINSERT INTO "parents" ("first_name", "last_name", "phone_number", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["first_name", "Muriithi"], ["last_name", "Kibata"], ["phone_number", nil], ["password_digest", "[FILTERED]"], ["created_at", "2023-01-06 13:14:23.452408"], ["updated_at", "2023-01-06 13:14:23.452408"]]
+  ↳ app/controllers/parents_controller.rb:6:in `create'
+  [1m[36mTRANSACTION (6.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/parents_controller.rb:6:in `create'
+[active_model_serializers]   [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" INNER JOIN "parent_students" ON "students"."id" = "parent_students"."student_id" WHERE "parent_students"."parent_id" = ?[0m  [["parent_id", 16]]
+[active_model_serializers]   ↳ app/controllers/parents_controller.rb:8:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (5.04ms)
+Completed 201 Created in 324ms (Views: 5.6ms | ActiveRecord: 6.8ms | Allocations: 3530)
+
+
+Started POST "/parents" for 127.0.0.1 at 2023-01-06 16:19:20 +0300
+Processing by ParentsController#create as */*
+  Parameters: {"parent"=>{}}
+[31mUnpermitted parameter: :parent. Context: { controller: ParentsController, action: create, request: #<ActionDispatch::Request:0x00007fdd0ed48288>, params: {"controller"=>"parents", "action"=>"create", "parent"=>{}} }[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.1ms)
+Completed 422 Unprocessable Entity in 22ms (Views: 0.6ms | ActiveRecord: 0.0ms | Allocations: 6621)
+
+
+Started POST "/parents" for 127.0.0.1 at 2023-01-06 16:21:22 +0300
+Processing by ParentsController#create as */*
+  Parameters: {"parent"=>{}}
+[31mUnpermitted parameter: :parent. Context: { controller: ParentsController, action: create, request: #<ActionDispatch::Request:0x00007fdd0ed7af58>, params: {"controller"=>"parents", "action"=>"create", "parent"=>{}} }[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.19ms)
+Completed 422 Unprocessable Entity in 13ms (Views: 0.9ms | ActiveRecord: 0.0ms | Allocations: 3679)
+
+
+Started POST "/parents" for 127.0.0.1 at 2023-01-06 16:22:57 +0300
+Processing by ParentsController#create as */*
+  Parameters: {"parent"=>{}}
+[31mUnpermitted parameter: :parent. Context: { controller: ParentsController, action: create, request: #<ActionDispatch::Request:0x00007fdd0ed98788>, params: {"controller"=>"parents", "action"=>"create", "parent"=>{}} }[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.1ms)
+Completed 422 Unprocessable Entity in 10ms (Views: 0.6ms | ActiveRecord: 0.0ms | Allocations: 3680)
+
+
+Started POST "/parents" for 127.0.0.1 at 2023-01-06 16:23:44 +0300
+Processing by ParentsController#create as */*
+  Parameters: {"first_name"=>"Joyce", "last_name"=>"Wambui", "first_"=>"", "phone_"=>"", "phone_number"=>"079945610", "password"=>"[FILTERED]", "parent"=>{"first_name"=>"Joyce", "last_name"=>"Wambui", "phone_number"=>"079945610"}}
+[31mUnpermitted parameters: :first_, :phone_, :phone_number, :parent. Context: { controller: ParentsController, action: create, request: #<ActionDispatch::Request:0x00007fdd0f86b4f8>, params: {"first_name"=>"Joyce", "last_name"=>"Wambui", "first_"=>"", "phone_"=>"", "phone_number"=>"079945610", "password"=>"[FILTERED]", "controller"=>"parents", "action"=>"create", "parent"=>{"first_name"=>"Joyce", "last_name"=>"Wambui", "phone_number"=>"079945610"}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/parents_controller.rb:6:in `create'
+  [1m[36mParent Create (1.2ms)[0m  [1m[32mINSERT INTO "parents" ("first_name", "last_name", "phone_number", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["first_name", "Joyce"], ["last_name", "Wambui"], ["phone_number", nil], ["password_digest", "[FILTERED]"], ["created_at", "2023-01-06 13:23:45.102437"], ["updated_at", "2023-01-06 13:23:45.102437"]]
+  ↳ app/controllers/parents_controller.rb:6:in `create'
+  [1m[36mTRANSACTION (6.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/parents_controller.rb:6:in `create'
+[active_model_serializers]   [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" INNER JOIN "parent_students" ON "students"."id" = "parent_students"."student_id" WHERE "parent_students"."parent_id" = ?[0m  [["parent_id", 17]]
+[active_model_serializers]   ↳ app/controllers/parents_controller.rb:8:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (11.0ms)
+Completed 201 Created in 329ms (Views: 12.5ms | ActiveRecord: 7.5ms | Allocations: 3301)
+
+
+Started POST "/parents" for 127.0.0.1 at 2023-01-06 16:28:34 +0300
+Processing by ParentsController#create as */*
+  Parameters: {"first_name"=>"Muriithi", "last_name"=>"Kibata", "phone_number"=>"765478643", "password"=>"[FILTERED]", "parent"=>{"first_name"=>"Muriithi", "last_name"=>"Kibata", "phone_number"=>"765478643"}}
+[31mUnpermitted parameters: :phone_number, :parent. Context: { controller: ParentsController, action: create, request: #<ActionDispatch::Request:0x00007fdd0a63b818>, params: {"first_name"=>"Muriithi", "last_name"=>"Kibata", "phone_number"=>"765478643", "password"=>"[FILTERED]", "controller"=>"parents", "action"=>"create", "parent"=>{"first_name"=>"Muriithi", "last_name"=>"Kibata", "phone_number"=>"765478643"}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/parents_controller.rb:6:in `create'
+  [1m[36mParent Create (0.6ms)[0m  [1m[32mINSERT INTO "parents" ("first_name", "last_name", "phone_number", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["first_name", "Muriithi"], ["last_name", "Kibata"], ["phone_number", nil], ["password_digest", "[FILTERED]"], ["created_at", "2023-01-06 13:28:34.421841"], ["updated_at", "2023-01-06 13:28:34.421841"]]
+  ↳ app/controllers/parents_controller.rb:6:in `create'
+  [1m[36mTRANSACTION (6.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/parents_controller.rb:6:in `create'
+[active_model_serializers]   [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" INNER JOIN "parent_students" ON "students"."id" = "parent_students"."student_id" WHERE "parent_students"."parent_id" = ?[0m  [["parent_id", 18]]
+[active_model_serializers]   ↳ app/controllers/parents_controller.rb:8:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (3.7ms)
+Completed 201 Created in 328ms (Views: 4.0ms | ActiveRecord: 6.9ms | Allocations: 3287)
+
+
+Started POST "/parents" for 127.0.0.1 at 2023-01-06 16:29:54 +0300
+Processing by ParentsController#create as */*
+  Parameters: {"first_name"=>"Muriithi", "last_name"=>"Kibata", "phone_number"=>"07988756", "password"=>"[FILTERED]", "parent"=>{"first_name"=>"Muriithi", "last_name"=>"Kibata", "phone_number"=>"07988756"}}
+[31mUnpermitted parameters: :phone_number, :parent. Context: { controller: ParentsController, action: create, request: #<ActionDispatch::Request:0x00007fdd0abca4f0>, params: {"first_name"=>"Muriithi", "last_name"=>"Kibata", "phone_number"=>"07988756", "password"=>"[FILTERED]", "controller"=>"parents", "action"=>"create", "parent"=>{"first_name"=>"Muriithi", "last_name"=>"Kibata", "phone_number"=>"07988756"}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/parents_controller.rb:6:in `create'
+  [1m[36mParent Create (0.6ms)[0m  [1m[32mINSERT INTO "parents" ("first_name", "last_name", "phone_number", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["first_name", "Muriithi"], ["last_name", "Kibata"], ["phone_number", nil], ["password_digest", "[FILTERED]"], ["created_at", "2023-01-06 13:29:54.465459"], ["updated_at", "2023-01-06 13:29:54.465459"]]
+  ↳ app/controllers/parents_controller.rb:6:in `create'
+  [1m[36mTRANSACTION (6.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/parents_controller.rb:6:in `create'
+[active_model_serializers]   [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" INNER JOIN "parent_students" ON "students"."id" = "parent_students"."student_id" WHERE "parent_students"."parent_id" = ?[0m  [["parent_id", 19]]
+[active_model_serializers]   ↳ app/controllers/parents_controller.rb:8:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (3.49ms)
+Completed 201 Created in 317ms (Views: 3.8ms | ActiveRecord: 7.1ms | Allocations: 3292)
+
+
+Started POST "/parents" for 127.0.0.1 at 2023-01-06 16:30:18 +0300
+Processing by ParentsController#create as */*
+  Parameters: {"first_name"=>"Muriithi", "last_name"=>"Kibata", "phone_number"=>"07988756", "password"=>"[FILTERED]", "parent"=>{"first_name"=>"Muriithi", "last_name"=>"Kibata", "phone_number"=>"07988756"}}
+[31mUnpermitted parameters: :phone_number, :parent. Context: { controller: ParentsController, action: create, request: #<ActionDispatch::Request:0x00007fdd0e0b3310>, params: {"first_name"=>"Muriithi", "last_name"=>"Kibata", "phone_number"=>"07988756", "password"=>"[FILTERED]", "controller"=>"parents", "action"=>"create", "parent"=>{"first_name"=>"Muriithi", "last_name"=>"Kibata", "phone_number"=>"07988756"}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/parents_controller.rb:6:in `create'
+  [1m[36mParent Create (0.6ms)[0m  [1m[32mINSERT INTO "parents" ("first_name", "last_name", "phone_number", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["first_name", "Muriithi"], ["last_name", "Kibata"], ["phone_number", nil], ["password_digest", "[FILTERED]"], ["created_at", "2023-01-06 13:30:18.635196"], ["updated_at", "2023-01-06 13:30:18.635196"]]
+  ↳ app/controllers/parents_controller.rb:6:in `create'
+  [1m[36mTRANSACTION (6.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/parents_controller.rb:6:in `create'
+[active_model_serializers]   [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" INNER JOIN "parent_students" ON "students"."id" = "parent_students"."student_id" WHERE "parent_students"."parent_id" = ?[0m  [["parent_id", 20]]
+[active_model_serializers]   ↳ app/controllers/parents_controller.rb:8:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (3.55ms)
+Completed 201 Created in 319ms (Views: 3.9ms | ActiveRecord: 6.9ms | Allocations: 3288)
+
+
+Started POST "/parents" for 127.0.0.1 at 2023-01-06 16:31:56 +0300
+Processing by ParentsController#create as */*
+  Parameters: {"first_name"=>"Muriithi", "last_name"=>"Kibata", "phone_number"=>"07988756", "password"=>"[FILTERED]", "parent"=>{"first_name"=>"Muriithi", "last_name"=>"Kibata", "phone_number"=>"07988756"}}
+[31mUnpermitted parameters: :phone_number, :parent. Context: { controller: ParentsController, action: create, request: #<ActionDispatch::Request:0x00007fdd0cebf9b0>, params: {"first_name"=>"Muriithi", "last_name"=>"Kibata", "phone_number"=>"07988756", "password"=>"[FILTERED]", "controller"=>"parents", "action"=>"create", "parent"=>{"first_name"=>"Muriithi", "last_name"=>"Kibata", "phone_number"=>"07988756"}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/parents_controller.rb:6:in `create'
+  [1m[36mParent Create (0.7ms)[0m  [1m[32mINSERT INTO "parents" ("first_name", "last_name", "phone_number", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["first_name", "Muriithi"], ["last_name", "Kibata"], ["phone_number", nil], ["password_digest", "[FILTERED]"], ["created_at", "2023-01-06 13:31:56.863327"], ["updated_at", "2023-01-06 13:31:56.863327"]]
+  ↳ app/controllers/parents_controller.rb:6:in `create'
+  [1m[36mTRANSACTION (6.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/parents_controller.rb:6:in `create'
+[active_model_serializers]   [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" INNER JOIN "parent_students" ON "students"."id" = "parent_students"."student_id" WHERE "parent_students"."parent_id" = ?[0m  [["parent_id", 21]]
+[active_model_serializers]   ↳ app/controllers/parents_controller.rb:8:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (4.91ms)
+Completed 201 Created in 331ms (Views: 5.4ms | ActiveRecord: 7.2ms | Allocations: 3289)
+
+
+Started POST "/parents" for 127.0.0.1 at 2023-01-06 16:32:57 +0300
+Processing by ParentsController#create as */*
+  Parameters: {"first_name"=>"Muriithi", "last_name"=>"Kibata", "phone_number"=>"07988756", "password"=>"[FILTERED]", "parent"=>{"first_name"=>"Muriithi", "last_name"=>"Kibata", "phone_number"=>"07988756"}}
+[31mUnpermitted parameters: :phone_number, :parent. Context: { controller: ParentsController, action: create, request: #<ActionDispatch::Request:0x00007fdd0e22a7e8>, params: {"first_name"=>"Muriithi", "last_name"=>"Kibata", "phone_number"=>"07988756", "password"=>"[FILTERED]", "controller"=>"parents", "action"=>"create", "parent"=>{"first_name"=>"Muriithi", "last_name"=>"Kibata", "phone_number"=>"07988756"}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/parents_controller.rb:6:in `create'
+  [1m[36mParent Create (0.5ms)[0m  [1m[32mINSERT INTO "parents" ("first_name", "last_name", "phone_number", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["first_name", "Muriithi"], ["last_name", "Kibata"], ["phone_number", nil], ["password_digest", "[FILTERED]"], ["created_at", "2023-01-06 13:32:57.456125"], ["updated_at", "2023-01-06 13:32:57.456125"]]
+  ↳ app/controllers/parents_controller.rb:6:in `create'
+  [1m[36mTRANSACTION (6.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/parents_controller.rb:6:in `create'
+[active_model_serializers]   [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" INNER JOIN "parent_students" ON "students"."id" = "parent_students"."student_id" WHERE "parent_students"."parent_id" = ?[0m  [["parent_id", 22]]
+[active_model_serializers]   ↳ app/controllers/parents_controller.rb:8:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (3.19ms)
+Completed 201 Created in 313ms (Views: 3.4ms | ActiveRecord: 6.8ms | Allocations: 3288)
+
+
+Started POST "/parents" for 127.0.0.1 at 2023-01-06 16:35:30 +0300
+Processing by ParentsController#create as */*
+  Parameters: {"first_name"=>"Henry", "last_name"=>"King", "phone_number"=>"01152003", "password"=>"[FILTERED]", "parent"=>{"first_name"=>"Henry", "last_name"=>"King", "phone_number"=>"01152003"}}
+[31mUnpermitted parameters: :phone_number, :parent. Context: { controller: ParentsController, action: create, request: #<ActionDispatch::Request:0x00007fdd0cf2e6d0>, params: {"first_name"=>"Henry", "last_name"=>"King", "phone_number"=>"01152003", "password"=>"[FILTERED]", "controller"=>"parents", "action"=>"create", "parent"=>{"first_name"=>"Henry", "last_name"=>"King", "phone_number"=>"01152003"}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/parents_controller.rb:6:in `create'
+  [1m[36mParent Create (0.6ms)[0m  [1m[32mINSERT INTO "parents" ("first_name", "last_name", "phone_number", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["first_name", "Henry"], ["last_name", "King"], ["phone_number", nil], ["password_digest", "[FILTERED]"], ["created_at", "2023-01-06 13:35:30.416656"], ["updated_at", "2023-01-06 13:35:30.416656"]]
+  ↳ app/controllers/parents_controller.rb:6:in `create'
+  [1m[36mTRANSACTION (6.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/parents_controller.rb:6:in `create'
+[active_model_serializers]   [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" INNER JOIN "parent_students" ON "students"."id" = "parent_students"."student_id" WHERE "parent_students"."parent_id" = ?[0m  [["parent_id", 23]]
+[active_model_serializers]   ↳ app/controllers/parents_controller.rb:8:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (3.86ms)
+Completed 201 Created in 322ms (Views: 4.2ms | ActiveRecord: 6.9ms | Allocations: 3287)
+
+
+Started POST "/parent_login" for 127.0.0.1 at 2023-01-06 16:35:45 +0300
+Processing by ParentAuthController#create as */*
+  Parameters: {"phone_number"=>"01152003", "password"=>"[FILTERED]", "parent_auth"=>{"phone_number"=>"01152003", "password"=>"[FILTERED]"}}
+  [1m[36mParent Load (0.2ms)[0m  [1m[34mSELECT "parents".* FROM "parents" WHERE "parents"."phone_number" = ? LIMIT ?[0m  [["phone_number", 1152003], ["LIMIT", 1]]
+  ↳ app/controllers/parent_auth_controller.rb:5:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.1ms)
+Completed 401 Unauthorized in 3ms (Views: 1.1ms | ActiveRecord: 0.2ms | Allocations: 597)
+
+
+Started POST "/parent_login" for 127.0.0.1 at 2023-01-06 16:37:07 +0300
+Processing by ParentAuthController#create as */*
+  Parameters: {"phone_number"=>"01152003", "password"=>"[FILTERED]", "parent_auth"=>{"phone_number"=>"01152003", "password"=>"[FILTERED]"}}
+  [1m[36mParent Load (0.2ms)[0m  [1m[34mSELECT "parents".* FROM "parents" WHERE "parents"."phone_number" = ? LIMIT ?[0m  [["phone_number", 1152003], ["LIMIT", 1]]
+  ↳ app/controllers/parent_auth_controller.rb:5:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.09ms)
+Completed 401 Unauthorized in 16ms (Views: 1.7ms | ActiveRecord: 1.1ms | Allocations: 4556)
+
+
+Started POST "/parent_login" for 127.0.0.1 at 2023-01-06 16:39:10 +0300
+Processing by ParentAuthController#create as */*
+  Parameters: {"phone_number"=>765478643, "password"=>"[FILTERED]", "parent_auth"=>{"phone_number"=>765478643, "password"=>"[FILTERED]"}}
+  [1m[36mParent Load (0.1ms)[0m  [1m[34mSELECT "parents".* FROM "parents" WHERE "parents"."phone_number" = ? LIMIT ?[0m  [["phone_number", 765478643], ["LIMIT", 1]]
+  ↳ app/controllers/parent_auth_controller.rb:5:in `create'
+Completed 500 Internal Server Error in 35ms (ActiveRecord: 1.8ms | Allocations: 8015)
+
+
+  
+NoMethodError (undefined method `authenticate' for #<ParentAuthController:0x00000000017e08>
+Did you mean?  auth_header):
+  
+app/controllers/parent_auth_controller.rb:6:in `create'
+Started POST "/parent_login" for 127.0.0.1 at 2023-01-06 16:39:39 +0300
+Processing by ParentAuthController#create as */*
+  Parameters: {"phone_number"=>765478643, "password"=>"[FILTERED]", "parent_auth"=>{"phone_number"=>765478643, "password"=>"[FILTERED]"}}
+  [1m[36mParent Load (0.3ms)[0m  [1m[34mSELECT "parents".* FROM "parents" WHERE "parents"."phone_number" = ? LIMIT ?[0m  [["phone_number", 765478643], ["LIMIT", 1]]
+  ↳ app/controllers/parent_auth_controller.rb:5:in `create'
+  [1m[36mTeacher Load (0.1ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+[active_model_serializers]   [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" INNER JOIN "parent_students" ON "students"."id" = "parent_students"."student_id" WHERE "parent_students"."parent_id" = ?[0m  [["parent_id", 6]]
+[active_model_serializers]   ↳ app/controllers/parent_auth_controller.rb:8:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (33.69ms)
+Completed 202 Accepted in 391ms (Views: 40.4ms | ActiveRecord: 7.7ms | Allocations: 19841)
+
+
+Started POST "/parent_login" for 127.0.0.1 at 2023-01-06 16:40:08 +0300
+Processing by ParentAuthController#create as */*
+  Parameters: {"phone_number"=>"01152003", "password"=>"[FILTERED]", "parent_auth"=>{"phone_number"=>"01152003", "password"=>"[FILTERED]"}}
+  [1m[36mParent Load (0.3ms)[0m  [1m[34mSELECT "parents".* FROM "parents" WHERE "parents"."phone_number" = ? LIMIT ?[0m  [["phone_number", 1152003], ["LIMIT", 1]]
+  ↳ app/controllers/parent_auth_controller.rb:5:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.09ms)
+Completed 401 Unauthorized in 4ms (Views: 0.6ms | ActiveRecord: 0.3ms | Allocations: 600)
+
+
+Started POST "/teachers" for 127.0.0.1 at 2023-01-06 17:06:53 +0300
+Processing by TeachersController#create as */*
+  Parameters: {"first_name"=>"Muriithi", "career_name"=>"Math Teacher", "last_name"=>"Kibata", "email"=>"kmuriithi@gmail.com", "phone_number"=>"07988756", "password"=>"[FILTERED]", "gender"=>"Male", "teacher"=>{"first_name"=>"Muriithi", "last_name"=>"Kibata", "career_name"=>"Math Teacher", "phone_number"=>"07988756", "email"=>"kmuriithi@gmail.com", "gender"=>"Male"}}
+[31mUnpermitted parameter: :teacher. Context: { controller: TeachersController, action: create, request: #<ActionDispatch::Request:0x00007fdd0e9dae48>, params: {"first_name"=>"Muriithi", "career_name"=>"Math Teacher", "last_name"=>"Kibata", "email"=>"kmuriithi@gmail.com", "phone_number"=>"07988756", "password"=>"[FILTERED]", "gender"=>"Male", "controller"=>"teachers", "action"=>"create", "teacher"=>{"first_name"=>"Muriithi", "last_name"=>"Kibata", "career_name"=>"Math Teacher", "phone_number"=>"07988756", "email"=>"kmuriithi@gmail.com", "gender"=>"Male"}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/teachers_controller.rb:12:in `create'
+  [1m[36mTeacher Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "teachers" WHERE "teachers"."email" = ? LIMIT ?[0m  [["email", "kmuriithi@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/teachers_controller.rb:12:in `create'
+  [1m[36mTeacher Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "teachers" WHERE "teachers"."career_name" = ? LIMIT ?[0m  [["career_name", "Math Teacher"], ["LIMIT", 1]]
+  ↳ app/controllers/teachers_controller.rb:12:in `create'
+  [1m[36mTeacher Create (0.7ms)[0m  [1m[32mINSERT INTO "teachers" ("first_name", "last_name", "career_name", "password_digest", "phone_number", "email", "gender", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "Muriithi"], ["last_name", "Kibata"], ["career_name", "Math Teacher"], ["password_digest", "[FILTERED]"], ["phone_number", "07988756"], ["email", "kmuriithi@gmail.com"], ["gender", "Male"], ["created_at", "2023-01-06 14:06:54.165238"], ["updated_at", "2023-01-06 14:06:54.165238"]]
+  ↳ app/controllers/teachers_controller.rb:12:in `create'
+  [1m[36mTRANSACTION (6.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/teachers_controller.rb:12:in `create'
+No serializer found for resource: {:token=>"eyJhbGciOiJIUzI1NiJ9.eyJ0ZWFjaGVyX2lkIjo1fQ.ZupFxkZC6bSUIFNOrpyQ9oYJ4CZLBaF6JC_22qE3ddM"}
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (0.32ms)
+Completed 201 Created in 339ms (Views: 1.4ms | ActiveRecord: 8.3ms | Allocations: 19700)
+
+
+Started POST "/teachers" for 127.0.0.1 at 2023-01-06 17:09:22 +0300
+Processing by TeachersController#create as */*
+  Parameters: {"first_name"=>"Muriithi", "career_name"=>"Math Teacher", "last_name"=>"Kibata", "email"=>"kmuriithi@gmail.com", "phone_number"=>"07988756", "password"=>"[FILTERED]", "gender"=>"Male", "teacher"=>{"first_name"=>"Muriithi", "last_name"=>"Kibata", "career_name"=>"Math Teacher", "phone_number"=>"07988756", "email"=>"kmuriithi@gmail.com", "gender"=>"Male"}}
+[31mUnpermitted parameter: :teacher. Context: { controller: TeachersController, action: create, request: #<ActionDispatch::Request:0x00007fdd0e72d718>, params: {"first_name"=>"Muriithi", "career_name"=>"Math Teacher", "last_name"=>"Kibata", "email"=>"kmuriithi@gmail.com", "phone_number"=>"07988756", "password"=>"[FILTERED]", "gender"=>"Male", "controller"=>"teachers", "action"=>"create", "teacher"=>{"first_name"=>"Muriithi", "last_name"=>"Kibata", "career_name"=>"Math Teacher", "phone_number"=>"07988756", "email"=>"kmuriithi@gmail.com", "gender"=>"Male"}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/teachers_controller.rb:12:in `create'
+  [1m[36mTeacher Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "teachers" WHERE "teachers"."email" = ? LIMIT ?[0m  [["email", "kmuriithi@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/teachers_controller.rb:12:in `create'
+  [1m[36mTeacher Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "teachers" WHERE "teachers"."career_name" = ? LIMIT ?[0m  [["career_name", "Math Teacher"], ["LIMIT", 1]]
+  ↳ app/controllers/teachers_controller.rb:12:in `create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/teachers_controller.rb:12:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.15ms)
+Completed 200 OK in 334ms (Views: 2.5ms | ActiveRecord: 0.7ms | Allocations: 4657)
+
+
+Started POST "/teachers" for 127.0.0.1 at 2023-01-06 17:11:16 +0300
+Processing by TeachersController#create as */*
+  Parameters: {"first_name"=>"Muriithi", "career_name"=>"Math Teacher", "last_name"=>"Kibata", "email"=>"KMD@gmail.com", "phone_number"=>"07988756", "password"=>"[FILTERED]", "gender"=>"Male", "teacher"=>{"first_name"=>"Muriithi", "last_name"=>"Kibata", "career_name"=>"Math Teacher", "phone_number"=>"07988756", "email"=>"KMD@gmail.com", "gender"=>"Male"}}
+[31mUnpermitted parameter: :teacher. Context: { controller: TeachersController, action: create, request: #<ActionDispatch::Request:0x00007fdd0eca9750>, params: {"first_name"=>"Muriithi", "career_name"=>"Math Teacher", "last_name"=>"Kibata", "email"=>"KMD@gmail.com", "phone_number"=>"07988756", "password"=>"[FILTERED]", "gender"=>"Male", "controller"=>"teachers", "action"=>"create", "teacher"=>{"first_name"=>"Muriithi", "last_name"=>"Kibata", "career_name"=>"Math Teacher", "phone_number"=>"07988756", "email"=>"KMD@gmail.com", "gender"=>"Male"}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/teachers_controller.rb:12:in `create'
+  [1m[36mTeacher Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "teachers" WHERE "teachers"."email" = ? LIMIT ?[0m  [["email", "KMD@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/teachers_controller.rb:12:in `create'
+  [1m[36mTeacher Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "teachers" WHERE "teachers"."career_name" = ? LIMIT ?[0m  [["career_name", "Math Teacher"], ["LIMIT", 1]]
+  ↳ app/controllers/teachers_controller.rb:12:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/teachers_controller.rb:12:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.14ms)
+Completed 200 OK in 313ms (Views: 1.1ms | ActiveRecord: 0.6ms | Allocations: 3742)
+
+
+Started POST "/teachers" for 127.0.0.1 at 2023-01-06 17:12:29 +0300
+Processing by TeachersController#create as */*
+  Parameters: {"first_name"=>"Muriithi", "career_name"=>"Math Teacher", "last_name"=>"Kibata", "email"=>"kmuriithi@gmail.com", "phone_number"=>"07988756", "password"=>"[FILTERED]", "gender"=>"Male", "teacher"=>{"first_name"=>"Muriithi", "last_name"=>"Kibata", "career_name"=>"Math Teacher", "phone_number"=>"07988756", "email"=>"kmuriithi@gmail.com", "gender"=>"Male"}}
+[31mUnpermitted parameter: :teacher. Context: { controller: TeachersController, action: create, request: #<ActionDispatch::Request:0x00007fdd0acee4f8>, params: {"first_name"=>"Muriithi", "career_name"=>"Math Teacher", "last_name"=>"Kibata", "email"=>"kmuriithi@gmail.com", "phone_number"=>"07988756", "password"=>"[FILTERED]", "gender"=>"Male", "controller"=>"teachers", "action"=>"create", "teacher"=>{"first_name"=>"Muriithi", "last_name"=>"Kibata", "career_name"=>"Math Teacher", "phone_number"=>"07988756", "email"=>"kmuriithi@gmail.com", "gender"=>"Male"}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/teachers_controller.rb:12:in `create'
+  [1m[36mTeacher Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "teachers" WHERE "teachers"."email" = ? LIMIT ?[0m  [["email", "kmuriithi@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/teachers_controller.rb:12:in `create'
+  [1m[36mTeacher Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "teachers" WHERE "teachers"."career_name" = ? LIMIT ?[0m  [["career_name", "Math Teacher"], ["LIMIT", 1]]
+  ↳ app/controllers/teachers_controller.rb:12:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/teachers_controller.rb:12:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.1ms)
+Completed 200 OK in 324ms (Views: 0.8ms | ActiveRecord: 2.2ms | Allocations: 7533)
+
+
+Started POST "/teachers" for 127.0.0.1 at 2023-01-06 17:16:04 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by TeachersController#create as */*
+  Parameters: {"first_name"=>"Muriithi", "career_name"=>"Math Teacher", "last_name"=>"Kibata", "email"=>"KMD@gmail.com", "phone_number"=>"07988756", "password"=>"[FILTERED]", "gender"=>"Male", "teacher"=>{"first_name"=>"Muriithi", "last_name"=>"Kibata", "career_name"=>"Math Teacher", "phone_number"=>"07988756", "email"=>"KMD@gmail.com", "gender"=>"Male"}}
+[31mUnpermitted parameter: :teacher. Context: { controller: TeachersController, action: create, request: #<ActionDispatch::Request:0x00007fdee69dfef0>, params: {"first_name"=>"Muriithi", "career_name"=>"Math Teacher", "last_name"=>"Kibata", "email"=>"KMD@gmail.com", "phone_number"=>"07988756", "password"=>"[FILTERED]", "gender"=>"Male", "controller"=>"teachers", "action"=>"create", "teacher"=>{"first_name"=>"Muriithi", "last_name"=>"Kibata", "career_name"=>"Math Teacher", "phone_number"=>"07988756", "email"=>"KMD@gmail.com", "gender"=>"Male"}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/teachers_controller.rb:12:in `create'
+  [1m[36mTeacher Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "teachers" WHERE "teachers"."email" = ? LIMIT ?[0m  [["email", "KMD@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/teachers_controller.rb:12:in `create'
+  [1m[36mTeacher Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "teachers" WHERE "teachers"."career_name" = ? LIMIT ?[0m  [["career_name", "Math Teacher"], ["LIMIT", 1]]
+  ↳ app/controllers/teachers_controller.rb:12:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/teachers_controller.rb:12:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.17ms)
+Completed 200 OK in 353ms (Views: 2.8ms | ActiveRecord: 1.6ms | Allocations: 44575)
+
+
+Started POST "/teachers" for 127.0.0.1 at 2023-01-06 17:17:03 +0300
+Processing by TeachersController#create as */*
+  Parameters: {"first_name"=>"Muriithi", "career_name"=>"Math Teacher", "last_name"=>"Kipchumba", "email"=>"kmuriithi@gmail.com", "phone_number"=>"07988756", "password"=>"[FILTERED]", "gender"=>"Male", "teacher"=>{"first_name"=>"Muriithi", "last_name"=>"Kipchumba", "career_name"=>"Math Teacher", "phone_number"=>"07988756", "email"=>"kmuriithi@gmail.com", "gender"=>"Male"}}
+[31mUnpermitted parameter: :teacher. Context: { controller: TeachersController, action: create, request: #<ActionDispatch::Request:0x00007fdee78709d8>, params: {"first_name"=>"Muriithi", "career_name"=>"Math Teacher", "last_name"=>"Kipchumba", "email"=>"kmuriithi@gmail.com", "phone_number"=>"07988756", "password"=>"[FILTERED]", "gender"=>"Male", "controller"=>"teachers", "action"=>"create", "teacher"=>{"first_name"=>"Muriithi", "last_name"=>"Kipchumba", "career_name"=>"Math Teacher", "phone_number"=>"07988756", "email"=>"kmuriithi@gmail.com", "gender"=>"Male"}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/teachers_controller.rb:12:in `create'
+  [1m[36mTeacher Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "teachers" WHERE "teachers"."email" = ? LIMIT ?[0m  [["email", "kmuriithi@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/teachers_controller.rb:12:in `create'
+  [1m[36mTeacher Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "teachers" WHERE "teachers"."career_name" = ? LIMIT ?[0m  [["career_name", "Math Teacher"], ["LIMIT", 1]]
+  ↳ app/controllers/teachers_controller.rb:12:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/teachers_controller.rb:12:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.11ms)
+Completed 200 OK in 348ms (Views: 2.4ms | ActiveRecord: 0.6ms | Allocations: 4579)
+
+
+Started POST "/teachers" for 127.0.0.1 at 2023-01-06 17:18:12 +0300
+Processing by TeachersController#create as */*
+  Parameters: {"first_name"=>"Muriithi", "career_name"=>"Math Teacher", "last_name"=>"Kibata", "email"=>"kmuriithi@gmail.com", "phone_number"=>"07988756", "password"=>"[FILTERED]", "gender"=>"Male", "teacher"=>{"first_name"=>"Muriithi", "last_name"=>"Kibata", "career_name"=>"Math Teacher", "phone_number"=>"07988756", "email"=>"kmuriithi@gmail.com", "gender"=>"Male"}}
+[31mUnpermitted parameter: :teacher. Context: { controller: TeachersController, action: create, request: #<ActionDispatch::Request:0x00007fdee6f34d88>, params: {"first_name"=>"Muriithi", "career_name"=>"Math Teacher", "last_name"=>"Kibata", "email"=>"kmuriithi@gmail.com", "phone_number"=>"07988756", "password"=>"[FILTERED]", "gender"=>"Male", "controller"=>"teachers", "action"=>"create", "teacher"=>{"first_name"=>"Muriithi", "last_name"=>"Kibata", "career_name"=>"Math Teacher", "phone_number"=>"07988756", "email"=>"kmuriithi@gmail.com", "gender"=>"Male"}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/teachers_controller.rb:12:in `create'
+  [1m[36mTeacher Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "teachers" WHERE "teachers"."email" = ? LIMIT ?[0m  [["email", "kmuriithi@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/teachers_controller.rb:12:in `create'
+  [1m[36mTeacher Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "teachers" WHERE "teachers"."career_name" = ? LIMIT ?[0m  [["career_name", "Math Teacher"], ["LIMIT", 1]]
+  ↳ app/controllers/teachers_controller.rb:12:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/teachers_controller.rb:12:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.12ms)
+Completed 200 OK in 313ms (Views: 0.7ms | ActiveRecord: 0.7ms | Allocations: 4533)
+
+
+Started POST "/teachers" for 127.0.0.1 at 2023-01-06 17:19:13 +0300
+Processing by TeachersController#create as */*
+  Parameters: {"first_name"=>"Muriithi", "career_name"=>"Math Teacher", "last_name"=>"Kipchumba", "email"=>"kmuriithi@gmail.com", "phone_number"=>"07988756", "password"=>"[FILTERED]", "gender"=>"Male", "teacher"=>{"first_name"=>"Muriithi", "last_name"=>"Kipchumba", "career_name"=>"Math Teacher", "phone_number"=>"07988756", "email"=>"kmuriithi@gmail.com", "gender"=>"Male"}}
+[31mUnpermitted parameter: :teacher. Context: { controller: TeachersController, action: create, request: #<ActionDispatch::Request:0x00007fdee219e060>, params: {"first_name"=>"Muriithi", "career_name"=>"Math Teacher", "last_name"=>"Kipchumba", "email"=>"kmuriithi@gmail.com", "phone_number"=>"07988756", "password"=>"[FILTERED]", "gender"=>"Male", "controller"=>"teachers", "action"=>"create", "teacher"=>{"first_name"=>"Muriithi", "last_name"=>"Kipchumba", "career_name"=>"Math Teacher", "phone_number"=>"07988756", "email"=>"kmuriithi@gmail.com", "gender"=>"Male"}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/teachers_controller.rb:12:in `create'
+  [1m[36mTeacher Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "teachers" WHERE "teachers"."email" = ? LIMIT ?[0m  [["email", "kmuriithi@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/teachers_controller.rb:12:in `create'
+  [1m[36mTeacher Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "teachers" WHERE "teachers"."career_name" = ? LIMIT ?[0m  [["career_name", "Math Teacher"], ["LIMIT", 1]]
+  ↳ app/controllers/teachers_controller.rb:12:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/teachers_controller.rb:12:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.1ms)
+Completed 200 OK in 318ms (Views: 0.6ms | ActiveRecord: 0.6ms | Allocations: 4536)
+
+
+Started POST "/parents" for 127.0.0.1 at 2023-01-06 17:19:40 +0300
+Processing by ParentsController#create as */*
+  Parameters: {"first_name"=>"Muriithi", "last_name"=>"", "phone_number"=>"01152003", "password"=>"[FILTERED]", "parent"=>{"first_name"=>"Muriithi", "last_name"=>"", "phone_number"=>"01152003"}}
+[31mUnpermitted parameters: :phone_number, :parent. Context: { controller: ParentsController, action: create, request: #<ActionDispatch::Request:0x00007fdee793c1a0>, params: {"first_name"=>"Muriithi", "last_name"=>"", "phone_number"=>"01152003", "password"=>"[FILTERED]", "controller"=>"parents", "action"=>"create", "parent"=>{"first_name"=>"Muriithi", "last_name"=>"", "phone_number"=>"01152003"}} }[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.1ms)
+Completed 422 Unprocessable Entity in 306ms (Views: 0.7ms | ActiveRecord: 0.8ms | Allocations: 3449)
+
+
+Started POST "/parents" for 127.0.0.1 at 2023-01-06 17:20:20 +0300
+Processing by ParentsController#create as */*
+  Parameters: {"first_name"=>"Muriithi", "last_name"=>"", "phone_number"=>"01152003", "password"=>"[FILTERED]", "parent"=>{"first_name"=>"Muriithi", "last_name"=>"", "phone_number"=>"01152003"}}
+[31mUnpermitted parameters: :phone_number, :parent. Context: { controller: ParentsController, action: create, request: #<ActionDispatch::Request:0x00007fdee6fbd750>, params: {"first_name"=>"Muriithi", "last_name"=>"", "phone_number"=>"01152003", "password"=>"[FILTERED]", "controller"=>"parents", "action"=>"create", "parent"=>{"first_name"=>"Muriithi", "last_name"=>"", "phone_number"=>"01152003"}} }[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.1ms)
+Completed 422 Unprocessable Entity in 304ms (Views: 0.6ms | ActiveRecord: 0.0ms | Allocations: 1406)
+
+
+Started POST "/login" for 127.0.0.1 at 2023-01-06 17:23:26 +0300
+Processing by AuthController#create as */*
+  Parameters: {"email"=>"01152003", "password"=>"[FILTERED]", "auth"=>{"email"=>"01152003", "password"=>"[FILTERED]"}}
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."email" = ? LIMIT ?[0m  [["email", "01152003"], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:6:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.09ms)
+Completed 401 Unauthorized in 10ms (Views: 0.9ms | ActiveRecord: 0.9ms | Allocations: 3481)
+
+
+Started POST "/login" for 127.0.0.1 at 2023-01-06 17:24:53 +0300
+Processing by AuthController#create as */*
+  Parameters: {"email"=>"01152003", "password"=>"[FILTERED]", "auth"=>{"email"=>"01152003", "password"=>"[FILTERED]"}}
+  [1m[36mTeacher Load (0.1ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."email" = ? LIMIT ?[0m  [["email", "01152003"], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:6:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.08ms)
+Completed 401 Unauthorized in 2ms (Views: 0.5ms | ActiveRecord: 0.1ms | Allocations: 599)
+
+
+Started POST "/login" for 127.0.0.1 at 2023-01-06 17:27:41 +0300
+Processing by AuthController#create as */*
+  Parameters: {"email"=>"01152003", "password"=>"[FILTERED]", "auth"=>{"email"=>"01152003", "password"=>"[FILTERED]"}}
+  [1m[36mTeacher Load (0.3ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."email" = ? LIMIT ?[0m  [["email", "01152003"], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:6:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.14ms)
+Completed 401 Unauthorized in 12ms (Views: 1.5ms | ActiveRecord: 1.0ms | Allocations: 3401)
+
+
+Started POST "/teachers" for 127.0.0.1 at 2023-01-06 17:28:30 +0300
+Processing by TeachersController#create as */*
+  Parameters: {"first_name"=>"Muriithi", "career_name"=>"Math Teacher", "last_name"=>"Kibata", "email"=>"kmuriithi@gmail.com", "phone_number"=>"07988756", "password"=>"[FILTERED]", "gender"=>"Male", "teacher"=>{"first_name"=>"Muriithi", "last_name"=>"Kibata", "career_name"=>"Math Teacher", "phone_number"=>"07988756", "email"=>"kmuriithi@gmail.com", "gender"=>"Male"}}
+[31mUnpermitted parameter: :teacher. Context: { controller: TeachersController, action: create, request: #<ActionDispatch::Request:0x00007fdee6a04688>, params: {"first_name"=>"Muriithi", "career_name"=>"Math Teacher", "last_name"=>"Kibata", "email"=>"kmuriithi@gmail.com", "phone_number"=>"07988756", "password"=>"[FILTERED]", "gender"=>"Male", "controller"=>"teachers", "action"=>"create", "teacher"=>{"first_name"=>"Muriithi", "last_name"=>"Kibata", "career_name"=>"Math Teacher", "phone_number"=>"07988756", "email"=>"kmuriithi@gmail.com", "gender"=>"Male"}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/teachers_controller.rb:12:in `create'
+  [1m[36mTeacher Exists? (0.9ms)[0m  [1m[34mSELECT 1 AS one FROM "teachers" WHERE "teachers"."email" = ? LIMIT ?[0m  [["email", "kmuriithi@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/teachers_controller.rb:12:in `create'
+  [1m[36mTeacher Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "teachers" WHERE "teachers"."career_name" = ? LIMIT ?[0m  [["career_name", "Math Teacher"], ["LIMIT", 1]]
+  ↳ app/controllers/teachers_controller.rb:12:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/teachers_controller.rb:12:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.17ms)
+Completed 200 OK in 373ms (Views: 2.3ms | ActiveRecord: 2.1ms | Allocations: 7352)
+
+
+Started POST "/parent_login" for 127.0.0.1 at 2023-01-06 17:29:13 +0300
+Processing by ParentAuthController#create as */*
+  Parameters: {"phone_number"=>"01152003", "password"=>"[FILTERED]", "parent_auth"=>{"phone_number"=>"01152003", "password"=>"[FILTERED]"}}
+  [1m[36mParent Load (0.3ms)[0m  [1m[34mSELECT "parents".* FROM "parents" WHERE "parents"."phone_number" = ? LIMIT ?[0m  [["phone_number", 1152003], ["LIMIT", 1]]
+  ↳ app/controllers/parent_auth_controller.rb:5:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.09ms)
+Completed 401 Unauthorized in 28ms (Views: 0.8ms | ActiveRecord: 0.9ms | Allocations: 4131)
+
+
+Started POST "/parents" for 127.0.0.1 at 2023-01-06 17:29:22 +0300
+Processing by ParentsController#create as */*
+  Parameters: {"first_name"=>"Muriithi", "last_name"=>"", "phone_number"=>"01152003", "password"=>"[FILTERED]", "parent"=>{"first_name"=>"Muriithi", "last_name"=>"", "phone_number"=>"01152003"}}
+[31mUnpermitted parameters: :phone_number, :parent. Context: { controller: ParentsController, action: create, request: #<ActionDispatch::Request:0x00007fdee5e61088>, params: {"first_name"=>"Muriithi", "last_name"=>"", "phone_number"=>"01152003", "password"=>"[FILTERED]", "controller"=>"parents", "action"=>"create", "parent"=>{"first_name"=>"Muriithi", "last_name"=>"", "phone_number"=>"01152003"}} }[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.09ms)
+Completed 422 Unprocessable Entity in 332ms (Views: 0.8ms | ActiveRecord: 0.4ms | Allocations: 3341)
+
+
+Started POST "/teachers" for 127.0.0.1 at 2023-01-06 17:30:46 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by TeachersController#create as */*
+  Parameters: {"first_name"=>"Muriithi", "career_name"=>"Math Teacher", "last_name"=>"Kibata", "email"=>"kmuriithi@gmail.com", "phone_number"=>"07988756", "password"=>"[FILTERED]", "gender"=>"Male", "teacher"=>{"first_name"=>"Muriithi", "last_name"=>"Kibata", "career_name"=>"Math Teacher", "phone_number"=>"07988756", "email"=>"kmuriithi@gmail.com", "gender"=>"Male"}}
+[31mUnpermitted parameter: :teacher. Context: { controller: TeachersController, action: create, request: #<ActionDispatch::Request:0x00007ff70c733790>, params: {"first_name"=>"Muriithi", "career_name"=>"Math Teacher", "last_name"=>"Kibata", "email"=>"kmuriithi@gmail.com", "phone_number"=>"07988756", "password"=>"[FILTERED]", "gender"=>"Male", "controller"=>"teachers", "action"=>"create", "teacher"=>{"first_name"=>"Muriithi", "last_name"=>"Kibata", "career_name"=>"Math Teacher", "phone_number"=>"07988756", "email"=>"kmuriithi@gmail.com", "gender"=>"Male"}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/teachers_controller.rb:12:in `create'
+  [1m[36mTeacher Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "teachers" WHERE "teachers"."email" = ? LIMIT ?[0m  [["email", "kmuriithi@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/teachers_controller.rb:12:in `create'
+  [1m[36mTeacher Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "teachers" WHERE "teachers"."career_name" = ? LIMIT ?[0m  [["career_name", "Math Teacher"], ["LIMIT", 1]]
+  ↳ app/controllers/teachers_controller.rb:12:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/teachers_controller.rb:12:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.22ms)
+Completed 422 Unprocessable Entity in 379ms (Views: 2.9ms | ActiveRecord: 1.9ms | Allocations: 45390)
+
+
+Started POST "/teachers" for 127.0.0.1 at 2023-01-06 17:32:42 +0300
+Processing by TeachersController#create as */*
+  Parameters: {"first_name"=>"Muriithi", "career_name"=>"Math Teacher", "last_name"=>"Kibata", "email"=>"kmuriithi@gmail.com", "phone_number"=>"07988756", "password"=>"[FILTERED]", "gender"=>"Male", "teacher"=>{"first_name"=>"Muriithi", "last_name"=>"Kibata", "career_name"=>"Math Teacher", "phone_number"=>"07988756", "email"=>"kmuriithi@gmail.com", "gender"=>"Male"}}
+[31mUnpermitted parameter: :teacher. Context: { controller: TeachersController, action: create, request: #<ActionDispatch::Request:0x00007ff70ea08090>, params: {"first_name"=>"Muriithi", "career_name"=>"Math Teacher", "last_name"=>"Kibata", "email"=>"kmuriithi@gmail.com", "phone_number"=>"07988756", "password"=>"[FILTERED]", "gender"=>"Male", "controller"=>"teachers", "action"=>"create", "teacher"=>{"first_name"=>"Muriithi", "last_name"=>"Kibata", "career_name"=>"Math Teacher", "phone_number"=>"07988756", "email"=>"kmuriithi@gmail.com", "gender"=>"Male"}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/teachers_controller.rb:12:in `create'
+  [1m[36mTeacher Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "teachers" WHERE "teachers"."email" = ? LIMIT ?[0m  [["email", "kmuriithi@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/teachers_controller.rb:12:in `create'
+  [1m[36mTeacher Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "teachers" WHERE "teachers"."career_name" = ? LIMIT ?[0m  [["career_name", "Math Teacher"], ["LIMIT", 1]]
+  ↳ app/controllers/teachers_controller.rb:12:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/teachers_controller.rb:12:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.12ms)
+Completed 422 Unprocessable Entity in 323ms (Views: 2.3ms | ActiveRecord: 1.9ms | Allocations: 7522)
+
+
+Started POST "/teachers" for 127.0.0.1 at 2023-01-06 17:35:19 +0300
+Processing by TeachersController#create as */*
+  Parameters: {"first_name"=>"Muriithi", "career_name"=>"English Literature", "last_name"=>"Kibata", "email"=>"KMD@gmail.com", "phone_number"=>"07988756", "password"=>"[FILTERED]", "gender"=>"Male", "teacher"=>{"first_name"=>"Muriithi", "last_name"=>"Kibata", "career_name"=>"English Literature", "phone_number"=>"07988756", "email"=>"KMD@gmail.com", "gender"=>"Male"}}
+[31mUnpermitted parameter: :teacher. Context: { controller: TeachersController, action: create, request: #<ActionDispatch::Request:0x00007ff709ad27c8>, params: {"first_name"=>"Muriithi", "career_name"=>"English Literature", "last_name"=>"Kibata", "email"=>"KMD@gmail.com", "phone_number"=>"07988756", "password"=>"[FILTERED]", "gender"=>"Male", "controller"=>"teachers", "action"=>"create", "teacher"=>{"first_name"=>"Muriithi", "last_name"=>"Kibata", "career_name"=>"English Literature", "phone_number"=>"07988756", "email"=>"KMD@gmail.com", "gender"=>"Male"}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/teachers_controller.rb:12:in `create'
+  [1m[36mTeacher Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "teachers" WHERE "teachers"."email" = ? LIMIT ?[0m  [["email", "KMD@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/teachers_controller.rb:12:in `create'
+  [1m[36mTeacher Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "teachers" WHERE "teachers"."career_name" = ? LIMIT ?[0m  [["career_name", "English Literature"], ["LIMIT", 1]]
+  ↳ app/controllers/teachers_controller.rb:12:in `create'
+  [1m[36mTeacher Create (0.8ms)[0m  [1m[32mINSERT INTO "teachers" ("first_name", "last_name", "career_name", "password_digest", "phone_number", "email", "gender", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "Muriithi"], ["last_name", "Kibata"], ["career_name", "English Literature"], ["password_digest", "[FILTERED]"], ["phone_number", "07988756"], ["email", "KMD@gmail.com"], ["gender", "Male"], ["created_at", "2023-01-06 14:35:19.556463"], ["updated_at", "2023-01-06 14:35:19.556463"]]
+  ↳ app/controllers/teachers_controller.rb:12:in `create'
+  [1m[36mTRANSACTION (6.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/teachers_controller.rb:12:in `create'
+No serializer found for resource: {:token=>"eyJhbGciOiJIUzI1NiJ9.eyJ0ZWFjaGVyX2lkIjo2fQ.v3jrj-Bm_ygorKW25gpDanHVCQXShO1VM25nMHpx6ac"}
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (3.27ms)
+Completed 201 Created in 362ms (Views: 4.7ms | ActiveRecord: 7.9ms | Allocations: 6865)
+
+
+Started POST "/teachers" for 127.0.0.1 at 2023-01-06 17:36:55 +0300
+Processing by TeachersController#create as */*
+  Parameters: {"first_name"=>"Muriithi", "career_name"=>"Teacher", "last_name"=>"Kipchumba", "email"=>"Token@gmail.com", "phone_number"=>"07988756", "password"=>"[FILTERED]", "gender"=>"Male", "teacher"=>{"first_name"=>"Muriithi", "last_name"=>"Kipchumba", "career_name"=>"Teacher", "phone_number"=>"07988756", "email"=>"Token@gmail.com", "gender"=>"Male"}}
+[31mUnpermitted parameter: :teacher. Context: { controller: TeachersController, action: create, request: #<ActionDispatch::Request:0x00007ff70dca7b58>, params: {"first_name"=>"Muriithi", "career_name"=>"Teacher", "last_name"=>"Kipchumba", "email"=>"Token@gmail.com", "phone_number"=>"07988756", "password"=>"[FILTERED]", "gender"=>"Male", "controller"=>"teachers", "action"=>"create", "teacher"=>{"first_name"=>"Muriithi", "last_name"=>"Kipchumba", "career_name"=>"Teacher", "phone_number"=>"07988756", "email"=>"Token@gmail.com", "gender"=>"Male"}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/teachers_controller.rb:12:in `create'
+  [1m[36mTeacher Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "teachers" WHERE "teachers"."email" = ? LIMIT ?[0m  [["email", "Token@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/teachers_controller.rb:12:in `create'
+  [1m[36mTeacher Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "teachers" WHERE "teachers"."career_name" = ? LIMIT ?[0m  [["career_name", "Teacher"], ["LIMIT", 1]]
+  ↳ app/controllers/teachers_controller.rb:12:in `create'
+  [1m[36mTeacher Create (0.6ms)[0m  [1m[32mINSERT INTO "teachers" ("first_name", "last_name", "career_name", "password_digest", "phone_number", "email", "gender", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "Muriithi"], ["last_name", "Kipchumba"], ["career_name", "Teacher"], ["password_digest", "[FILTERED]"], ["phone_number", "07988756"], ["email", "Token@gmail.com"], ["gender", "Male"], ["created_at", "2023-01-06 14:36:55.749646"], ["updated_at", "2023-01-06 14:36:55.749646"]]
+  ↳ app/controllers/teachers_controller.rb:12:in `create'
+  [1m[36mTRANSACTION (6.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/teachers_controller.rb:12:in `create'
+No serializer found for resource: {:token=>"eyJhbGciOiJIUzI1NiJ9.eyJ0ZWFjaGVyX2lkIjo3fQ.QvRDOmpvsxEeDl4pCs3VMQ1RqStsbeKelbM5MhdH2r4"}
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (0.26ms)
+Completed 201 Created in 321ms (Views: 0.9ms | ActiveRecord: 7.3ms | Allocations: 3685)
+
+
+Started POST "/teachers" for 127.0.0.1 at 2023-01-06 17:38:12 +0300
+Processing by TeachersController#create as */*
+  Parameters: {"first_name"=>"Muriithi", "career_name"=>"Mwalimu", "last_name"=>"Kibata", "email"=>"muriithi@kinderjoy.com", "phone_number"=>"07988756", "password"=>"[FILTERED]", "gender"=>"Male", "teacher"=>{"first_name"=>"Muriithi", "last_name"=>"Kibata", "career_name"=>"Mwalimu", "phone_number"=>"07988756", "email"=>"muriithi@kinderjoy.com", "gender"=>"Male"}}
+[31mUnpermitted parameter: :teacher. Context: { controller: TeachersController, action: create, request: #<ActionDispatch::Request:0x00007ff708a5cc90>, params: {"first_name"=>"Muriithi", "career_name"=>"Mwalimu", "last_name"=>"Kibata", "email"=>"muriithi@kinderjoy.com", "phone_number"=>"07988756", "password"=>"[FILTERED]", "gender"=>"Male", "controller"=>"teachers", "action"=>"create", "teacher"=>{"first_name"=>"Muriithi", "last_name"=>"Kibata", "career_name"=>"Mwalimu", "phone_number"=>"07988756", "email"=>"muriithi@kinderjoy.com", "gender"=>"Male"}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/teachers_controller.rb:12:in `create'
+  [1m[36mTeacher Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "teachers" WHERE "teachers"."email" = ? LIMIT ?[0m  [["email", "muriithi@kinderjoy.com"], ["LIMIT", 1]]
+  ↳ app/controllers/teachers_controller.rb:12:in `create'
+  [1m[36mTeacher Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "teachers" WHERE "teachers"."career_name" = ? LIMIT ?[0m  [["career_name", "Mwalimu"], ["LIMIT", 1]]
+  ↳ app/controllers/teachers_controller.rb:12:in `create'
+  [1m[36mTeacher Create (0.5ms)[0m  [1m[32mINSERT INTO "teachers" ("first_name", "last_name", "career_name", "password_digest", "phone_number", "email", "gender", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "Muriithi"], ["last_name", "Kibata"], ["career_name", "Mwalimu"], ["password_digest", "[FILTERED]"], ["phone_number", "07988756"], ["email", "muriithi@kinderjoy.com"], ["gender", "Male"], ["created_at", "2023-01-06 14:38:12.862659"], ["updated_at", "2023-01-06 14:38:12.862659"]]
+  ↳ app/controllers/teachers_controller.rb:12:in `create'
+  [1m[36mTRANSACTION (6.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/teachers_controller.rb:12:in `create'
+No serializer found for resource: {:token=>"eyJhbGciOiJIUzI1NiJ9.eyJ0ZWFjaGVyX2lkIjo4fQ.J9045-Djq6omTtmEKZ0_Bxrjb7DA2iVvCqoshhpkWGw"}
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (0.78ms)
+Completed 201 Created in 323ms (Views: 1.8ms | ActiveRecord: 7.6ms | Allocations: 3685)
+
+
+Started POST "/teachers" for 127.0.0.1 at 2023-01-06 17:40:09 +0300
+Processing by TeachersController#create as */*
+  Parameters: {"first_name"=>"Muriithi", "career_name"=>"Sports", "last_name"=>"Kibata", "email"=>"k2muriithi@gmail.com", "phone_number"=>"07988756", "password"=>"[FILTERED]", "gender"=>"Male", "teacher"=>{"first_name"=>"Muriithi", "last_name"=>"Kibata", "career_name"=>"Sports", "phone_number"=>"07988756", "email"=>"k2muriithi@gmail.com", "gender"=>"Male"}}
+[31mUnpermitted parameter: :teacher. Context: { controller: TeachersController, action: create, request: #<ActionDispatch::Request:0x00007ff70eb88fc8>, params: {"first_name"=>"Muriithi", "career_name"=>"Sports", "last_name"=>"Kibata", "email"=>"k2muriithi@gmail.com", "phone_number"=>"07988756", "password"=>"[FILTERED]", "gender"=>"Male", "controller"=>"teachers", "action"=>"create", "teacher"=>{"first_name"=>"Muriithi", "last_name"=>"Kibata", "career_name"=>"Sports", "phone_number"=>"07988756", "email"=>"k2muriithi@gmail.com", "gender"=>"Male"}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/teachers_controller.rb:12:in `create'
+  [1m[36mTeacher Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "teachers" WHERE "teachers"."email" = ? LIMIT ?[0m  [["email", "k2muriithi@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/teachers_controller.rb:12:in `create'
+  [1m[36mTeacher Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "teachers" WHERE "teachers"."career_name" = ? LIMIT ?[0m  [["career_name", "Sports"], ["LIMIT", 1]]
+  ↳ app/controllers/teachers_controller.rb:12:in `create'
+  [1m[36mTeacher Create (0.6ms)[0m  [1m[32mINSERT INTO "teachers" ("first_name", "last_name", "career_name", "password_digest", "phone_number", "email", "gender", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "Muriithi"], ["last_name", "Kibata"], ["career_name", "Sports"], ["password_digest", "[FILTERED]"], ["phone_number", "07988756"], ["email", "k2muriithi@gmail.com"], ["gender", "Male"], ["created_at", "2023-01-06 14:40:09.745503"], ["updated_at", "2023-01-06 14:40:09.745503"]]
+  ↳ app/controllers/teachers_controller.rb:12:in `create'
+  [1m[36mTRANSACTION (6.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/teachers_controller.rb:12:in `create'
+No serializer found for resource: {:token=>"eyJhbGciOiJIUzI1NiJ9.eyJ0ZWFjaGVyX2lkIjo5fQ.v6GX1ZDXXkihGUm10HXB1mzeddBiSl4x07GLp8JVlro"}
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (0.27ms)
+Completed 201 Created in 322ms (Views: 0.9ms | ActiveRecord: 7.4ms | Allocations: 3672)
+
+
+Started POST "/teachers" for 127.0.0.1 at 2023-01-06 17:40:56 +0300
+Processing by TeachersController#create as */*
+  Parameters: {"first_name"=>"Muriithi", "career_name"=>"Sportsmaster", "last_name"=>"Kipchumba", "email"=>"KMDW@gmail.com", "phone_number"=>"07988756", "password"=>"[FILTERED]", "gender"=>"Male", "teacher"=>{"first_name"=>"Muriithi", "last_name"=>"Kipchumba", "career_name"=>"Sportsmaster", "phone_number"=>"07988756", "email"=>"KMDW@gmail.com", "gender"=>"Male"}}
+[31mUnpermitted parameter: :teacher. Context: { controller: TeachersController, action: create, request: #<ActionDispatch::Request:0x00007ff70ebdb188>, params: {"first_name"=>"Muriithi", "career_name"=>"Sportsmaster", "last_name"=>"Kipchumba", "email"=>"KMDW@gmail.com", "phone_number"=>"07988756", "password"=>"[FILTERED]", "gender"=>"Male", "controller"=>"teachers", "action"=>"create", "teacher"=>{"first_name"=>"Muriithi", "last_name"=>"Kipchumba", "career_name"=>"Sportsmaster", "phone_number"=>"07988756", "email"=>"KMDW@gmail.com", "gender"=>"Male"}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/teachers_controller.rb:12:in `create'
+  [1m[36mTeacher Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "teachers" WHERE "teachers"."email" = ? LIMIT ?[0m  [["email", "KMDW@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/teachers_controller.rb:12:in `create'
+  [1m[36mTeacher Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "teachers" WHERE "teachers"."career_name" = ? LIMIT ?[0m  [["career_name", "Sportsmaster"], ["LIMIT", 1]]
+  ↳ app/controllers/teachers_controller.rb:12:in `create'
+  [1m[36mTeacher Create (0.6ms)[0m  [1m[32mINSERT INTO "teachers" ("first_name", "last_name", "career_name", "password_digest", "phone_number", "email", "gender", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "Muriithi"], ["last_name", "Kipchumba"], ["career_name", "Sportsmaster"], ["password_digest", "[FILTERED]"], ["phone_number", "07988756"], ["email", "KMDW@gmail.com"], ["gender", "Male"], ["created_at", "2023-01-06 14:40:56.683949"], ["updated_at", "2023-01-06 14:40:56.683949"]]
+  ↳ app/controllers/teachers_controller.rb:12:in `create'
+  [1m[36mTRANSACTION (6.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/teachers_controller.rb:12:in `create'
+No serializer found for resource: {:token=>"eyJhbGciOiJIUzI1NiJ9.eyJ0ZWFjaGVyX2lkIjoxMH0.xcWnbVmH4-p3QoMS_VmlScCnHNWm6V-yFPN3_mRCM4A"}
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (0.3ms)
+Completed 201 Created in 341ms (Views: 1.0ms | ActiveRecord: 7.2ms | Allocations: 3672)
+
+
+Started POST "/teachers" for 127.0.0.1 at 2023-01-06 17:43:26 +0300
+Processing by TeachersController#create as */*
+  Parameters: {"first_name"=>"Muriithi", "career_name"=>"Sportsmaster1", "last_name"=>"Kibata", "email"=>"k3muriithi@gmail.com", "phone_number"=>"07988756", "password"=>"[FILTERED]", "gender"=>"Male", "teacher"=>{"first_name"=>"Muriithi", "last_name"=>"Kibata", "career_name"=>"Sportsmaster1", "phone_number"=>"07988756", "email"=>"k3muriithi@gmail.com", "gender"=>"Male"}}
+[31mUnpermitted parameter: :teacher. Context: { controller: TeachersController, action: create, request: #<ActionDispatch::Request:0x00007ff70c26bf50>, params: {"first_name"=>"Muriithi", "career_name"=>"Sportsmaster1", "last_name"=>"Kibata", "email"=>"k3muriithi@gmail.com", "phone_number"=>"07988756", "password"=>"[FILTERED]", "gender"=>"Male", "controller"=>"teachers", "action"=>"create", "teacher"=>{"first_name"=>"Muriithi", "last_name"=>"Kibata", "career_name"=>"Sportsmaster1", "phone_number"=>"07988756", "email"=>"k3muriithi@gmail.com", "gender"=>"Male"}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/teachers_controller.rb:12:in `create'
+  [1m[36mTeacher Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "teachers" WHERE "teachers"."email" = ? LIMIT ?[0m  [["email", "k3muriithi@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/teachers_controller.rb:12:in `create'
+  [1m[36mTeacher Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "teachers" WHERE "teachers"."career_name" = ? LIMIT ?[0m  [["career_name", "Sportsmaster1"], ["LIMIT", 1]]
+  ↳ app/controllers/teachers_controller.rb:12:in `create'
+  [1m[36mTeacher Create (0.6ms)[0m  [1m[32mINSERT INTO "teachers" ("first_name", "last_name", "career_name", "password_digest", "phone_number", "email", "gender", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "Muriithi"], ["last_name", "Kibata"], ["career_name", "Sportsmaster1"], ["password_digest", "[FILTERED]"], ["phone_number", "07988756"], ["email", "k3muriithi@gmail.com"], ["gender", "Male"], ["created_at", "2023-01-06 14:43:26.510186"], ["updated_at", "2023-01-06 14:43:26.510186"]]
+  ↳ app/controllers/teachers_controller.rb:12:in `create'
+  [1m[36mTRANSACTION (6.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/teachers_controller.rb:12:in `create'
+No serializer found for resource: {:token=>"eyJhbGciOiJIUzI1NiJ9.eyJ0ZWFjaGVyX2lkIjoxMX0.LdFB_SemeCUwrILnFNzEDFi0LwKxsJwDZeldeGSIc2c"}
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (0.27ms)
+Completed 201 Created in 321ms (Views: 1.9ms | ActiveRecord: 7.1ms | Allocations: 3670)
+
+
+Started POST "/teachers" for 127.0.0.1 at 2023-01-06 19:34:52 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by TeachersController#create as */*
+  Parameters: {"first_name"=>"", "career_name"=>"", "last_name"=>"", "email"=>"01152003", "phone_number"=>"", "password"=>"[FILTERED]", "gender"=>"", "teacher"=>{"first_name"=>"", "last_name"=>"", "career_name"=>"", "phone_number"=>"", "email"=>"01152003", "gender"=>""}}
+[31mUnpermitted parameter: :teacher. Context: { controller: TeachersController, action: create, request: #<ActionDispatch::Request:0x00007fdefafcce58>, params: {"first_name"=>"", "career_name"=>"", "last_name"=>"", "email"=>"01152003", "phone_number"=>"", "password"=>"[FILTERED]", "gender"=>"", "controller"=>"teachers", "action"=>"create", "teacher"=>{"first_name"=>"", "last_name"=>"", "career_name"=>"", "phone_number"=>"", "email"=>"01152003", "gender"=>""}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/teachers_controller.rb:12:in `create'
+  [1m[36mTeacher Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "teachers" WHERE "teachers"."email" = ? LIMIT ?[0m  [["email", "01152003"], ["LIMIT", 1]]
+  ↳ app/controllers/teachers_controller.rb:12:in `create'
+  [1m[36mTeacher Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "teachers" WHERE "teachers"."career_name" = ? LIMIT ?[0m  [["career_name", ""], ["LIMIT", 1]]
+  ↳ app/controllers/teachers_controller.rb:12:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/teachers_controller.rb:12:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.18ms)
+Completed 422 Unprocessable Entity in 360ms (Views: 1.9ms | ActiveRecord: 1.6ms | Allocations: 48674)
+
+
+Started POST "/teachers" for 127.0.0.1 at 2023-01-06 19:35:43 +0300
+Processing by TeachersController#create as */*
+  Parameters: {"first_name"=>"Muriithi", "career_name"=>"Mwalimu1", "last_name"=>"Kipchumba", "email"=>"k4muriithi@gmail.com", "phone_number"=>"07988756", "password"=>"[FILTERED]", "gender"=>"Male", "teacher"=>{"first_name"=>"Muriithi", "last_name"=>"Kipchumba", "career_name"=>"Mwalimu1", "phone_number"=>"07988756", "email"=>"k4muriithi@gmail.com", "gender"=>"Male"}}
+[31mUnpermitted parameter: :teacher. Context: { controller: TeachersController, action: create, request: #<ActionDispatch::Request:0x00007fdef79860d8>, params: {"first_name"=>"Muriithi", "career_name"=>"Mwalimu1", "last_name"=>"Kipchumba", "email"=>"k4muriithi@gmail.com", "phone_number"=>"07988756", "password"=>"[FILTERED]", "gender"=>"Male", "controller"=>"teachers", "action"=>"create", "teacher"=>{"first_name"=>"Muriithi", "last_name"=>"Kipchumba", "career_name"=>"Mwalimu1", "phone_number"=>"07988756", "email"=>"k4muriithi@gmail.com", "gender"=>"Male"}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/teachers_controller.rb:12:in `create'
+  [1m[36mTeacher Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "teachers" WHERE "teachers"."email" = ? LIMIT ?[0m  [["email", "k4muriithi@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/teachers_controller.rb:12:in `create'
+  [1m[36mTeacher Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "teachers" WHERE "teachers"."career_name" = ? LIMIT ?[0m  [["career_name", "Mwalimu1"], ["LIMIT", 1]]
+  ↳ app/controllers/teachers_controller.rb:12:in `create'
+  [1m[36mTeacher Create (0.7ms)[0m  [1m[32mINSERT INTO "teachers" ("first_name", "last_name", "career_name", "password_digest", "phone_number", "email", "gender", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "Muriithi"], ["last_name", "Kipchumba"], ["career_name", "Mwalimu1"], ["password_digest", "[FILTERED]"], ["phone_number", "07988756"], ["email", "k4muriithi@gmail.com"], ["gender", "Male"], ["created_at", "2023-01-06 16:35:43.879805"], ["updated_at", "2023-01-06 16:35:43.879805"]]
+  ↳ app/controllers/teachers_controller.rb:12:in `create'
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/teachers_controller.rb:12:in `create'
+No serializer found for resource: {:token=>"eyJhbGciOiJIUzI1NiJ9.eyJ0ZWFjaGVyX2lkIjoxMn0.OAaf2ogvogInmA3ipcs-1z4NEhQQFp9RUh0Vso_7kjQ"}
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (3.25ms)
+Completed 201 Created in 474ms (Views: 5.0ms | ActiveRecord: 2.8ms | Allocations: 6878)
+
+
+Started POST "/teachers" for 127.0.0.1 at 2023-01-06 19:38:37 +0300
+Processing by TeachersController#create as */*
+  Parameters: {"first_name"=>"Muriithi", "career_name"=>"Sportsmaster2", "last_name"=>"Kipchumba", "email"=>"k5muriithi@gmail.com", "phone_number"=>"07988756", "password"=>"[FILTERED]", "gender"=>"Male", "teacher"=>{"first_name"=>"Muriithi", "last_name"=>"Kipchumba", "career_name"=>"Sportsmaster2", "phone_number"=>"07988756", "email"=>"k5muriithi@gmail.com", "gender"=>"Male"}}
+[31mUnpermitted parameter: :teacher. Context: { controller: TeachersController, action: create, request: #<ActionDispatch::Request:0x00007fdefc50cf48>, params: {"first_name"=>"Muriithi", "career_name"=>"Sportsmaster2", "last_name"=>"Kipchumba", "email"=>"k5muriithi@gmail.com", "phone_number"=>"07988756", "password"=>"[FILTERED]", "gender"=>"Male", "controller"=>"teachers", "action"=>"create", "teacher"=>{"first_name"=>"Muriithi", "last_name"=>"Kipchumba", "career_name"=>"Sportsmaster2", "phone_number"=>"07988756", "email"=>"k5muriithi@gmail.com", "gender"=>"Male"}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/teachers_controller.rb:12:in `create'
+  [1m[36mTeacher Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "teachers" WHERE "teachers"."email" = ? LIMIT ?[0m  [["email", "k5muriithi@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/teachers_controller.rb:12:in `create'
+  [1m[36mTeacher Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "teachers" WHERE "teachers"."career_name" = ? LIMIT ?[0m  [["career_name", "Sportsmaster2"], ["LIMIT", 1]]
+  ↳ app/controllers/teachers_controller.rb:12:in `create'
+  [1m[36mTeacher Create (0.5ms)[0m  [1m[32mINSERT INTO "teachers" ("first_name", "last_name", "career_name", "password_digest", "phone_number", "email", "gender", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "Muriithi"], ["last_name", "Kipchumba"], ["career_name", "Sportsmaster2"], ["password_digest", "[FILTERED]"], ["phone_number", "07988756"], ["email", "k5muriithi@gmail.com"], ["gender", "Male"], ["created_at", "2023-01-06 16:38:37.388116"], ["updated_at", "2023-01-06 16:38:37.388116"]]
+  ↳ app/controllers/teachers_controller.rb:12:in `create'
+  [1m[36mTRANSACTION (6.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/teachers_controller.rb:12:in `create'
+No serializer found for resource: {:token=>"eyJhbGciOiJIUzI1NiJ9.eyJ0ZWFjaGVyX2lkIjoxM30.pGSGSlusekvGYh_iGs7zd1I1M_zHnhjVY4hiNqetBsE"}
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (0.84ms)
+Completed 201 Created in 319ms (Views: 2.1ms | ActiveRecord: 7.4ms | Allocations: 3685)
+
+
+Started POST "/teachers" for 127.0.0.1 at 2023-01-06 19:39:16 +0300
+Processing by TeachersController#create as */*
+  Parameters: {"first_name"=>"Muriithi", "career_name"=>"Math Teacher1", "last_name"=>"Kibata", "email"=>"k6muriithi@gmail.com", "phone_number"=>"07988756", "password"=>"[FILTERED]", "gender"=>"Male", "teacher"=>{"first_name"=>"Muriithi", "last_name"=>"Kibata", "career_name"=>"Math Teacher1", "phone_number"=>"07988756", "email"=>"k6muriithi@gmail.com", "gender"=>"Male"}}
+[31mUnpermitted parameter: :teacher. Context: { controller: TeachersController, action: create, request: #<ActionDispatch::Request:0x00007fdefa03d668>, params: {"first_name"=>"Muriithi", "career_name"=>"Math Teacher1", "last_name"=>"Kibata", "email"=>"k6muriithi@gmail.com", "phone_number"=>"07988756", "password"=>"[FILTERED]", "gender"=>"Male", "controller"=>"teachers", "action"=>"create", "teacher"=>{"first_name"=>"Muriithi", "last_name"=>"Kibata", "career_name"=>"Math Teacher1", "phone_number"=>"07988756", "email"=>"k6muriithi@gmail.com", "gender"=>"Male"}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/teachers_controller.rb:12:in `create'
+  [1m[36mTeacher Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "teachers" WHERE "teachers"."email" = ? LIMIT ?[0m  [["email", "k6muriithi@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/teachers_controller.rb:12:in `create'
+  [1m[36mTeacher Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "teachers" WHERE "teachers"."career_name" = ? LIMIT ?[0m  [["career_name", "Math Teacher1"], ["LIMIT", 1]]
+  ↳ app/controllers/teachers_controller.rb:12:in `create'
+  [1m[36mTeacher Create (0.8ms)[0m  [1m[32mINSERT INTO "teachers" ("first_name", "last_name", "career_name", "password_digest", "phone_number", "email", "gender", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "Muriithi"], ["last_name", "Kibata"], ["career_name", "Math Teacher1"], ["password_digest", "[FILTERED]"], ["phone_number", "07988756"], ["email", "k6muriithi@gmail.com"], ["gender", "Male"], ["created_at", "2023-01-06 16:39:17.087319"], ["updated_at", "2023-01-06 16:39:17.087319"]]
+  ↳ app/controllers/teachers_controller.rb:12:in `create'
+  [1m[36mTRANSACTION (6.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/teachers_controller.rb:12:in `create'
+No serializer found for resource: {:token=>"eyJhbGciOiJIUzI1NiJ9.eyJ0ZWFjaGVyX2lkIjoxNH0.f_c7rbTLgfKGLb-oCsu81TKU9jCrFyYM9H0SpmuRCj0"}
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (0.75ms)
+Completed 201 Created in 329ms (Views: 1.5ms | ActiveRecord: 7.5ms | Allocations: 3687)
+
+
+Started POST "/teachers" for 127.0.0.1 at 2023-01-06 19:40:41 +0300
+Processing by TeachersController#create as */*
+  Parameters: {"first_name"=>"Muriithi", "career_name"=>"Math Teacher3", "last_name"=>"Kibata", "email"=>"k7muriithi@gmail.com", "phone_number"=>"07988756", "password"=>"[FILTERED]", "gender"=>"Male", "teacher"=>{"first_name"=>"Muriithi", "last_name"=>"Kibata", "career_name"=>"Math Teacher3", "phone_number"=>"07988756", "email"=>"k7muriithi@gmail.com", "gender"=>"Male"}}
+[31mUnpermitted parameter: :teacher. Context: { controller: TeachersController, action: create, request: #<ActionDispatch::Request:0x00007fdefaa930e0>, params: {"first_name"=>"Muriithi", "career_name"=>"Math Teacher3", "last_name"=>"Kibata", "email"=>"k7muriithi@gmail.com", "phone_number"=>"07988756", "password"=>"[FILTERED]", "gender"=>"Male", "controller"=>"teachers", "action"=>"create", "teacher"=>{"first_name"=>"Muriithi", "last_name"=>"Kibata", "career_name"=>"Math Teacher3", "phone_number"=>"07988756", "email"=>"k7muriithi@gmail.com", "gender"=>"Male"}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/teachers_controller.rb:12:in `create'
+  [1m[36mTeacher Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "teachers" WHERE "teachers"."email" = ? LIMIT ?[0m  [["email", "k7muriithi@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/teachers_controller.rb:12:in `create'
+  [1m[36mTeacher Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "teachers" WHERE "teachers"."career_name" = ? LIMIT ?[0m  [["career_name", "Math Teacher3"], ["LIMIT", 1]]
+  ↳ app/controllers/teachers_controller.rb:12:in `create'
+  [1m[36mTeacher Create (0.5ms)[0m  [1m[32mINSERT INTO "teachers" ("first_name", "last_name", "career_name", "password_digest", "phone_number", "email", "gender", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "Muriithi"], ["last_name", "Kibata"], ["career_name", "Math Teacher3"], ["password_digest", "[FILTERED]"], ["phone_number", "07988756"], ["email", "k7muriithi@gmail.com"], ["gender", "Male"], ["created_at", "2023-01-06 16:40:41.865621"], ["updated_at", "2023-01-06 16:40:41.865621"]]
+  ↳ app/controllers/teachers_controller.rb:12:in `create'
+  [1m[36mTRANSACTION (5.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/teachers_controller.rb:12:in `create'
+No serializer found for resource: {:token=>"eyJhbGciOiJIUzI1NiJ9.eyJ0ZWFjaGVyX2lkIjoxNX0.Q8LRXW08KVtqrntez-MFgTJHIreSR8dOiyU4FduXJCc"}
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (0.39ms)
+Completed 201 Created in 331ms (Views: 2.0ms | ActiveRecord: 6.9ms | Allocations: 3685)
+
+
+Started POST "/teachers" for 127.0.0.1 at 2023-01-06 19:42:33 +0300
+Processing by TeachersController#create as */*
+  Parameters: {"first_name"=>"Muriithi", "career_name"=>"Math Teacher5", "last_name"=>"Kibata", "email"=>"k8muriithi@gmail.com", "phone_number"=>"07988756", "password"=>"[FILTERED]", "gender"=>"Male", "teacher"=>{"first_name"=>"Muriithi", "last_name"=>"Kibata", "career_name"=>"Math Teacher5", "phone_number"=>"07988756", "email"=>"k8muriithi@gmail.com", "gender"=>"Male"}}
+[31mUnpermitted parameter: :teacher. Context: { controller: TeachersController, action: create, request: #<ActionDispatch::Request:0x00007fdefac389b8>, params: {"first_name"=>"Muriithi", "career_name"=>"Math Teacher5", "last_name"=>"Kibata", "email"=>"k8muriithi@gmail.com", "phone_number"=>"07988756", "password"=>"[FILTERED]", "gender"=>"Male", "controller"=>"teachers", "action"=>"create", "teacher"=>{"first_name"=>"Muriithi", "last_name"=>"Kibata", "career_name"=>"Math Teacher5", "phone_number"=>"07988756", "email"=>"k8muriithi@gmail.com", "gender"=>"Male"}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/teachers_controller.rb:12:in `create'
+  [1m[36mTeacher Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "teachers" WHERE "teachers"."email" = ? LIMIT ?[0m  [["email", "k8muriithi@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/teachers_controller.rb:12:in `create'
+  [1m[36mTeacher Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "teachers" WHERE "teachers"."career_name" = ? LIMIT ?[0m  [["career_name", "Math Teacher5"], ["LIMIT", 1]]
+  ↳ app/controllers/teachers_controller.rb:12:in `create'
+  [1m[36mTeacher Create (0.6ms)[0m  [1m[32mINSERT INTO "teachers" ("first_name", "last_name", "career_name", "password_digest", "phone_number", "email", "gender", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "Muriithi"], ["last_name", "Kibata"], ["career_name", "Math Teacher5"], ["password_digest", "[FILTERED]"], ["phone_number", "07988756"], ["email", "k8muriithi@gmail.com"], ["gender", "Male"], ["created_at", "2023-01-06 16:42:34.031135"], ["updated_at", "2023-01-06 16:42:34.031135"]]
+  ↳ app/controllers/teachers_controller.rb:12:in `create'
+  [1m[36mTRANSACTION (6.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/teachers_controller.rb:12:in `create'
+No serializer found for resource: {:token=>"eyJhbGciOiJIUzI1NiJ9.eyJ0ZWFjaGVyX2lkIjoxNn0.DNcThHAZXC5CXs2xxoupz7oYU092F3tPy7tq6rA_au0"}
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (0.27ms)
+Completed 201 Created in 324ms (Views: 0.9ms | ActiveRecord: 7.2ms | Allocations: 3671)
+
+
+Started POST "/teachers" for 127.0.0.1 at 2023-01-06 19:43:40 +0300
+Processing by TeachersController#create as */*
+  Parameters: {"first_name"=>"Muriithi", "career_name"=>"Math Teacher5", "last_name"=>"Kibata", "email"=>"k9muriithi@gmail.com", "phone_number"=>"07988756", "password"=>"[FILTERED]", "gender"=>"Male", "teacher"=>{"first_name"=>"Muriithi", "last_name"=>"Kibata", "career_name"=>"Math Teacher5", "phone_number"=>"07988756", "email"=>"k9muriithi@gmail.com", "gender"=>"Male"}}
+[31mUnpermitted parameter: :teacher. Context: { controller: TeachersController, action: create, request: #<ActionDispatch::Request:0x00007fdefa5e2af0>, params: {"first_name"=>"Muriithi", "career_name"=>"Math Teacher5", "last_name"=>"Kibata", "email"=>"k9muriithi@gmail.com", "phone_number"=>"07988756", "password"=>"[FILTERED]", "gender"=>"Male", "controller"=>"teachers", "action"=>"create", "teacher"=>{"first_name"=>"Muriithi", "last_name"=>"Kibata", "career_name"=>"Math Teacher5", "phone_number"=>"07988756", "email"=>"k9muriithi@gmail.com", "gender"=>"Male"}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/teachers_controller.rb:12:in `create'
+  [1m[36mTeacher Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "teachers" WHERE "teachers"."email" = ? LIMIT ?[0m  [["email", "k9muriithi@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/teachers_controller.rb:12:in `create'
+  [1m[36mTeacher Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "teachers" WHERE "teachers"."career_name" = ? LIMIT ?[0m  [["career_name", "Math Teacher5"], ["LIMIT", 1]]
+  ↳ app/controllers/teachers_controller.rb:12:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/teachers_controller.rb:12:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.1ms)
+Completed 422 Unprocessable Entity in 308ms (Views: 0.8ms | ActiveRecord: 0.9ms | Allocations: 3799)
+
+
+Started POST "/teachers" for 127.0.0.1 at 2023-01-06 19:43:51 +0300
+Processing by TeachersController#create as */*
+  Parameters: {"first_name"=>"Muriithi", "career_name"=>"Math Teacher9", "last_name"=>"Kibata", "email"=>"k9muriithi@gmail.com", "phone_number"=>"07988756", "password"=>"[FILTERED]", "gender"=>"Male", "teacher"=>{"first_name"=>"Muriithi", "last_name"=>"Kibata", "career_name"=>"Math Teacher9", "phone_number"=>"07988756", "email"=>"k9muriithi@gmail.com", "gender"=>"Male"}}
+[31mUnpermitted parameter: :teacher. Context: { controller: TeachersController, action: create, request: #<ActionDispatch::Request:0x00007fdefadc0a88>, params: {"first_name"=>"Muriithi", "career_name"=>"Math Teacher9", "last_name"=>"Kibata", "email"=>"k9muriithi@gmail.com", "phone_number"=>"07988756", "password"=>"[FILTERED]", "gender"=>"Male", "controller"=>"teachers", "action"=>"create", "teacher"=>{"first_name"=>"Muriithi", "last_name"=>"Kibata", "career_name"=>"Math Teacher9", "phone_number"=>"07988756", "email"=>"k9muriithi@gmail.com", "gender"=>"Male"}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/teachers_controller.rb:12:in `create'
+  [1m[36mTeacher Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "teachers" WHERE "teachers"."email" = ? LIMIT ?[0m  [["email", "k9muriithi@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/teachers_controller.rb:12:in `create'
+  [1m[36mTeacher Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "teachers" WHERE "teachers"."career_name" = ? LIMIT ?[0m  [["career_name", "Math Teacher9"], ["LIMIT", 1]]
+  ↳ app/controllers/teachers_controller.rb:12:in `create'
+  [1m[36mTeacher Create (0.6ms)[0m  [1m[32mINSERT INTO "teachers" ("first_name", "last_name", "career_name", "password_digest", "phone_number", "email", "gender", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "Muriithi"], ["last_name", "Kibata"], ["career_name", "Math Teacher9"], ["password_digest", "[FILTERED]"], ["phone_number", "07988756"], ["email", "k9muriithi@gmail.com"], ["gender", "Male"], ["created_at", "2023-01-06 16:43:51.436344"], ["updated_at", "2023-01-06 16:43:51.436344"]]
+  ↳ app/controllers/teachers_controller.rb:12:in `create'
+  [1m[36mTRANSACTION (6.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/teachers_controller.rb:12:in `create'
+No serializer found for resource: {:token=>"eyJhbGciOiJIUzI1NiJ9.eyJ0ZWFjaGVyX2lkIjoxN30.PUaOemg6eaqZ3eyqiyMesfcbsSOwL7vW99pjwI65BdU"}
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (0.25ms)
+Completed 201 Created in 324ms (Views: 0.8ms | ActiveRecord: 7.3ms | Allocations: 3669)
+
+
+Started POST "/teachers" for 127.0.0.1 at 2023-01-06 19:59:08 +0300
+Processing by TeachersController#create as */*
+  Parameters: {"first_name"=>"Muriithi", "career_name"=>"Math Teacher10", "last_name"=>"Kipchumba", "email"=>"k10muriithi@gmail.com", "phone_number"=>"07988756", "password"=>"[FILTERED]", "gender"=>"Male", "teacher"=>{"first_name"=>"Muriithi", "last_name"=>"Kipchumba", "career_name"=>"Math Teacher10", "phone_number"=>"07988756", "email"=>"k10muriithi@gmail.com", "gender"=>"Male"}}
+[31mUnpermitted parameter: :teacher. Context: { controller: TeachersController, action: create, request: #<ActionDispatch::Request:0x00007fdefa79b900>, params: {"first_name"=>"Muriithi", "career_name"=>"Math Teacher10", "last_name"=>"Kipchumba", "email"=>"k10muriithi@gmail.com", "phone_number"=>"07988756", "password"=>"[FILTERED]", "gender"=>"Male", "controller"=>"teachers", "action"=>"create", "teacher"=>{"first_name"=>"Muriithi", "last_name"=>"Kipchumba", "career_name"=>"Math Teacher10", "phone_number"=>"07988756", "email"=>"k10muriithi@gmail.com", "gender"=>"Male"}} }[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/teachers_controller.rb:12:in `create'
+  [1m[36mTeacher Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "teachers" WHERE "teachers"."email" = ? LIMIT ?[0m  [["email", "k10muriithi@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/teachers_controller.rb:12:in `create'
+  [1m[36mTeacher Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "teachers" WHERE "teachers"."career_name" = ? LIMIT ?[0m  [["career_name", "Math Teacher10"], ["LIMIT", 1]]
+  ↳ app/controllers/teachers_controller.rb:12:in `create'
+  [1m[36mTeacher Create (0.6ms)[0m  [1m[32mINSERT INTO "teachers" ("first_name", "last_name", "career_name", "password_digest", "phone_number", "email", "gender", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "Muriithi"], ["last_name", "Kipchumba"], ["career_name", "Math Teacher10"], ["password_digest", "[FILTERED]"], ["phone_number", "07988756"], ["email", "k10muriithi@gmail.com"], ["gender", "Male"], ["created_at", "2023-01-06 16:59:09.084898"], ["updated_at", "2023-01-06 16:59:09.084898"]]
+  ↳ app/controllers/teachers_controller.rb:12:in `create'
+  [1m[36mTRANSACTION (5.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/teachers_controller.rb:12:in `create'
+No serializer found for resource: {:token=>"eyJhbGciOiJIUzI1NiJ9.eyJ0ZWFjaGVyX2lkIjoxOH0.I5nFqJ0QHj1EkBY_34eVpM8C4ARMopWMZEIWwl97XJE"}
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (0.26ms)
+Completed 201 Created in 324ms (Views: 0.9ms | ActiveRecord: 7.4ms | Allocations: 3794)
+
+
+Started POST "/teachers" for 127.0.0.1 at 2023-01-06 20:00:40 +0300
+Processing by TeachersController#create as */*
+  Parameters: {"first_name"=>"Muriithi", "career_name"=>"Math Teacher11", "last_name"=>"Kibata", "email"=>"KMD12@gmail.com", "phone_number"=>"07988756", "password"=>"[FILTERED]", "gender"=>"Male", "teacher"=>{"first_name"=>"Muriithi", "last_name"=>"Kibata", "career_name"=>"Math Teacher11", "phone_number"=>"07988756", "email"=>"KMD12@gmail.com", "gender"=>"Male"}}
+[31mUnpermitted parameter: :teacher. Context: { controller: TeachersController, action: create, request: #<ActionDispatch::Request:0x00007fdefaef1628>, params: {"first_name"=>"Muriithi", "career_name"=>"Math Teacher11", "last_name"=>"Kibata", "email"=>"KMD12@gmail.com", "phone_number"=>"07988756", "password"=>"[FILTERED]", "gender"=>"Male", "controller"=>"teachers", "action"=>"create", "teacher"=>{"first_name"=>"Muriithi", "last_name"=>"Kibata", "career_name"=>"Math Teacher11", "phone_number"=>"07988756", "email"=>"KMD12@gmail.com", "gender"=>"Male"}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/teachers_controller.rb:12:in `create'
+  [1m[36mTeacher Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "teachers" WHERE "teachers"."email" = ? LIMIT ?[0m  [["email", "KMD12@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/teachers_controller.rb:12:in `create'
+  [1m[36mTeacher Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "teachers" WHERE "teachers"."career_name" = ? LIMIT ?[0m  [["career_name", "Math Teacher11"], ["LIMIT", 1]]
+  ↳ app/controllers/teachers_controller.rb:12:in `create'
+  [1m[36mTeacher Create (0.5ms)[0m  [1m[32mINSERT INTO "teachers" ("first_name", "last_name", "career_name", "password_digest", "phone_number", "email", "gender", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "Muriithi"], ["last_name", "Kibata"], ["career_name", "Math Teacher11"], ["password_digest", "[FILTERED]"], ["phone_number", "07988756"], ["email", "KMD12@gmail.com"], ["gender", "Male"], ["created_at", "2023-01-06 17:00:40.457527"], ["updated_at", "2023-01-06 17:00:40.457527"]]
+  ↳ app/controllers/teachers_controller.rb:12:in `create'
+  [1m[36mTRANSACTION (6.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/teachers_controller.rb:12:in `create'
+No serializer found for resource: {:token=>"eyJhbGciOiJIUzI1NiJ9.eyJ0ZWFjaGVyX2lkIjoxOX0.NjFVWmq16yU5XEebAtIlrAMVNxMOhcr4UQsM2p4jd1Y"}
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (0.34ms)
+Completed 201 Created in 344ms (Views: 3.0ms | ActiveRecord: 7.2ms | Allocations: 3669)
+
+
+Started POST "/teachers" for 127.0.0.1 at 2023-01-06 20:05:43 +0300
+Processing by TeachersController#create as */*
+  Parameters: {"first_name"=>"Muriithi", "career_name"=>"Math Teacher15", "last_name"=>"Kibata", "email"=>"KMD23@gmail.com", "phone_number"=>"07988756", "password"=>"[FILTERED]", "gender"=>"Male", "teacher"=>{"first_name"=>"Muriithi", "last_name"=>"Kibata", "career_name"=>"Math Teacher15", "phone_number"=>"07988756", "email"=>"KMD23@gmail.com", "gender"=>"Male"}}
+[31mUnpermitted parameter: :teacher. Context: { controller: TeachersController, action: create, request: #<ActionDispatch::Request:0x00007fdefa7f8858>, params: {"first_name"=>"Muriithi", "career_name"=>"Math Teacher15", "last_name"=>"Kibata", "email"=>"KMD23@gmail.com", "phone_number"=>"07988756", "password"=>"[FILTERED]", "gender"=>"Male", "controller"=>"teachers", "action"=>"create", "teacher"=>{"first_name"=>"Muriithi", "last_name"=>"Kibata", "career_name"=>"Math Teacher15", "phone_number"=>"07988756", "email"=>"KMD23@gmail.com", "gender"=>"Male"}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/teachers_controller.rb:12:in `create'
+  [1m[36mTeacher Exists? (1.0ms)[0m  [1m[34mSELECT 1 AS one FROM "teachers" WHERE "teachers"."email" = ? LIMIT ?[0m  [["email", "KMD23@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/teachers_controller.rb:12:in `create'
+  [1m[36mTeacher Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "teachers" WHERE "teachers"."career_name" = ? LIMIT ?[0m  [["career_name", "Math Teacher15"], ["LIMIT", 1]]
+  ↳ app/controllers/teachers_controller.rb:12:in `create'
+  [1m[36mTeacher Create (0.6ms)[0m  [1m[32mINSERT INTO "teachers" ("first_name", "last_name", "career_name", "password_digest", "phone_number", "email", "gender", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "Muriithi"], ["last_name", "Kibata"], ["career_name", "Math Teacher15"], ["password_digest", "[FILTERED]"], ["phone_number", "07988756"], ["email", "KMD23@gmail.com"], ["gender", "Male"], ["created_at", "2023-01-06 17:05:44.290705"], ["updated_at", "2023-01-06 17:05:44.290705"]]
+  ↳ app/controllers/teachers_controller.rb:12:in `create'
+  [1m[36mTRANSACTION (19.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/teachers_controller.rb:12:in `create'
+No serializer found for resource: {:token=>"eyJhbGciOiJIUzI1NiJ9.eyJ0ZWFjaGVyX2lkIjoyMH0.vyhe-HzhN0JgKPXFGl3mJo2enVmVFK2rNDqZn-yy12E"}
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (0.34ms)
+Completed 201 Created in 406ms (Views: 2.2ms | ActiveRecord: 21.3ms | Allocations: 3669)
+
+
+Started POST "/login" for 127.0.0.1 at 2023-01-07 15:54:13 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by AuthController#create as */*
+  Parameters: {"email"=>"", "password"=>"[FILTERED]", "auth"=>{"email"=>"", "password"=>"[FILTERED]"}}
+  [1m[36mTeacher Load (0.3ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."email" = ? LIMIT ?[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:6:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.17ms)
+Completed 401 Unauthorized in 34ms (Views: 3.6ms | ActiveRecord: 0.6ms | Allocations: 25704)
+
+
+Started POST "/login" for 127.0.0.1 at 2023-01-07 15:55:25 +0300
+Processing by AuthController#create as */*
+  Parameters: {"email"=>"lewisdarwin@gmail.com", "password"=>"[FILTERED]", "auth"=>{"email"=>"lewisdarwin@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."email" = ? LIMIT ?[0m  [["email", "lewisdarwin@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:6:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (6.9ms)
+Completed 202 Accepted in 562ms (Views: 7.5ms | ActiveRecord: 0.8ms | Allocations: 21092)
+
+
+Started POST "/login" for 127.0.0.1 at 2023-01-07 15:56:57 +0300
+Processing by AuthController#create as */*
+  Parameters: {"email"=>"lewisdarwin@gmail.com", "password"=>"[FILTERED]", "auth"=>{"email"=>"lewisdarwin@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mTeacher Load (0.3ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."email" = ? LIMIT ?[0m  [["email", "lewisdarwin@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:6:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.29ms)
+Completed 202 Accepted in 311ms (Views: 0.9ms | ActiveRecord: 0.3ms | Allocations: 806)
+
+
+Started POST "/login" for 127.0.0.1 at 2023-01-07 15:58:24 +0300
+Processing by AuthController#create as */*
+  Parameters: {"email"=>"lewisdarwin@gmail.com", "password"=>"[FILTERED]", "auth"=>{"email"=>"lewisdarwin@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."email" = ? LIMIT ?[0m  [["email", "lewisdarwin@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:6:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.09ms)
+Completed 401 Unauthorized in 305ms (Views: 0.6ms | ActiveRecord: 0.2ms | Allocations: 653)
+
+
+Started POST "/login" for 127.0.0.1 at 2023-01-07 15:58:44 +0300
+Processing by AuthController#create as */*
+  Parameters: {"email"=>"lewisdarwin@gmail.com", "password"=>"[FILTERED]", "auth"=>{"email"=>"lewisdarwin@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mTeacher Load (0.3ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."email" = ? LIMIT ?[0m  [["email", "lewisdarwin@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:6:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.23ms)
+Completed 202 Accepted in 306ms (Views: 0.8ms | ActiveRecord: 0.3ms | Allocations: 806)
+
+
+Started POST "/login" for 127.0.0.1 at 2023-01-07 16:03:55 +0300
+Processing by AuthController#create as */*
+  Parameters: {"email"=>"lewisdarwin@gmail.com", "password"=>"[FILTERED]", "auth"=>{"email"=>"lewisdarwin@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."email" = ? LIMIT ?[0m  [["email", "lewisdarwin@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:6:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.23ms)
+Completed 202 Accepted in 311ms (Views: 0.8ms | ActiveRecord: 0.2ms | Allocations: 795)
+
+
+Started POST "/login" for 127.0.0.1 at 2023-01-07 16:05:21 +0300
+Processing by AuthController#create as */*
+  Parameters: {"email"=>"lewisdarwin@gmail.com", "password"=>"[FILTERED]", "auth"=>{"email"=>"lewisdarwin@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mTeacher Load (0.3ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."email" = ? LIMIT ?[0m  [["email", "lewisdarwin@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:6:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.22ms)
+Completed 202 Accepted in 307ms (Views: 0.7ms | ActiveRecord: 0.3ms | Allocations: 791)
+
+
+Started POST "/login" for 127.0.0.1 at 2023-01-07 16:08:04 +0300
+Processing by AuthController#create as */*
+  Parameters: {"email"=>"lewisdarwin@gmail.com", "password"=>"[FILTERED]", "auth"=>{"email"=>"lewisdarwin@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."email" = ? LIMIT ?[0m  [["email", "lewisdarwin@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:6:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.23ms)
+Completed 202 Accepted in 303ms (Views: 0.7ms | ActiveRecord: 0.2ms | Allocations: 791)
+
+
+Started POST "/login" for 127.0.0.1 at 2023-01-07 16:10:11 +0300
+Processing by AuthController#create as */*
+  Parameters: {"email"=>"lewisdarwin@gmail.com", "password"=>"[FILTERED]", "auth"=>{"email"=>"lewisdarwin@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mTeacher Load (0.3ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."email" = ? LIMIT ?[0m  [["email", "lewisdarwin@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:6:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.27ms)
+Completed 202 Accepted in 312ms (Views: 0.9ms | ActiveRecord: 0.3ms | Allocations: 792)
+
+
+Started POST "/login" for 127.0.0.1 at 2023-01-07 16:11:50 +0300
+Processing by AuthController#create as */*
+  Parameters: {"email"=>"lewisdarwin@gmail.com", "password"=>"[FILTERED]", "auth"=>{"email"=>"lewisdarwin@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."email" = ? LIMIT ?[0m  [["email", "lewisdarwin@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:6:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.29ms)
+Completed 202 Accepted in 310ms (Views: 0.8ms | ActiveRecord: 0.2ms | Allocations: 791)
+
+
+Started POST "/login" for 127.0.0.1 at 2023-01-07 16:13:04 +0300
+Processing by AuthController#create as */*
+  Parameters: {"email"=>"lewisdarwin@gmail.com", "password"=>"[FILTERED]", "auth"=>{"email"=>"lewisdarwin@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mTeacher Load (0.1ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."email" = ? LIMIT ?[0m  [["email", "lewisdarwin@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:6:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.34ms)
+Completed 202 Accepted in 307ms (Views: 0.9ms | ActiveRecord: 0.1ms | Allocations: 792)
+
+
+Started POST "/login" for 127.0.0.1 at 2023-01-07 16:13:45 +0300
+Processing by AuthController#create as */*
+  Parameters: {"email"=>"lewisdarwin@gmail.com", "password"=>"[FILTERED]", "auth"=>{"email"=>"lewisdarwin@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."email" = ? LIMIT ?[0m  [["email", "lewisdarwin@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:6:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.27ms)
+Completed 202 Accepted in 306ms (Views: 0.8ms | ActiveRecord: 0.2ms | Allocations: 791)
+
+
+Started POST "/login" for 127.0.0.1 at 2023-01-07 16:14:51 +0300
+Processing by AuthController#create as */*
+  Parameters: {"email"=>"lewisdarwin@gmail.com", "password"=>"[FILTERED]", "auth"=>{"email"=>"lewisdarwin@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."email" = ? LIMIT ?[0m  [["email", "lewisdarwin@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:6:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.29ms)
+Completed 202 Accepted in 304ms (Views: 1.0ms | ActiveRecord: 0.2ms | Allocations: 791)
+
+
+Started POST "/login" for 127.0.0.1 at 2023-01-07 16:15:40 +0300
+Processing by AuthController#create as */*
+  Parameters: {"email"=>"lewisdarwin@gmail.com", "password"=>"[FILTERED]", "auth"=>{"email"=>"lewisdarwin@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mTeacher Load (0.4ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."email" = ? LIMIT ?[0m  [["email", "lewisdarwin@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:6:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.25ms)
+Completed 202 Accepted in 303ms (Views: 0.8ms | ActiveRecord: 0.4ms | Allocations: 794)
+
+
+Started POST "/teachers" for 127.0.0.1 at 2023-01-07 16:16:17 +0300
+Processing by TeachersController#create as */*
+  Parameters: {"first_name"=>"Muriithi", "career_name"=>"Math Teacher19", "last_name"=>"Kibata", "email"=>"KMD13@gmail.com", "phone_number"=>"07988756", "password"=>"[FILTERED]", "gender"=>"Male", "teacher"=>{"first_name"=>"Muriithi", "last_name"=>"Kibata", "career_name"=>"Math Teacher19", "phone_number"=>"07988756", "email"=>"KMD13@gmail.com", "gender"=>"Male"}}
+[31mUnpermitted parameter: :teacher. Context: { controller: TeachersController, action: create, request: #<ActionDispatch::Request:0x00007fb8f0f1d4d8>, params: {"first_name"=>"Muriithi", "career_name"=>"Math Teacher19", "last_name"=>"Kibata", "email"=>"KMD13@gmail.com", "phone_number"=>"07988756", "password"=>"[FILTERED]", "gender"=>"Male", "controller"=>"teachers", "action"=>"create", "teacher"=>{"first_name"=>"Muriithi", "last_name"=>"Kibata", "career_name"=>"Math Teacher19", "phone_number"=>"07988756", "email"=>"KMD13@gmail.com", "gender"=>"Male"}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/teachers_controller.rb:12:in `create'
+  [1m[36mTeacher Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM "teachers" WHERE "teachers"."email" = ? LIMIT ?[0m  [["email", "KMD13@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/teachers_controller.rb:12:in `create'
+  [1m[36mTeacher Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "teachers" WHERE "teachers"."career_name" = ? LIMIT ?[0m  [["career_name", "Math Teacher19"], ["LIMIT", 1]]
+  ↳ app/controllers/teachers_controller.rb:12:in `create'
+  [1m[36mTeacher Create (0.6ms)[0m  [1m[32mINSERT INTO "teachers" ("first_name", "last_name", "career_name", "password_digest", "phone_number", "email", "gender", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "Muriithi"], ["last_name", "Kibata"], ["career_name", "Math Teacher19"], ["password_digest", "[FILTERED]"], ["phone_number", "07988756"], ["email", "KMD13@gmail.com"], ["gender", "Male"], ["created_at", "2023-01-07 13:16:18.022089"], ["updated_at", "2023-01-07 13:16:18.022089"]]
+  ↳ app/controllers/teachers_controller.rb:12:in `create'
+  [1m[36mTRANSACTION (6.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/teachers_controller.rb:12:in `create'
+No serializer found for resource: {:token=>"eyJhbGciOiJIUzI1NiJ9.eyJ0ZWFjaGVyX2lkIjoyMX0.trtUrd2UXjcY7lv6qo8RQSbXDzoxiloMzetG6iGlvww"}
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Array (1.14ms)
+Completed 201 Created in 341ms (Views: 2.4ms | ActiveRecord: 8.1ms | Allocations: 4754)
+
+
+Started POST "/login" for 127.0.0.1 at 2023-01-07 16:20:56 +0300
+Processing by AuthController#create as */*
+  Parameters: {"email"=>"KMD13@gmail.com", "password"=>"[FILTERED]", "auth"=>{"email"=>"KMD13@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mTeacher Load (0.3ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."email" = ? LIMIT ?[0m  [["email", "KMD13@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:6:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.26ms)
+Completed 202 Accepted in 310ms (Views: 0.8ms | ActiveRecord: 0.3ms | Allocations: 792)
+
+
+Started POST "/parents" for 127.0.0.1 at 2023-01-07 16:24:26 +0300
+Processing by ParentsController#create as */*
+  Parameters: {"first_name"=>"Muriithi", "last_name"=>"Kibata", "phone_number"=>"07400089", "password"=>"[FILTERED]", "parent"=>{"first_name"=>"Muriithi", "last_name"=>"Kibata", "phone_number"=>"07400089"}}
+[31mUnpermitted parameters: :phone_number, :parent. Context: { controller: ParentsController, action: create, request: #<ActionDispatch::Request:0x00007fb8efefffd8>, params: {"first_name"=>"Muriithi", "last_name"=>"Kibata", "phone_number"=>"07400089", "password"=>"[FILTERED]", "controller"=>"parents", "action"=>"create", "parent"=>{"first_name"=>"Muriithi", "last_name"=>"Kibata", "phone_number"=>"07400089"}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/parents_controller.rb:6:in `create'
+  [1m[36mParent Create (1.2ms)[0m  [1m[32mINSERT INTO "parents" ("first_name", "last_name", "phone_number", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["first_name", "Muriithi"], ["last_name", "Kibata"], ["phone_number", nil], ["password_digest", "[FILTERED]"], ["created_at", "2023-01-07 13:24:27.275306"], ["updated_at", "2023-01-07 13:24:27.275306"]]
+  ↳ app/controllers/parents_controller.rb:6:in `create'
+  [1m[36mTRANSACTION (6.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/parents_controller.rb:6:in `create'
+[active_model_serializers]   [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT "students".* FROM "students" INNER JOIN "parent_students" ON "students"."id" = "parent_students"."student_id" WHERE "parent_students"."parent_id" = ?[0m  [["parent_id", 24]]
+[active_model_serializers]   ↳ app/controllers/parents_controller.rb:8:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (58.39ms)
+Completed 201 Created in 401ms (Views: 59.0ms | ActiveRecord: 10.1ms | Allocations: 22087)
+
+
+Started POST "/parent_login" for 127.0.0.1 at 2023-01-07 16:25:06 +0300
+Processing by ParentAuthController#create as */*
+  Parameters: {"phone_number"=>"07400089", "password"=>"[FILTERED]", "parent_auth"=>{"phone_number"=>"07400089", "password"=>"[FILTERED]"}}
+  [1m[36mParent Load (0.3ms)[0m  [1m[34mSELECT "parents".* FROM "parents" WHERE "parents"."phone_number" = ? LIMIT ?[0m  [["phone_number", 7400089], ["LIMIT", 1]]
+  ↳ app/controllers/parent_auth_controller.rb:5:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.1ms)
+Completed 401 Unauthorized in 4ms (Views: 0.8ms | ActiveRecord: 0.3ms | Allocations: 919)
+
+
+Started POST "/parent_login" for 127.0.0.1 at 2023-01-07 16:32:14 +0300
+Processing by ParentAuthController#create as */*
+  Parameters: {"phone_number"=>"01152003", "password"=>"[FILTERED]", "parent_auth"=>{"phone_number"=>"01152003", "password"=>"[FILTERED]"}}
+  [1m[36mParent Load (0.2ms)[0m  [1m[34mSELECT "parents".* FROM "parents" WHERE "parents"."phone_number" = ? LIMIT ?[0m  [["phone_number", 1152003], ["LIMIT", 1]]
+  ↳ app/controllers/parent_auth_controller.rb:5:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.11ms)
+Completed 401 Unauthorized in 5ms (Views: 0.7ms | ActiveRecord: 0.8ms | Allocations: 756)
+
+
+Started POST "/parent_login" for 127.0.0.1 at 2023-01-07 16:32:27 +0300
+Processing by ParentAuthController#create as */*
+  Parameters: {"phone_number"=>"01152003", "password"=>"[FILTERED]", "parent_auth"=>{"phone_number"=>"01152003", "password"=>"[FILTERED]"}}
+  [1m[36mParent Load (0.2ms)[0m  [1m[34mSELECT "parents".* FROM "parents" WHERE "parents"."phone_number" = ? LIMIT ?[0m  [["phone_number", 1152003], ["LIMIT", 1]]
+  ↳ app/controllers/parent_auth_controller.rb:5:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.13ms)
+Completed 401 Unauthorized in 4ms (Views: 0.9ms | ActiveRecord: 0.2ms | Allocations: 598)
+
+
+Started POST "/parent_login" for 127.0.0.1 at 2023-01-07 18:51:58 +0300
+Processing by ParentAuthController#create as */*
+  Parameters: {"phone_number"=>"07400089", "password"=>"[FILTERED]", "parent_auth"=>{"phone_number"=>"07400089", "password"=>"[FILTERED]"}}
+  [1m[36mParent Load (0.2ms)[0m  [1m[34mSELECT "parents".* FROM "parents" WHERE "parents"."phone_number" = ? LIMIT ?[0m  [["phone_number", 7400089], ["LIMIT", 1]]
+  ↳ app/controllers/parent_auth_controller.rb:5:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.12ms)
+Completed 401 Unauthorized in 4ms (Views: 0.8ms | ActiveRecord: 1.1ms | Allocations: 746)
+
+
+Started POST "/parent_login" for 127.0.0.1 at 2023-01-07 18:52:55 +0300
+Processing by ParentAuthController#create as */*
+  Parameters: {"phone_number"=>"765478643", "password"=>"[FILTERED]", "parent_auth"=>{"phone_number"=>"765478643", "password"=>"[FILTERED]"}}
+  [1m[36mParent Load (0.2ms)[0m  [1m[34mSELECT "parents".* FROM "parents" WHERE "parents"."phone_number" = ? LIMIT ?[0m  [["phone_number", 765478643], ["LIMIT", 1]]
+  ↳ app/controllers/parent_auth_controller.rb:5:in `create'
+[active_model_serializers]   [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT "students".* FROM "students" INNER JOIN "parent_students" ON "students"."id" = "parent_students"."student_id" WHERE "parent_students"."parent_id" = ?[0m  [["parent_id", 6]]
+[active_model_serializers]   ↳ app/controllers/parent_auth_controller.rb:8:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (4.92ms)
+Completed 202 Accepted in 310ms (Views: 5.5ms | ActiveRecord: 0.5ms | Allocations: 1914)
+
+
+Started POST "/parent_login" for 127.0.0.1 at 2023-01-07 19:22:43 +0300
+Processing by ParentAuthController#create as */*
+  Parameters: {"phone_number"=>"07400089", "password"=>"[FILTERED]", "parent_auth"=>{"phone_number"=>"07400089", "password"=>"[FILTERED]"}}
+  [1m[36mParent Load (0.2ms)[0m  [1m[34mSELECT "parents".* FROM "parents" WHERE "parents"."phone_number" = ? LIMIT ?[0m  [["phone_number", 7400089], ["LIMIT", 1]]
+  ↳ app/controllers/parent_auth_controller.rb:5:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.09ms)
+Completed 401 Unauthorized in 4ms (Views: 0.7ms | ActiveRecord: 0.7ms | Allocations: 746)
+
+
+Started POST "/parent_login" for 127.0.0.1 at 2023-01-07 19:23:10 +0300
+Processing by ParentAuthController#create as */*
+  Parameters: {"phone_number"=>"765478643", "password"=>"[FILTERED]", "parent_auth"=>{"phone_number"=>"765478643", "password"=>"[FILTERED]"}}
+  [1m[36mParent Load (0.2ms)[0m  [1m[34mSELECT "parents".* FROM "parents" WHERE "parents"."phone_number" = ? LIMIT ?[0m  [["phone_number", 765478643], ["LIMIT", 1]]
+  ↳ app/controllers/parent_auth_controller.rb:5:in `create'
+[active_model_serializers]   [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT "students".* FROM "students" INNER JOIN "parent_students" ON "students"."id" = "parent_students"."student_id" WHERE "parent_students"."parent_id" = ?[0m  [["parent_id", 6]]
+[active_model_serializers]   ↳ app/controllers/parent_auth_controller.rb:8:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (2.97ms)
+Completed 202 Accepted in 302ms (Views: 3.4ms | ActiveRecord: 0.5ms | Allocations: 1886)
+
+
+Started POST "/parents" for 127.0.0.1 at 2023-01-07 19:25:57 +0300
+Processing by ParentsController#create as */*
+  Parameters: {"first_name"=>"Nicholas", "last_name"=>"Njeru", "phone_number"=>"078323423", "password"=>"[FILTERED]", "parent"=>{"first_name"=>"Nicholas", "last_name"=>"Njeru", "phone_number"=>"078323423"}}
+[31mUnpermitted parameters: :phone_number, :parent. Context: { controller: ParentsController, action: create, request: #<ActionDispatch::Request:0x00007fb8f0a4e128>, params: {"first_name"=>"Nicholas", "last_name"=>"Njeru", "phone_number"=>"078323423", "password"=>"[FILTERED]", "controller"=>"parents", "action"=>"create", "parent"=>{"first_name"=>"Nicholas", "last_name"=>"Njeru", "phone_number"=>"078323423"}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/parents_controller.rb:6:in `create'
+  [1m[36mParent Create (0.8ms)[0m  [1m[32mINSERT INTO "parents" ("first_name", "last_name", "phone_number", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["first_name", "Nicholas"], ["last_name", "Njeru"], ["phone_number", nil], ["password_digest", "[FILTERED]"], ["created_at", "2023-01-07 16:25:57.473690"], ["updated_at", "2023-01-07 16:25:57.473690"]]
+  ↳ app/controllers/parents_controller.rb:6:in `create'
+  [1m[36mTRANSACTION (6.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/parents_controller.rb:6:in `create'
+[active_model_serializers]   [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" INNER JOIN "parent_students" ON "students"."id" = "parent_students"."student_id" WHERE "parent_students"."parent_id" = ?[0m  [["parent_id", 25]]
+[active_model_serializers]   ↳ app/controllers/parents_controller.rb:8:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (3.78ms)
+Completed 201 Created in 312ms (Views: 4.1ms | ActiveRecord: 7.3ms | Allocations: 3288)
+
+
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to ChangePhoneNumberToString (20230107162905)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aparents" ("id" integer NOT NULL PRIMARY KEY, "first_name" varchar DEFAULT NULL, "last_name" varchar DEFAULT NULL, "phone_number" integer DEFAULT NULL, "password_digest" varchar DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[32mINSERT INTO "aparents" ("id","first_name","last_name","phone_number","password_digest","created_at","updated_at")
+                     SELECT "id","first_name","last_name","phone_number","password_digest","created_at","updated_at" FROM "parents"[0m
+  [1m[35m (1.2ms)[0m  [1m[35mDROP TABLE "parents"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "parents" ("id" integer NOT NULL PRIMARY KEY, "first_name" varchar DEFAULT NULL, "last_name" varchar DEFAULT NULL, "phone_number" varchar DEFAULT NULL, "password_digest" varchar DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "parents" ("id","first_name","last_name","phone_number","password_digest","created_at","updated_at")
+                     SELECT "id","first_name","last_name","phone_number","password_digest","created_at","updated_at" FROM "aparents"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "aparents"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20230107162905"]]
+  [1m[36mTRANSACTION (3.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTeacher Load (0.4ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers"[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTeacher Destroy (1.3ms)[0m  [1m[31mDELETE FROM "teachers" WHERE "teachers"."id" = ?[0m  [["id", 3]]
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTeacher Destroy (0.4ms)[0m  [1m[31mDELETE FROM "teachers" WHERE "teachers"."id" = ?[0m  [["id", 4]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTeacher Destroy (0.3ms)[0m  [1m[31mDELETE FROM "teachers" WHERE "teachers"."id" = ?[0m  [["id", 5]]
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTeacher Destroy (0.8ms)[0m  [1m[31mDELETE FROM "teachers" WHERE "teachers"."id" = ?[0m  [["id", 6]]
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTeacher Destroy (0.8ms)[0m  [1m[31mDELETE FROM "teachers" WHERE "teachers"."id" = ?[0m  [["id", 7]]
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTeacher Destroy (0.6ms)[0m  [1m[31mDELETE FROM "teachers" WHERE "teachers"."id" = ?[0m  [["id", 8]]
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTeacher Destroy (0.9ms)[0m  [1m[31mDELETE FROM "teachers" WHERE "teachers"."id" = ?[0m  [["id", 9]]
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTeacher Destroy (0.5ms)[0m  [1m[31mDELETE FROM "teachers" WHERE "teachers"."id" = ?[0m  [["id", 10]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTeacher Destroy (0.5ms)[0m  [1m[31mDELETE FROM "teachers" WHERE "teachers"."id" = ?[0m  [["id", 11]]
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTeacher Destroy (0.4ms)[0m  [1m[31mDELETE FROM "teachers" WHERE "teachers"."id" = ?[0m  [["id", 12]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTeacher Destroy (0.4ms)[0m  [1m[31mDELETE FROM "teachers" WHERE "teachers"."id" = ?[0m  [["id", 13]]
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTeacher Destroy (0.6ms)[0m  [1m[31mDELETE FROM "teachers" WHERE "teachers"."id" = ?[0m  [["id", 14]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTeacher Destroy (0.4ms)[0m  [1m[31mDELETE FROM "teachers" WHERE "teachers"."id" = ?[0m  [["id", 15]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTeacher Destroy (0.4ms)[0m  [1m[31mDELETE FROM "teachers" WHERE "teachers"."id" = ?[0m  [["id", 16]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTeacher Destroy (0.6ms)[0m  [1m[31mDELETE FROM "teachers" WHERE "teachers"."id" = ?[0m  [["id", 17]]
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTeacher Destroy (0.4ms)[0m  [1m[31mDELETE FROM "teachers" WHERE "teachers"."id" = ?[0m  [["id", 18]]
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTeacher Destroy (0.5ms)[0m  [1m[31mDELETE FROM "teachers" WHERE "teachers"."id" = ?[0m  [["id", 19]]
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTeacher Destroy (0.5ms)[0m  [1m[31mDELETE FROM "teachers" WHERE "teachers"."id" = ?[0m  [["id", 20]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTeacher Destroy (0.5ms)[0m  [1m[31mDELETE FROM "teachers" WHERE "teachers"."id" = ?[0m  [["id", 21]]
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT "students".* FROM "students"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDiscipline Load (0.1ms)[0m  [1m[34mSELECT "disciplines".* FROM "disciplines" WHERE "disciplines"."student_id" = ?[0m  [["student_id", 4]]
+  [1m[36mDiscipline Destroy (0.5ms)[0m  [1m[31mDELETE FROM "disciplines" WHERE "disciplines"."id" = ?[0m  [["id", 5]]
+  [1m[36mStudent Destroy (0.8ms)[0m  [1m[31mDELETE FROM "students" WHERE "students"."id" = ?[0m  [["id", 4]]
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDiscipline Load (0.2ms)[0m  [1m[34mSELECT "disciplines".* FROM "disciplines" WHERE "disciplines"."student_id" = ?[0m  [["student_id", 5]]
+  [1m[36mDiscipline Destroy (0.4ms)[0m  [1m[31mDELETE FROM "disciplines" WHERE "disciplines"."id" = ?[0m  [["id", 6]]
+  [1m[36mDiscipline Destroy (0.2ms)[0m  [1m[31mDELETE FROM "disciplines" WHERE "disciplines"."id" = ?[0m  [["id", 8]]
+  [1m[36mStudent Destroy (0.2ms)[0m  [1m[31mDELETE FROM "students" WHERE "students"."id" = ?[0m  [["id", 5]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDiscipline Load (0.3ms)[0m  [1m[34mSELECT "disciplines".* FROM "disciplines" WHERE "disciplines"."student_id" = ?[0m  [["student_id", 6]]
+  [1m[36mDiscipline Destroy (0.4ms)[0m  [1m[31mDELETE FROM "disciplines" WHERE "disciplines"."id" = ?[0m  [["id", 7]]
+  [1m[36mStudent Destroy (0.5ms)[0m  [1m[31mDELETE FROM "students" WHERE "students"."id" = ?[0m  [["id", 6]]
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mClassroom Load (0.3ms)[0m  [1m[34mSELECT "classrooms".* FROM "classrooms"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."classroom_id" = ?[0m  [["classroom_id", 3]]
+  [1m[36mAttendance Load (0.2ms)[0m  [1m[34mSELECT "attendances".* FROM "attendances" WHERE "attendances"."classroom_id" = ?[0m  [["classroom_id", 3]]
+  [1m[36mClassroom Destroy (0.4ms)[0m  [1m[31mDELETE FROM "classrooms" WHERE "classrooms"."id" = ?[0m  [["id", 3]]
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."classroom_id" = ?[0m  [["classroom_id", 4]]
+  [1m[36mAttendance Load (0.1ms)[0m  [1m[34mSELECT "attendances".* FROM "attendances" WHERE "attendances"."classroom_id" = ?[0m  [["classroom_id", 4]]
+  [1m[36mClassroom Destroy (0.7ms)[0m  [1m[31mDELETE FROM "classrooms" WHERE "classrooms"."id" = ?[0m  [["id", 4]]
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mParent Load (0.5ms)[0m  [1m[34mSELECT "parents".* FROM "parents"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mParent Destroy (0.4ms)[0m  [1m[31mDELETE FROM "parents" WHERE "parents"."id" = ?[0m  [["id", 6]]
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mParent Destroy (0.5ms)[0m  [1m[31mDELETE FROM "parents" WHERE "parents"."id" = ?[0m  [["id", 7]]
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mParent Destroy (0.4ms)[0m  [1m[31mDELETE FROM "parents" WHERE "parents"."id" = ?[0m  [["id", 8]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mParent Destroy (0.6ms)[0m  [1m[31mDELETE FROM "parents" WHERE "parents"."id" = ?[0m  [["id", 9]]
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mParent Destroy (0.7ms)[0m  [1m[31mDELETE FROM "parents" WHERE "parents"."id" = ?[0m  [["id", 10]]
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mParent Destroy (0.5ms)[0m  [1m[31mDELETE FROM "parents" WHERE "parents"."id" = ?[0m  [["id", 11]]
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mParent Destroy (0.6ms)[0m  [1m[31mDELETE FROM "parents" WHERE "parents"."id" = ?[0m  [["id", 12]]
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mParent Destroy (0.6ms)[0m  [1m[31mDELETE FROM "parents" WHERE "parents"."id" = ?[0m  [["id", 13]]
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mParent Destroy (0.5ms)[0m  [1m[31mDELETE FROM "parents" WHERE "parents"."id" = ?[0m  [["id", 14]]
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mParent Destroy (0.4ms)[0m  [1m[31mDELETE FROM "parents" WHERE "parents"."id" = ?[0m  [["id", 15]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mParent Destroy (0.6ms)[0m  [1m[31mDELETE FROM "parents" WHERE "parents"."id" = ?[0m  [["id", 16]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mParent Destroy (0.6ms)[0m  [1m[31mDELETE FROM "parents" WHERE "parents"."id" = ?[0m  [["id", 17]]
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mParent Destroy (0.6ms)[0m  [1m[31mDELETE FROM "parents" WHERE "parents"."id" = ?[0m  [["id", 18]]
+  [1m[36mTRANSACTION (1.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mParent Destroy (0.4ms)[0m  [1m[31mDELETE FROM "parents" WHERE "parents"."id" = ?[0m  [["id", 19]]
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mParent Destroy (0.6ms)[0m  [1m[31mDELETE FROM "parents" WHERE "parents"."id" = ?[0m  [["id", 20]]
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mParent Destroy (0.5ms)[0m  [1m[31mDELETE FROM "parents" WHERE "parents"."id" = ?[0m  [["id", 21]]
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mParent Destroy (0.5ms)[0m  [1m[31mDELETE FROM "parents" WHERE "parents"."id" = ?[0m  [["id", 22]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mParent Destroy (0.5ms)[0m  [1m[31mDELETE FROM "parents" WHERE "parents"."id" = ?[0m  [["id", 23]]
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mParent Destroy (0.5ms)[0m  [1m[31mDELETE FROM "parents" WHERE "parents"."id" = ?[0m  [["id", 24]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mParent Destroy (0.8ms)[0m  [1m[31mDELETE FROM "parents" WHERE "parents"."id" = ?[0m  [["id", 25]]
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mAttendance Load (0.2ms)[0m  [1m[34mSELECT "attendances".* FROM "attendances"[0m
+  [1m[36mDiscipline Load (0.2ms)[0m  [1m[34mSELECT "disciplines".* FROM "disciplines"[0m
+  [1m[36mParentStudent Load (0.3ms)[0m  [1m[34mSELECT "parent_students".* FROM "parent_students"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mParentStudent Destroy (0.7ms)[0m  [1m[31mDELETE FROM "parent_students" WHERE "parent_students"."id" = ?[0m  [["id", 5]]
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mParentStudent Destroy (0.4ms)[0m  [1m[31mDELETE FROM "parent_students" WHERE "parent_students"."id" = ?[0m  [["id", 6]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mParentStudent Destroy (0.5ms)[0m  [1m[31mDELETE FROM "parent_students" WHERE "parent_students"."id" = ?[0m  [["id", 7]]
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mParentStudent Destroy (0.5ms)[0m  [1m[31mDELETE FROM "parent_students" WHERE "parent_students"."id" = ?[0m  [["id", 8]]
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTeacher Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "teachers" WHERE "teachers"."email" = ? LIMIT ?[0m  [["email", "lukeshaw@gmail.com"], ["LIMIT", 1]]
+  [1m[36mTeacher Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "teachers" WHERE "teachers"."career_name" = ? LIMIT ?[0m  [["career_name", "English"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTeacher Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "teachers" WHERE "teachers"."email" = ? LIMIT ?[0m  [["email", "lewisdarwin@gmail.com"], ["LIMIT", 1]]
+  [1m[36mTeacher Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "teachers" WHERE "teachers"."career_name" = ? LIMIT ?[0m  [["career_name", "Play group leader"], ["LIMIT", 1]]
+  [1m[36mTeacher Create (0.5ms)[0m  [1m[32mINSERT INTO "teachers" ("first_name", "last_name", "career_name", "password_digest", "phone_number", "email", "gender", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "Darwin"], ["last_name", "Ken"], ["career_name", "Play group leader"], ["password_digest", "[FILTERED]"], ["phone_number", "0754372656"], ["email", "lewisdarwin@gmail.com"], ["gender", "male"], ["created_at", "2023-01-07 16:37:14.016976"], ["updated_at", "2023-01-07 16:37:14.016976"]]
+  [1m[36mTRANSACTION (5.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTeacher Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "teachers" WHERE "teachers"."email" = ? LIMIT ?[0m  [["email", "timothy@gmail.com"], ["LIMIT", 1]]
+  [1m[36mTeacher Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "teachers" WHERE "teachers"."career_name" = ? LIMIT ?[0m  [["career_name", "Math"], ["LIMIT", 1]]
+  [1m[36mTeacher Create (0.5ms)[0m  [1m[32mINSERT INTO "teachers" ("first_name", "last_name", "career_name", "password_digest", "phone_number", "email", "gender", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "Timothy"], ["last_name", "Rogers"], ["career_name", "Math"], ["password_digest", "[FILTERED]"], ["phone_number", "0754372656"], ["email", "timothy@gmail.com"], ["gender", "male"], ["created_at", "2023-01-07 16:37:14.325345"], ["updated_at", "2023-01-07 16:37:14.325345"]]
+  [1m[36mTRANSACTION (6.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[36mClassroom Create (0.5ms)[0m  [1m[32mINSERT INTO "classrooms" ("name", "teacher_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "PP2"], ["teacher_id", 22], ["created_at", "2023-01-07 16:37:14.343071"], ["updated_at", "2023-01-07 16:37:14.343071"]]
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTeacher Load (0.1ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."id" = ? LIMIT ?[0m  [["id", 23], ["LIMIT", 1]]
+  [1m[36mClassroom Create (0.5ms)[0m  [1m[32mINSERT INTO "classrooms" ("name", "teacher_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "PP3"], ["teacher_id", 23], ["created_at", "2023-01-07 16:37:14.351142"], ["updated_at", "2023-01-07 16:37:14.351142"]]
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mClassroom Load (0.2ms)[0m  [1m[34mSELECT "classrooms".* FROM "classrooms" WHERE "classrooms"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mStudent Create (0.5ms)[0m  [1m[32mINSERT INTO "students" ("first_name", "second_name", "surname", "age", "description", "admission_number", "classroom_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "Glory"], ["second_name", "Dermen"], ["surname", "Cox"], ["age", 4], ["description", " Glory is an ambitious student who will push herself to meet her personal best at all times"], ["admission_number", 4568], ["classroom_id", 5], ["created_at", "2023-01-07 16:37:14.360650"], ["updated_at", "2023-01-07 16:37:14.360650"]]
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mClassroom Load (0.2ms)[0m  [1m[34mSELECT "classrooms".* FROM "classrooms" WHERE "classrooms"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mStudent Create (0.5ms)[0m  [1m[32mINSERT INTO "students" ("first_name", "second_name", "surname", "age", "description", "admission_number", "classroom_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "Peter"], ["second_name", "Drury"], ["surname", "Fisher"], ["age", 5], ["description", " Peter is hardworking student"], ["admission_number", 4569], ["classroom_id", 6], ["created_at", "2023-01-07 16:37:14.369046"], ["updated_at", "2023-01-07 16:37:14.369046"]]
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mClassroom Load (0.3ms)[0m  [1m[34mSELECT "classrooms".* FROM "classrooms" WHERE "classrooms"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mStudent Create (0.8ms)[0m  [1m[32mINSERT INTO "students" ("first_name", "second_name", "surname", "age", "description", "admission_number", "classroom_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "James"], ["second_name", "Martin"], ["surname", "Fowler"], ["age", 4], ["description", " James is an average and humble student"], ["admission_number", 4570], ["classroom_id", 6], ["created_at", "2023-01-07 16:37:14.379196"], ["updated_at", "2023-01-07 16:37:14.379196"]]
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mParent Create (0.5ms)[0m  [1m[32mINSERT INTO "parents" ("first_name", "last_name", "phone_number", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["first_name", "Jancy"], ["last_name", "Mongy"], ["phone_number", "765478643"], ["password_digest", "[FILTERED]"], ["created_at", "2023-01-07 16:37:14.681376"], ["updated_at", "2023-01-07 16:37:14.681376"]]
+  [1m[36mTRANSACTION (6.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mParent Create (0.7ms)[0m  [1m[32mINSERT INTO "parents" ("first_name", "last_name", "phone_number", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["first_name", "David"], ["last_name", "Makali"], ["phone_number", "743564786"], ["password_digest", "[FILTERED]"], ["created_at", "2023-01-07 16:37:14.985271"], ["updated_at", "2023-01-07 16:37:14.985271"]]
+  [1m[36mTRANSACTION (6.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mParent Create (0.4ms)[0m  [1m[32mINSERT INTO "parents" ("first_name", "last_name", "phone_number", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["first_name", "Rehema"], ["last_name", "Angela"], ["phone_number", "765473564"], ["password_digest", "[FILTERED]"], ["created_at", "2023-01-07 16:37:15.292493"], ["updated_at", "2023-01-07 16:37:15.292493"]]
+  [1m[36mTRANSACTION (5.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mParent Create (0.5ms)[0m  [1m[32mINSERT INTO "parents" ("first_name", "last_name", "phone_number", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["first_name", "James"], ["last_name", "Aquine"], ["phone_number", "789657463"], ["password_digest", "[FILTERED]"], ["created_at", "2023-01-07 16:37:15.599898"], ["updated_at", "2023-01-07 16:37:15.599898"]]
+  [1m[36mTRANSACTION (5.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mParent Create (0.4ms)[0m  [1m[32mINSERT INTO "parents" ("first_name", "last_name", "phone_number", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["first_name", "Steve"], ["last_name", "Havey"], ["phone_number", "7107896457"], ["password_digest", "[FILTERED]"], ["created_at", "2023-01-07 16:37:15.909819"], ["updated_at", "2023-01-07 16:37:15.909819"]]
+  [1m[36mTRANSACTION (6.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mDiscipline Create (0.6ms)[0m  [1m[32mINSERT INTO "disciplines" ("student_id", "title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["student_id", 7], ["title", "Student"], ["description", "Average"], ["created_at", "2023-01-07 16:37:15.939280"], ["updated_at", "2023-01-07 16:37:15.939280"]]
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mDiscipline Create (0.5ms)[0m  [1m[32mINSERT INTO "disciplines" ("student_id", "title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["student_id", 8], ["title", "Student"], ["description", "Excellent"], ["created_at", "2023-01-07 16:37:15.946908"], ["updated_at", "2023-01-07 16:37:15.946908"]]
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mDiscipline Create (0.4ms)[0m  [1m[32mINSERT INTO "disciplines" ("student_id", "title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["student_id", 9], ["title", "Student"], ["description", "Very good"], ["created_at", "2023-01-07 16:37:15.954818"], ["updated_at", "2023-01-07 16:37:15.954818"]]
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mDiscipline Create (0.5ms)[0m  [1m[32mINSERT INTO "disciplines" ("student_id", "title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["student_id", 8], ["title", "Student"], ["description", "Excellent"], ["created_at", "2023-01-07 16:37:15.962593"], ["updated_at", "2023-01-07 16:37:15.962593"]]
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mParent Load (1.0ms)[0m  [1m[34mSELECT "parents".* FROM "parents" WHERE "parents"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mParent Load (0.6ms)[0m  [1m[34mSELECT "parents".* FROM "parents" WHERE "parents"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mParentStudent Create (0.5ms)[0m  [1m[32mINSERT INTO "parent_students" ("parent_id", "student_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["parent_id", 2], ["student_id", 7], ["created_at", "2023-01-07 16:37:15.999080"], ["updated_at", "2023-01-07 16:37:15.999080"]]
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mParent Load (0.3ms)[0m  [1m[34mSELECT "parents".* FROM "parents" WHERE "parents"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mParent Load (0.1ms)[0m  [1m[34mSELECT "parents".* FROM "parents" WHERE "parents"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mParentStudent Create (0.4ms)[0m  [1m[32mINSERT INTO "parent_students" ("parent_id", "student_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["parent_id", 3], ["student_id", 8], ["created_at", "2023-01-07 16:37:16.015539"], ["updated_at", "2023-01-07 16:37:16.015539"]]
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mStudent Load (0.1ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mParent Load (0.1ms)[0m  [1m[34mSELECT "parents".* FROM "parents" WHERE "parents"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mParentStudent Create (0.6ms)[0m  [1m[32mINSERT INTO "parent_students" ("parent_id", "student_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["parent_id", 4], ["student_id", 9], ["created_at", "2023-01-07 16:37:16.025647"], ["updated_at", "2023-01-07 16:37:16.025647"]]
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mParent Load (0.1ms)[0m  [1m[34mSELECT "parents".* FROM "parents" WHERE "parents"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mParentStudent Create (0.5ms)[0m  [1m[32mINSERT INTO "parent_students" ("parent_id", "student_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["parent_id", 5], ["student_id", 8], ["created_at", "2023-01-07 16:37:16.035440"], ["updated_at", "2023-01-07 16:37:16.035440"]]
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[36mcommit transaction[0m
+Started POST "/parents" for 127.0.0.1 at 2023-01-07 19:39:44 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ParentsController#create as */*
+  Parameters: {"first_name"=>"Nicholas", "last_name"=>"Njeru", "phone_number"=>"078323423", "password"=>"[FILTERED]", "parent"=>{"first_name"=>"Nicholas", "last_name"=>"Njeru", "phone_number"=>"078323423"}}
+[31mUnpermitted parameters: :phone_number, :parent. Context: { controller: ParentsController, action: create, request: #<ActionDispatch::Request:0x00007f967ad98600>, params: {"first_name"=>"Nicholas", "last_name"=>"Njeru", "phone_number"=>"078323423", "password"=>"[FILTERED]", "controller"=>"parents", "action"=>"create", "parent"=>{"first_name"=>"Nicholas", "last_name"=>"Njeru", "phone_number"=>"078323423"}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/parents_controller.rb:6:in `create'
+  [1m[36mParent Create (0.7ms)[0m  [1m[32mINSERT INTO "parents" ("first_name", "last_name", "phone_number", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["first_name", "Nicholas"], ["last_name", "Njeru"], ["phone_number", nil], ["password_digest", "[FILTERED]"], ["created_at", "2023-01-07 16:39:45.433407"], ["updated_at", "2023-01-07 16:39:45.433407"]]
+  ↳ app/controllers/parents_controller.rb:6:in `create'
+  [1m[36mTRANSACTION (6.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/parents_controller.rb:6:in `create'
+[active_model_serializers]   [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT "students".* FROM "students" INNER JOIN "parent_students" ON "students"."id" = "parent_students"."student_id" WHERE "parent_students"."parent_id" = ?[0m  [["parent_id", 6]]
+[active_model_serializers]   ↳ app/controllers/parents_controller.rb:8:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (53.41ms)
+Completed 201 Created in 414ms (Views: 56.2ms | ActiveRecord: 10.5ms | Allocations: 60253)
+
+
+Started POST "/parents" for 127.0.0.1 at 2023-01-07 19:39:45 +0300
+Processing by ParentsController#create as */*
+  Parameters: {"first_name"=>"Nicholas", "last_name"=>"Njeru", "phone_number"=>"078323423", "password"=>"[FILTERED]", "parent"=>{"first_name"=>"Nicholas", "last_name"=>"Njeru", "phone_number"=>"078323423"}}
+[31mUnpermitted parameters: :phone_number, :parent. Context: { controller: ParentsController, action: create, request: #<ActionDispatch::Request:0x00007f967d074890>, params: {"first_name"=>"Nicholas", "last_name"=>"Njeru", "phone_number"=>"078323423", "password"=>"[FILTERED]", "controller"=>"parents", "action"=>"create", "parent"=>{"first_name"=>"Nicholas", "last_name"=>"Njeru", "phone_number"=>"078323423"}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/parents_controller.rb:6:in `create'
+  [1m[36mParent Create (0.6ms)[0m  [1m[32mINSERT INTO "parents" ("first_name", "last_name", "phone_number", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["first_name", "Nicholas"], ["last_name", "Njeru"], ["phone_number", nil], ["password_digest", "[FILTERED]"], ["created_at", "2023-01-07 16:39:45.931400"], ["updated_at", "2023-01-07 16:39:45.931400"]]
+  ↳ app/controllers/parents_controller.rb:6:in `create'
+  [1m[36mTRANSACTION (5.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/parents_controller.rb:6:in `create'
+[active_model_serializers]   [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" INNER JOIN "parent_students" ON "students"."id" = "parent_students"."student_id" WHERE "parent_students"."parent_id" = ?[0m  [["parent_id", 7]]
+[active_model_serializers]   ↳ app/controllers/parents_controller.rb:8:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (11.18ms)
+Completed 201 Created in 455ms (Views: 17.8ms | ActiveRecord: 6.9ms | Allocations: 3341)
+
+
+Started POST "/parent_login" for 127.0.0.1 at 2023-01-07 19:40:15 +0300
+Processing by ParentAuthController#create as */*
+  Parameters: {"phone_number"=>"078323423", "password"=>"[FILTERED]", "parent_auth"=>{"phone_number"=>"078323423", "password"=>"[FILTERED]"}}
+  [1m[36mParent Load (0.3ms)[0m  [1m[34mSELECT "parents".* FROM "parents" WHERE "parents"."phone_number" = ? LIMIT ?[0m  [["phone_number", "078323423"], ["LIMIT", 1]]
+  ↳ app/controllers/parent_auth_controller.rb:5:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.1ms)
+Completed 401 Unauthorized in 4ms (Views: 0.9ms | ActiveRecord: 0.3ms | Allocations: 988)
+
+

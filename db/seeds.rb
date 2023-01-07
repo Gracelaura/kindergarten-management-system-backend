@@ -123,14 +123,14 @@ teacher3 = Teacher.create(
     parent1 = Parent.create(
         first_name: "Jancy",
         last_name: "Mongy",
-        phone_number: 765478643,
+        phone_number: "765478643",
         password: "334354",
         
     )
     parent2 = Parent.create(
         first_name: "David",
         last_name: "Makali",
-        phone_number: 743564786,
+        phone_number: "743564786",
         password: "765476",
         
 
@@ -138,21 +138,21 @@ teacher3 = Teacher.create(
     parent3 = Parent.create(
         first_name: "Rehema",
         last_name: "Angela",
-        phone_number: 765473564,
+        phone_number: "765473564",
         password: "89765647",
         
     )
     parent4 = Parent.create(
         first_name: "James",
         last_name: "Aquine",
-        phone_number: 789657463,
+        phone_number: "789657463",
         password: "45362453",
         
     )
     parent5 = Parent.create(
         first_name: "Steve",
         last_name: "Havey",
-        phone_number: 7107896457,
+        phone_number: "7107896457",
         password: "65487835",
         
     )
