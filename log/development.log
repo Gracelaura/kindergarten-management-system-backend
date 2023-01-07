@@ -4631,3 +4631,31 @@ Processing by ParentAuthController#create as */*
 Completed 401 Unauthorized in 4ms (Views: 0.9ms | ActiveRecord: 0.3ms | Allocations: 988)
 
 
+Started POST "/parents" for 127.0.0.1 at 2023-01-07 19:42:50 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ParentsController#create as */*
+  Parameters: {"first_name"=>"Nicholas", "last_name"=>"Njeru", "phone_number"=>"078323423", "password"=>"[FILTERED]", "parent"=>{"first_name"=>"Nicholas", "last_name"=>"Njeru", "phone_number"=>"078323423"}}
+[31mUnpermitted parameter: :parent. Context: { controller: ParentsController, action: create, request: #<ActionDispatch::Request:0x00007fee62a98848>, params: {"first_name"=>"Nicholas", "last_name"=>"Njeru", "phone_number"=>"078323423", "password"=>"[FILTERED]", "controller"=>"parents", "action"=>"create", "parent"=>{"first_name"=>"Nicholas", "last_name"=>"Njeru", "phone_number"=>"078323423"}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/parents_controller.rb:6:in `create'
+  [1m[36mParent Create (1.1ms)[0m  [1m[32mINSERT INTO "parents" ("first_name", "last_name", "phone_number", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["first_name", "Nicholas"], ["last_name", "Njeru"], ["phone_number", "078323423"], ["password_digest", "[FILTERED]"], ["created_at", "2023-01-07 16:42:51.151897"], ["updated_at", "2023-01-07 16:42:51.151897"]]
+  ↳ app/controllers/parents_controller.rb:6:in `create'
+  [1m[36mTRANSACTION (6.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/parents_controller.rb:6:in `create'
+[active_model_serializers]   [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT "students".* FROM "students" INNER JOIN "parent_students" ON "students"."id" = "parent_students"."student_id" WHERE "parent_students"."parent_id" = ?[0m  [["parent_id", 8]]
+[active_model_serializers]   ↳ app/controllers/parents_controller.rb:8:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (31.74ms)
+Completed 201 Created in 375ms (Views: 32.1ms | ActiveRecord: 9.7ms | Allocations: 59909)
+
+
+Started POST "/parent_login" for 127.0.0.1 at 2023-01-07 19:43:12 +0300
+Processing by ParentAuthController#create as */*
+  Parameters: {"phone_number"=>"078323423", "password"=>"[FILTERED]", "parent_auth"=>{"phone_number"=>"078323423", "password"=>"[FILTERED]"}}
+  [1m[36mParent Load (0.4ms)[0m  [1m[34mSELECT "parents".* FROM "parents" WHERE "parents"."phone_number" = ? LIMIT ?[0m  [["phone_number", "078323423"], ["LIMIT", 1]]
+  ↳ app/controllers/parent_auth_controller.rb:5:in `create'
+[active_model_serializers]   [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" INNER JOIN "parent_students" ON "students"."id" = "parent_students"."student_id" WHERE "parent_students"."parent_id" = ?[0m  [["parent_id", 8]]
+[active_model_serializers]   ↳ app/controllers/parent_auth_controller.rb:8:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (2.93ms)
+Completed 202 Accepted in 317ms (Views: 3.7ms | ActiveRecord: 0.6ms | Allocations: 2289)
+
+
