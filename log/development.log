@@ -4659,3 +4659,252 @@ Processing by ParentAuthController#create as */*
 Completed 202 Accepted in 317ms (Views: 3.7ms | ActiveRecord: 0.6ms | Allocations: 2289)
 
 
+Started POST "/login" for 127.0.0.1 at 2023-01-08 11:51:30 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by AuthController#create as */*
+  Parameters: {"email"=>"", "password"=>"[FILTERED]", "auth"=>{"email"=>"", "password"=>"[FILTERED]"}}
+  [1m[36mTeacher Load (0.6ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."email" = ? LIMIT ?[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:6:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.2ms)
+Completed 401 Unauthorized in 34ms (Views: 3.0ms | ActiveRecord: 1.0ms | Allocations: 25704)
+
+
+Started GET "/parent_login" for ::1 at 2023-01-08 11:52:00 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/parent_login"):
+  
+Started GET "/favicon.ico" for ::1 at 2023-01-08 11:52:01 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/parent_login" for ::1 at 2023-01-08 11:52:07 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/parent_login"):
+  
+Started GET "/ws" for ::1 at 2023-01-08 11:52:08 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/ws"):
+  
+Started GET "/manifest.json" for ::1 at 2023-01-08 11:52:08 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/manifest.json"):
+  
+Started GET "/ws" for ::1 at 2023-01-08 11:52:09 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/ws"):
+  
+Started GET "/ws" for ::1 at 2023-01-08 11:52:12 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/ws"):
+  
+Started GET "/ws" for ::1 at 2023-01-08 11:52:16 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/ws"):
+  
+Started GET "/parent%20login" for ::1 at 2023-01-08 11:52:18 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/parent%20login"):
+  
+Started GET "/paren_login" for ::1 at 2023-01-08 11:52:28 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/paren_login"):
+  
+Started GET "/paren_login" for ::1 at 2023-01-08 11:52:37 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/paren_login"):
+  
+Started GET "/parent_login" for ::1 at 2023-01-08 11:52:42 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/parent_login"):
+  
+Started POST "/parent_login" for 127.0.0.1 at 2023-01-08 11:55:34 +0300
+Processing by ParentAuthController#create as */*
+  Parameters: {"phone_number"=>"078323423", "password"=>"[FILTERED]", "parent_auth"=>{"phone_number"=>"078323423", "password"=>"[FILTERED]"}}
+  [1m[36mParent Load (0.9ms)[0m  [1m[34mSELECT "parents".* FROM "parents" WHERE "parents"."phone_number" = ? LIMIT ?[0m  [["phone_number", "078323423"], ["LIMIT", 1]]
+  ↳ app/controllers/parent_auth_controller.rb:5:in `create'
+[active_model_serializers]   [1m[36mStudent Load (0.6ms)[0m  [1m[34mSELECT "students".* FROM "students" INNER JOIN "parent_students" ON "students"."id" = "parent_students"."student_id" WHERE "parent_students"."parent_id" = ?[0m  [["parent_id", 8]]
+[active_model_serializers]   ↳ app/controllers/parent_auth_controller.rb:8:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (50.36ms)
+Completed 202 Accepted in 431ms (Views: 51.0ms | ActiveRecord: 4.2ms | Allocations: 40157)
+
+
+Started POST "/parents" for 127.0.0.1 at 2023-01-08 11:58:33 +0300
+Processing by ParentsController#create as */*
+  Parameters: {"first_name"=>"Muriithi", "last_name"=>"Kibata", "phone_number"=>"078323423", "password"=>"[FILTERED]", "parent"=>{"first_name"=>"Muriithi", "last_name"=>"Kibata", "phone_number"=>"078323423"}}
+[31mUnpermitted parameter: :parent. Context: { controller: ParentsController, action: create, request: #<ActionDispatch::Request:0x00007f949f12dc30>, params: {"first_name"=>"Muriithi", "last_name"=>"Kibata", "phone_number"=>"078323423", "password"=>"[FILTERED]", "controller"=>"parents", "action"=>"create", "parent"=>{"first_name"=>"Muriithi", "last_name"=>"Kibata", "phone_number"=>"078323423"}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/parents_controller.rb:6:in `create'
+  [1m[36mParent Create (0.8ms)[0m  [1m[32mINSERT INTO "parents" ("first_name", "last_name", "phone_number", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["first_name", "Muriithi"], ["last_name", "Kibata"], ["phone_number", "078323423"], ["password_digest", "[FILTERED]"], ["created_at", "2023-01-08 08:58:33.570217"], ["updated_at", "2023-01-08 08:58:33.570217"]]
+  ↳ app/controllers/parents_controller.rb:6:in `create'
+  [1m[36mTRANSACTION (6.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/parents_controller.rb:6:in `create'
+[active_model_serializers]   [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT "students".* FROM "students" INNER JOIN "parent_students" ON "students"."id" = "parent_students"."student_id" WHERE "parent_students"."parent_id" = ?[0m  [["parent_id", 9]]
+[active_model_serializers]   ↳ app/controllers/parents_controller.rb:8:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (4.22ms)
+Completed 201 Created in 324ms (Views: 4.7ms | ActiveRecord: 7.5ms | Allocations: 4098)
+
+
+Started POST "/parents" for 127.0.0.1 at 2023-01-08 12:02:27 +0300
+Processing by ParentsController#create as */*
+  Parameters: {"first_name"=>"Muriithi", "last_name"=>"Kibata", "phone_number"=>"078926723", "password"=>"[FILTERED]", "parent"=>{"first_name"=>"Muriithi", "last_name"=>"Kibata", "phone_number"=>"078926723"}}
+[31mUnpermitted parameter: :parent. Context: { controller: ParentsController, action: create, request: #<ActionDispatch::Request:0x00007f949f195628>, params: {"first_name"=>"Muriithi", "last_name"=>"Kibata", "phone_number"=>"078926723", "password"=>"[FILTERED]", "controller"=>"parents", "action"=>"create", "parent"=>{"first_name"=>"Muriithi", "last_name"=>"Kibata", "phone_number"=>"078926723"}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/parents_controller.rb:6:in `create'
+  [1m[36mParent Create (0.6ms)[0m  [1m[32mINSERT INTO "parents" ("first_name", "last_name", "phone_number", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["first_name", "Muriithi"], ["last_name", "Kibata"], ["phone_number", "078926723"], ["password_digest", "[FILTERED]"], ["created_at", "2023-01-08 09:02:27.832043"], ["updated_at", "2023-01-08 09:02:27.832043"]]
+  ↳ app/controllers/parents_controller.rb:6:in `create'
+  [1m[36mTRANSACTION (5.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/parents_controller.rb:6:in `create'
+[active_model_serializers]   [1m[36mStudent Load (0.4ms)[0m  [1m[34mSELECT "students".* FROM "students" INNER JOIN "parent_students" ON "students"."id" = "parent_students"."student_id" WHERE "parent_students"."parent_id" = ?[0m  [["parent_id", 10]]
+[active_model_serializers]   ↳ app/controllers/parents_controller.rb:8:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (5.43ms)
+Completed 201 Created in 309ms (Views: 5.7ms | ActiveRecord: 6.8ms | Allocations: 3309)
+
+
+Started POST "/parent_login" for 127.0.0.1 at 2023-01-08 12:04:13 +0300
+Processing by ParentAuthController#create as */*
+  Parameters: {"phone_number"=>"078926723", "password"=>"[FILTERED]", "parent_auth"=>{"phone_number"=>"078926723", "password"=>"[FILTERED]"}}
+  [1m[36mParent Load (0.2ms)[0m  [1m[34mSELECT "parents".* FROM "parents" WHERE "parents"."phone_number" = ? LIMIT ?[0m  [["phone_number", "078926723"], ["LIMIT", 1]]
+  ↳ app/controllers/parent_auth_controller.rb:5:in `create'
+[active_model_serializers]   [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" INNER JOIN "parent_students" ON "students"."id" = "parent_students"."student_id" WHERE "parent_students"."parent_id" = ?[0m  [["parent_id", 10]]
+[active_model_serializers]   ↳ app/controllers/parent_auth_controller.rb:8:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (4.48ms)
+Completed 202 Accepted in 328ms (Views: 6.4ms | ActiveRecord: 0.4ms | Allocations: 1849)
+
+
+Started POST "/parent_login" for 127.0.0.1 at 2023-01-08 12:09:19 +0300
+Processing by ParentAuthController#create as */*
+  Parameters: {"phone_number"=>"078926723", "password"=>"[FILTERED]", "parent_auth"=>{"phone_number"=>"078926723", "password"=>"[FILTERED]"}}
+  [1m[36mParent Load (0.2ms)[0m  [1m[34mSELECT "parents".* FROM "parents" WHERE "parents"."phone_number" = ? LIMIT ?[0m  [["phone_number", "078926723"], ["LIMIT", 1]]
+  ↳ app/controllers/parent_auth_controller.rb:5:in `create'
+[active_model_serializers]   [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" INNER JOIN "parent_students" ON "students"."id" = "parent_students"."student_id" WHERE "parent_students"."parent_id" = ?[0m  [["parent_id", 10]]
+[active_model_serializers]   ↳ app/controllers/parent_auth_controller.rb:8:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (10.48ms)
+Completed 202 Accepted in 306ms (Views: 10.8ms | ActiveRecord: 0.4ms | Allocations: 1861)
+
+
+Started POST "/parent_login" for 127.0.0.1 at 2023-01-08 12:12:29 +0300
+Processing by ParentAuthController#create as */*
+  Parameters: {"phone_number"=>"078", "password"=>"[FILTERED]", "parent_auth"=>{"phone_number"=>"078", "password"=>"[FILTERED]"}}
+  [1m[36mParent Load (0.2ms)[0m  [1m[34mSELECT "parents".* FROM "parents" WHERE "parents"."phone_number" = ? LIMIT ?[0m  [["phone_number", "078"], ["LIMIT", 1]]
+  ↳ app/controllers/parent_auth_controller.rb:5:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.12ms)
+Completed 401 Unauthorized in 24ms (Views: 16.3ms | ActiveRecord: 0.2ms | Allocations: 600)
+
+
+Started POST "/login" for 127.0.0.1 at 2023-01-08 12:12:59 +0300
+Processing by AuthController#create as */*
+  Parameters: {"email"=>"07892", "password"=>"[FILTERED]", "auth"=>{"email"=>"07892", "password"=>"[FILTERED]"}}
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."email" = ? LIMIT ?[0m  [["email", "07892"], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:6:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.09ms)
+Completed 401 Unauthorized in 2ms (Views: 0.6ms | ActiveRecord: 0.2ms | Allocations: 601)
+
+
+Started POST "/login" for 127.0.0.1 at 2023-01-08 12:13:41 +0300
+Processing by AuthController#create as */*
+  Parameters: {"email"=>"timothy@gmail.com", "password"=>"[FILTERED]", "auth"=>{"email"=>"timothy@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."email" = ? LIMIT ?[0m  [["email", "timothy@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:6:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.3ms)
+Completed 202 Accepted in 331ms (Views: 0.9ms | ActiveRecord: 1.0ms | Allocations: 17079)
+
+
+Started POST "/login" for 127.0.0.1 at 2023-01-08 12:15:37 +0300
+Processing by AuthController#create as */*
+  Parameters: {"email"=>"timothy@gmail.com", "password"=>"[FILTERED]", "auth"=>{"email"=>"timothy@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."email" = ? LIMIT ?[0m  [["email", "timothy@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:6:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.26ms)
+Completed 202 Accepted in 298ms (Views: 0.9ms | ActiveRecord: 0.2ms | Allocations: 791)
+
+
+Started POST "/login" for 127.0.0.1 at 2023-01-08 12:19:40 +0300
+Processing by AuthController#create as */*
+  Parameters: {"email"=>"timothy@gmail.com", "password"=>"[FILTERED]", "auth"=>{"email"=>"timothy@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mTeacher Load (0.3ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."email" = ? LIMIT ?[0m  [["email", "timothy@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:6:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.23ms)
+Completed 202 Accepted in 307ms (Views: 0.7ms | ActiveRecord: 0.3ms | Allocations: 791)
+
+
+Started POST "/login" for 127.0.0.1 at 2023-01-08 12:22:27 +0300
+Processing by AuthController#create as */*
+  Parameters: {"email"=>"timothy@gmail.com", "password"=>"[FILTERED]", "auth"=>{"email"=>"timothy@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."email" = ? LIMIT ?[0m  [["email", "timothy@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:6:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.24ms)
+Completed 202 Accepted in 324ms (Views: 0.9ms | ActiveRecord: 0.2ms | Allocations: 795)
+
+
+Started GET "/favicon.ico" for ::1 at 2023-01-08 13:28:30 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started POST "/login" for 127.0.0.1 at 2023-01-08 13:30:02 +0300
+Processing by AuthController#create as */*
+  Parameters: {"email"=>"timothy@gmail.com", "password"=>"[FILTERED]", "auth"=>{"email"=>"timothy@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."email" = ? LIMIT ?[0m  [["email", "timothy@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:6:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (9.0ms)
+Completed 202 Accepted in 359ms (Views: 11.1ms | ActiveRecord: 1.4ms | Allocations: 25041)
+
+
+Started GET "/attendances" for ::1 at 2023-01-08 15:10:24 +0300
+Started GET "/students" for ::1 at 2023-01-08 15:10:24 +0300
+Processing by AttendancesController#index as HTML
+  
+SyntaxError (/Users/Mithamo/moringa_projects/kindergarten-management-system-backend/app/controllers/students_controller.rb:33: syntax error, unexpected ')', expecting literal content or terminator or tSTRING_DBEG or tSTRING_DVAR
+...ender,:age,:admission_number,:)
+...                              ^
+/Users/Mithamo/moringa_projects/kindergarten-management-system-backend/app/controllers/students_controller.rb:40: syntax error, unexpected ':', expecting =>
+    render json: {errors : invalid.record.errors.full_m...
+                         ^
+/Users/Mithamo/moringa_projects/kindergarten-management-system-backend/app/controllers/students_controller.rb:40: syntax error, unexpected '}', expecting `end'
+...id.record.errors.full_messages}, status: :unprocessable_enti...
+...                              ^
+/Users/Mithamo/moringa_projects/kindergarten-management-system-backend/app/controllers/students_controller.rb:42: syntax error, unexpected end-of-input, expecting `end'):
+  
+app/controllers/students_controller.rb:33: syntax error, unexpected ')', expecting literal content or terminator or tSTRING_DBEG or tSTRING_DVAR
+app/controllers/students_controller.rb:40: syntax error, unexpected ':', expecting =>
+app/controllers/students_controller.rb:40: syntax error, unexpected '}', expecting `end'
+app/controllers/students_controller.rb:42: syntax error, unexpected end-of-input, expecting `end'
+app/controllers/students_controller.rb:33: syntax error, unexpected ')', expecting literal content or terminator or tSTRING_DBEG or tSTRING_DVAR
+app/controllers/students_controller.rb:40: syntax error, unexpected ':', expecting =>
+app/controllers/students_controller.rb:40: syntax error, unexpected '}', expecting `end'
+app/controllers/students_controller.rb:42: syntax error, unexpected end-of-input, expecting `end'
+  [1m[36mAttendance Load (0.1ms)[0m  [1m[34mSELECT "attendances".* FROM "attendances"[0m
+  ↳ app/controllers/attendances_controller.rb:4:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.12ms)
+Completed 200 OK in 146ms (Views: 4.4ms | ActiveRecord: 0.6ms | Allocations: 46978)
+
+
+Started GET "/attendances" for ::1 at 2023-01-08 15:10:25 +0300
+Processing by AttendancesController#index as HTML
+  [1m[36mAttendance Load (0.1ms)[0m  [1m[34mSELECT "attendances".* FROM "attendances"[0m
+  ↳ app/controllers/attendances_controller.rb:4:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.17ms)
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.1ms | Allocations: 961)
+
+
+Started GET "/students" for ::1 at 2023-01-08 15:10:25 +0300
+  
+SyntaxError (/Users/Mithamo/moringa_projects/kindergarten-management-system-backend/app/controllers/students_controller.rb:33: syntax error, unexpected ')', expecting literal content or terminator or tSTRING_DBEG or tSTRING_DVAR
+...ender,:age,:admission_number,:)
+...                              ^
+/Users/Mithamo/moringa_projects/kindergarten-management-system-backend/app/controllers/students_controller.rb:40: syntax error, unexpected ':', expecting =>
+    render json: {errors : invalid.record.errors.full_m...
+                         ^
+/Users/Mithamo/moringa_projects/kindergarten-management-system-backend/app/controllers/students_controller.rb:40: syntax error, unexpected '}', expecting `end'
+...id.record.errors.full_messages}, status: :unprocessable_enti...
+...                              ^
+/Users/Mithamo/moringa_projects/kindergarten-management-system-backend/app/controllers/students_controller.rb:42: syntax error, unexpected end-of-input, expecting `end'):
+  
+app/controllers/students_controller.rb:33: syntax error, unexpected ')', expecting literal content or terminator or tSTRING_DBEG or tSTRING_DVAR
+app/controllers/students_controller.rb:40: syntax error, unexpected ':', expecting =>
+app/controllers/students_controller.rb:40: syntax error, unexpected '}', expecting `end'
+app/controllers/students_controller.rb:42: syntax error, unexpected end-of-input, expecting `end'
+app/controllers/students_controller.rb:33: syntax error, unexpected ')', expecting literal content or terminator or tSTRING_DBEG or tSTRING_DVAR
+app/controllers/students_controller.rb:40: syntax error, unexpected ':', expecting =>
+app/controllers/students_controller.rb:40: syntax error, unexpected '}', expecting `end'
+app/controllers/students_controller.rb:42: syntax error, unexpected end-of-input, expecting `end'
