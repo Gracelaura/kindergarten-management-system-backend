@@ -25,7 +25,7 @@ class TeachersController < ApplicationController
     end
 
     def teacher_params
-    params.permit(:first_name,:career_name,:last_name,:email,:phone_number,:password,:gender)
+    params.permit(:first_name, :career_name, :last_name, :email, :phone_number,:password, :gender)
     end
     
     def invalid_message(invalid)
