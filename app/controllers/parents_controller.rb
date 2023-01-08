@@ -1,7 +1,7 @@
 class ParentsController < ApplicationController
     rescue_from ActiveRecord::RecordInvalid, with: :invalid_message
     rescue_from ActiveRecord::RecordNotFound, with: :not_found_message
-    skip_before_action :authorize, only: [:create]
+    skip_before_action :authorize, only: [:create, :index]
     def create 
     parent = Parent.create!(parent_params)
     token = encode_token({parent_id: parent.id})
@@ -19,7 +19,7 @@ class ParentsController < ApplicationController
     
     private
     def parent_params
-    params.permit(:first_name,:last_name,:p_number,:password,:password_confirmation)
+    params.permit(:first_name,:last_name,:phone_number,:password)
     end
     def invalid_message(invalid)
         render json: {errors: invalid.record.errors.full_messages}, status: :unprocessable_entity
