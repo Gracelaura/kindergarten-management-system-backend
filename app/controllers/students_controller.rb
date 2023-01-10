@@ -30,13 +30,13 @@ class StudentsController < ApplicationController
     
         private
         def student_params
-        params.permit(:first_name,:second_name,:surname,:classroom_id,:gender,:age,:admission_number,:)
+        params.permit(:first_name,:second_name,:surname,:classroom_id,:gender,:age,:admission_number)
         end
         def not_found_message
             render json: {error: "Student Not Found"}, status: :not_found
         end
 
         def record_invalid invalid
-    render json: {errors : invalid.record.errors.full_messages}, status: :unprocessable_entity
+    render json: {errors: invalid.record.errors.full_messages}, status: :unprocessable_entity
         end
 end
