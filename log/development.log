@@ -212,3 +212,32 @@ Filter chain halted as :authorize rendered or redirected
 Completed 401 Unauthorized in 3ms (Views: 2.3ms | Allocations: 855)
 
 
+Started GET "/students" for 127.0.0.1 at 2023-01-10 11:39:38 +0300
+Processing by StudentsController#index as HTML
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.1ms)
+Filter chain halted as :authorize rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 1.1ms | Allocations: 196)
+
+
+Started GET "/parentas" for 127.0.0.1 at 2023-01-10 11:39:46 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/parentas"):
+  
+Started GET "/parents" for 127.0.0.1 at 2023-01-10 11:39:53 +0300
+Processing by ParentsController#index as HTML
+  [1m[36mParent Load (0.3ms)[0m  [1m[34mSELECT "parents".* FROM "parents"[0m
+  ↳ app/controllers/parents_controller.rb:12:in `index'
+[active_model_serializers]   [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" INNER JOIN "parent_students" ON "students"."id" = "parent_students"."student_id" WHERE "parent_students"."parent_id" = ?[0m  [["parent_id", 1]]
+[active_model_serializers]   ↳ app/controllers/parents_controller.rb:12:in `index'
+[active_model_serializers]   [1m[36mStudent Load (0.1ms)[0m  [1m[34mSELECT "students".* FROM "students" INNER JOIN "parent_students" ON "students"."id" = "parent_students"."student_id" WHERE "parent_students"."parent_id" = ?[0m  [["parent_id", 2]]
+[active_model_serializers]   ↳ app/controllers/parents_controller.rb:12:in `index'
+[active_model_serializers]   [1m[36mStudent Load (0.1ms)[0m  [1m[34mSELECT "students".* FROM "students" INNER JOIN "parent_students" ON "students"."id" = "parent_students"."student_id" WHERE "parent_students"."parent_id" = ?[0m  [["parent_id", 3]]
+[active_model_serializers]   ↳ app/controllers/parents_controller.rb:12:in `index'
+[active_model_serializers]   [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" INNER JOIN "parent_students" ON "students"."id" = "parent_students"."student_id" WHERE "parent_students"."parent_id" = ?[0m  [["parent_id", 4]]
+[active_model_serializers]   ↳ app/controllers/parents_controller.rb:12:in `index'
+[active_model_serializers]   [1m[36mStudent Load (0.1ms)[0m  [1m[34mSELECT "students".* FROM "students" INNER JOIN "parent_students" ON "students"."id" = "parent_students"."student_id" WHERE "parent_students"."parent_id" = ?[0m  [["parent_id", 5]]
+[active_model_serializers]   ↳ app/controllers/parents_controller.rb:12:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (76.53ms)
+Completed 200 OK in 143ms (Views: 126.8ms | ActiveRecord: 3.5ms | Allocations: 66394)
+
+

@@ -1,7 +1,7 @@
 class ParentsController < ApplicationController
     rescue_from ActiveRecord::RecordInvalid, with: :invalid_message
     rescue_from ActiveRecord::RecordNotFound, with: :not_found_message
-    skip_before_action :authorize, only: [:create, :index]
+    skip_before_action :authorize, only: [:create]
     def create 
     parent = Parent.create!(parent_params)
     token = encode_token({parent_id: parent.id})
