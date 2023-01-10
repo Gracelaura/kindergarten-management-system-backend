@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_01_03_131610) do
+ActiveRecord::Schema[7.0].define(version: 2023_01_07_162905) do
   create_table "attendances", force: :cascade do |t|
     t.integer "classroom_id"
     t.integer "student_id"
@@ -46,7 +46,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_03_131610) do
   create_table "parents", force: :cascade do |t|
     t.string "first_name"
     t.string "last_name"
-    t.integer "phone_number"
+    t.string "phone_number"
     t.string "password_digest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
