@@ -1,3 +1,3 @@
 class ParentStudentSerializer < ActiveModel::Serializer
-  attributes :id
+  attributes :id, :parent_id, :student_id
 end
