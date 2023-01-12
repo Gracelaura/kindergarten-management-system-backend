@@ -241,3 +241,223 @@ Processing by ParentsController#index as HTML
 Completed 200 OK in 143ms (Views: 126.8ms | ActiveRecord: 3.5ms | Allocations: 66394)
 
 
+Started POST "/login" for ::1 at 2023-01-12 12:26:33 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by AuthController#create as */*
+  Parameters: {"email"=>"timothy2@gmail.com", "password"=>"[FILTERED]", "auth"=>{"email"=>"timothy2@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mTeacher Load (0.4ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."email" = ? LIMIT ?[0m  [["email", "timothy2@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:6:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.24ms)
+Completed 401 Unauthorized in 389ms (Views: 53.3ms | ActiveRecord: 1.0ms | Allocations: 26754)
+
+
+Started POST "/login" for ::1 at 2023-01-12 12:26:55 +0300
+Processing by AuthController#create as */*
+  Parameters: {"email"=>"timothy@gmail.com", "password"=>"[FILTERED]", "auth"=>{"email"=>"timothy@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."email" = ? LIMIT ?[0m  [["email", "timothy@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:6:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (93.96ms)
+Completed 202 Accepted in 797ms (Views: 94.6ms | ActiveRecord: 0.8ms | Allocations: 20630)
+
+
+Started GET "/students/1" for ::1 at 2023-01-12 12:27:32 +0300
+Processing by StudentsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mTeacher Load (0.3ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+  [1m[36mParent Load (0.3ms)[0m  [1m[34mSELECT "parents".* FROM "parents" WHERE "parents"."id" = ? LIMIT ?[0m  [["id", 40], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:34:in `current_parent'
+  [1m[36mCACHE Teacher Load (0.0ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.15ms)
+Filter chain halted as :authorize rendered or redirected
+Completed 401 Unauthorized in 117ms (Views: 11.8ms | ActiveRecord: 1.1ms | Allocations: 7033)
+
+
+Started GET "/students/1" for ::1 at 2023-01-12 12:27:43 +0300
+Processing by StudentsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+  [1m[36mParent Load (0.2ms)[0m  [1m[34mSELECT "parents".* FROM "parents" WHERE "parents"."id" = ? LIMIT ?[0m  [["id", 40], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:34:in `current_parent'
+  [1m[36mCACHE Teacher Load (0.0ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.1ms)
+Filter chain halted as :authorize rendered or redirected
+Completed 401 Unauthorized in 11ms (Views: 4.6ms | ActiveRecord: 0.4ms | Allocations: 2157)
+
+
+Started GET "/students/1" for ::1 at 2023-01-12 12:28:11 +0300
+Processing by StudentsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mTeacher Load (0.3ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+  [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/students_controller.rb:10:in `show'
+  [1m[36mCACHE Teacher Load (0.0ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.83ms)
+Completed 201 Created in 211ms (Views: 45.4ms | ActiveRecord: 4.2ms | Allocations: 25796)
+
+
+Started GET "/students/1" for ::1 at 2023-01-12 12:28:34 +0300
+Processing by StudentsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mTeacher Load (0.3ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/students_controller.rb:10:in `show'
+  [1m[36mCACHE Teacher Load (0.0ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+[active_model_serializers] Rendered StudentSerializer with ActiveModelSerializers::Adapter::Attributes (0.67ms)
+Completed 201 Created in 62ms (Views: 6.4ms | ActiveRecord: 5.9ms | Allocations: 16084)
+
+
+Started GET "/students" for ::1 at 2023-01-12 12:29:01 +0300
+Processing by StudentsController#index as */*
+  [1m[36mTeacher Load (0.3ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+  [1m[36mParent Load (0.3ms)[0m  [1m[34mSELECT "parents".* FROM "parents" WHERE "parents"."id" = ? LIMIT ?[0m  [["id", 40], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:34:in `current_parent'
+  [1m[36mCACHE Teacher Load (0.0ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.11ms)
+Filter chain halted as :authorize rendered or redirected
+Completed 401 Unauthorized in 35ms (Views: 4.9ms | ActiveRecord: 1.4ms | Allocations: 7195)
+
+
+Started GET "/students" for ::1 at 2023-01-12 12:29:12 +0300
+Processing by StudentsController#index as */*
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+  [1m[36mCACHE Teacher Load (0.1ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+  [1m[36mStudent Load (0.4ms)[0m  [1m[34mSELECT "students".* FROM "students"[0m
+  ↳ app/controllers/students_controller.rb:6:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.61ms)
+Completed 201 Created in 23ms (Views: 17.1ms | ActiveRecord: 0.6ms | Allocations: 2520)
+
+
+Started POST "/login" for ::1 at 2023-01-12 12:39:59 +0300
+Processing by AuthController#create as */*
+  Parameters: {"email"=>"timothy@gmail.com", "password"=>"[FILTERED]", "auth"=>{"email"=>"timothy@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mTeacher Load (0.3ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."email" = ? LIMIT ?[0m  [["email", "timothy@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:6:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.33ms)
+Completed 202 Accepted in 476ms (Views: 1.1ms | ActiveRecord: 0.8ms | Allocations: 1775)
+
+
+Started POST "/login" for ::1 at 2023-01-12 12:44:59 +0300
+Processing by AuthController#create as */*
+  Parameters: {"email"=>"timothy@gmail.com", "password"=>"[FILTERED]", "auth"=>{"email"=>"timothy@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mTeacher Load (0.4ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."email" = ? LIMIT ?[0m  [["email", "timothy@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:6:in `create'
+[active_model_serializers]   [1m[36mClassroom Load (0.3ms)[0m  [1m[34mSELECT "classrooms".* FROM "classrooms" WHERE "classrooms"."teacher_id" = ? LIMIT ?[0m  [["teacher_id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/auth_controller.rb:9:in `create'
+[active_model_serializers]   [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."classroom_id" = ?[0m  [["classroom_id", 2]]
+[active_model_serializers]   ↳ app/controllers/auth_controller.rb:9:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (695.45ms)
+Completed 202 Accepted in 1257ms (Views: 701.8ms | ActiveRecord: 5.8ms | Allocations: 43133)
+
+
+Started POST "/login" for ::1 at 2023-01-12 13:01:53 +0300
+Processing by AuthController#create as */*
+  Parameters: {"email"=>"timothy@gmail.com", "password"=>"[FILTERED]", "auth"=>{"email"=>"timothy@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mTeacher Load (0.5ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."email" = ? LIMIT ?[0m  [["email", "timothy@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:6:in `create'
+[active_model_serializers]   [1m[36mClassroom Load (0.3ms)[0m  [1m[34mSELECT "classrooms".* FROM "classrooms" WHERE "classrooms"."teacher_id" = ? LIMIT ?[0m  [["teacher_id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/auth_controller.rb:9:in `create'
+[active_model_serializers]   [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."classroom_id" = ?[0m  [["classroom_id", 2]]
+[active_model_serializers]   ↳ app/controllers/auth_controller.rb:9:in `create'
+[active_model_serializers]   [1m[36mAttendance Load (0.3ms)[0m  [1m[34mSELECT "attendances".* FROM "attendances" WHERE "attendances"."classroom_id" = ?[0m  [["classroom_id", 2]]
+[active_model_serializers]   ↳ app/controllers/auth_controller.rb:9:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (150.46ms)
+Completed 202 Accepted in 561ms (Views: 149.9ms | ActiveRecord: 3.2ms | Allocations: 25863)
+
+
+Started POST "/attendances" for ::1 at 2023-01-12 13:03:59 +0300
+Processing by AttendancesController#create as */*
+  Parameters: {"classroom_id"=>1, "student_name"=>"Glory Sparks", "student_id"=>1, "status"=>"Present", "date"=>"2023-01-04", "attendance"=>{"classroom_id"=>1, "student_id"=>1, "student_name"=>"Glory Sparks", "status"=>"Present", "date"=>"2023-01-04"}}
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+[31mUnpermitted parameter: :attendance. Context: { controller: AttendancesController, action: create, request: #<ActionDispatch::Request:0x00007f47b0384c68>, params: {"classroom_id"=>1, "student_name"=>"Glory Sparks", "student_id"=>1, "status"=>"Present", "date"=>"2023-01-04", "controller"=>"attendances", "action"=>"create", "attendance"=>{"classroom_id"=>1, "student_id"=>1, "student_name"=>"Glory Sparks", "status"=>"Present", "date"=>"2023-01-04"}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/attendances_controller.rb:8:in `create'
+  [1m[36mClassroom Load (0.2ms)[0m  [1m[34mSELECT "classrooms".* FROM "classrooms" WHERE "classrooms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/attendances_controller.rb:8:in `create'
+  [1m[36mAttendance Create (26.3ms)[0m  [1m[32mINSERT INTO "attendances" ("classroom_id", "student_id", "student_name", "status", "date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["classroom_id", 1], ["student_id", 1], ["student_name", "Glory Sparks"], ["status", "Present"], ["date", 2023], ["created_at", "2023-01-12 10:03:59.636590"], ["updated_at", "2023-01-12 10:03:59.636590"]]
+  ↳ app/controllers/attendances_controller.rb:8:in `create'
+  [1m[36mTRANSACTION (245.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/attendances_controller.rb:8:in `create'
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+[active_model_serializers] Rendered AttendanceSerializer with ActiveModelSerializers::Adapter::Attributes (0.52ms)
+Completed 201 Created in 366ms (Views: 56.2ms | ActiveRecord: 273.1ms | Allocations: 20872)
+
+
+Started POST "/login" for ::1 at 2023-01-12 13:04:18 +0300
+Processing by AuthController#create as */*
+  Parameters: {"email"=>"timothy@gmail.com", "password"=>"[FILTERED]", "auth"=>{"email"=>"timothy@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."email" = ? LIMIT ?[0m  [["email", "timothy@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:6:in `create'
+[active_model_serializers]   [1m[36mClassroom Load (0.2ms)[0m  [1m[34mSELECT "classrooms".* FROM "classrooms" WHERE "classrooms"."teacher_id" = ? LIMIT ?[0m  [["teacher_id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/auth_controller.rb:9:in `create'
+[active_model_serializers]   [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."classroom_id" = ?[0m  [["classroom_id", 2]]
+[active_model_serializers]   ↳ app/controllers/auth_controller.rb:9:in `create'
+[active_model_serializers]   [1m[36mAttendance Load (0.1ms)[0m  [1m[34mSELECT "attendances".* FROM "attendances" WHERE "attendances"."classroom_id" = ?[0m  [["classroom_id", 2]]
+[active_model_serializers]   ↳ app/controllers/auth_controller.rb:9:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (11.04ms)
+Completed 202 Accepted in 418ms (Views: 11.3ms | ActiveRecord: 0.7ms | Allocations: 3855)
+
+
+Started POST "/login" for ::1 at 2023-01-12 13:04:27 +0300
+Processing by AuthController#create as */*
+  Parameters: {"email"=>"timothy@gmail.com", "password"=>"[FILTERED]", "auth"=>{"email"=>"timothy@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."email" = ? LIMIT ?[0m  [["email", "timothy@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:6:in `create'
+[active_model_serializers]   [1m[36mClassroom Load (0.2ms)[0m  [1m[34mSELECT "classrooms".* FROM "classrooms" WHERE "classrooms"."teacher_id" = ? LIMIT ?[0m  [["teacher_id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/auth_controller.rb:9:in `create'
+[active_model_serializers]   [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."classroom_id" = ?[0m  [["classroom_id", 2]]
+[active_model_serializers]   ↳ app/controllers/auth_controller.rb:9:in `create'
+[active_model_serializers]   [1m[36mAttendance Load (0.2ms)[0m  [1m[34mSELECT "attendances".* FROM "attendances" WHERE "attendances"."classroom_id" = ?[0m  [["classroom_id", 2]]
+[active_model_serializers]   ↳ app/controllers/auth_controller.rb:9:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (10.18ms)
+Completed 202 Accepted in 422ms (Views: 10.2ms | ActiveRecord: 0.8ms | Allocations: 3629)
+
+
+Started POST "/attendances" for ::1 at 2023-01-12 13:05:33 +0300
+Processing by AttendancesController#create as */*
+  Parameters: {"classroom_id"=>2, "student_name"=>"Glory Sparks", "student_id"=>1, "status"=>"Present", "date"=>"2023-01-04", "attendance"=>{"classroom_id"=>2, "student_id"=>1, "student_name"=>"Glory Sparks", "status"=>"Present", "date"=>"2023-01-04"}}
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+[31mUnpermitted parameter: :attendance. Context: { controller: AttendancesController, action: create, request: #<ActionDispatch::Request:0x00007f47bd1c4970>, params: {"classroom_id"=>2, "student_name"=>"Glory Sparks", "student_id"=>1, "status"=>"Present", "date"=>"2023-01-04", "controller"=>"attendances", "action"=>"create", "attendance"=>{"classroom_id"=>2, "student_id"=>1, "student_name"=>"Glory Sparks", "status"=>"Present", "date"=>"2023-01-04"}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/attendances_controller.rb:8:in `create'
+  [1m[36mClassroom Load (0.2ms)[0m  [1m[34mSELECT "classrooms".* FROM "classrooms" WHERE "classrooms"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/attendances_controller.rb:8:in `create'
+  [1m[36mAttendance Create (1.6ms)[0m  [1m[32mINSERT INTO "attendances" ("classroom_id", "student_id", "student_name", "status", "date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["classroom_id", 2], ["student_id", 1], ["student_name", "Glory Sparks"], ["status", "Present"], ["date", 2023], ["created_at", "2023-01-12 10:05:33.685018"], ["updated_at", "2023-01-12 10:05:33.685018"]]
+  ↳ app/controllers/attendances_controller.rb:8:in `create'
+  [1m[36mTRANSACTION (134.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/attendances_controller.rb:8:in `create'
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+[active_model_serializers] Rendered AttendanceSerializer with ActiveModelSerializers::Adapter::Attributes (0.41ms)
+Completed 201 Created in 173ms (Views: 3.3ms | ActiveRecord: 136.5ms | Allocations: 4257)
+
+
+Started POST "/login" for ::1 at 2023-01-12 13:05:41 +0300
+Processing by AuthController#create as */*
+  Parameters: {"email"=>"timothy@gmail.com", "password"=>"[FILTERED]", "auth"=>{"email"=>"timothy@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."email" = ? LIMIT ?[0m  [["email", "timothy@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:6:in `create'
+[active_model_serializers]   [1m[36mClassroom Load (0.2ms)[0m  [1m[34mSELECT "classrooms".* FROM "classrooms" WHERE "classrooms"."teacher_id" = ? LIMIT ?[0m  [["teacher_id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/auth_controller.rb:9:in `create'
+[active_model_serializers]   [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."classroom_id" = ?[0m  [["classroom_id", 2]]
+[active_model_serializers]   ↳ app/controllers/auth_controller.rb:9:in `create'
+[active_model_serializers]   [1m[36mAttendance Load (0.2ms)[0m  [1m[34mSELECT "attendances".* FROM "attendances" WHERE "attendances"."classroom_id" = ?[0m  [["classroom_id", 2]]
+[active_model_serializers]   ↳ app/controllers/auth_controller.rb:9:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (10.93ms)
+Completed 202 Accepted in 432ms (Views: 11.0ms | ActiveRecord: 0.8ms | Allocations: 3786)
+
+
