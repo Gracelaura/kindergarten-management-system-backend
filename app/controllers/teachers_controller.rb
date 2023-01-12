@@ -15,7 +15,7 @@ class TeachersController < ApplicationController
     end
     def show
         teacher = Teacher.find(params[:id])
-          render json: teacher, status: :ok
+          render json: teacher,  status: :ok
     end
 
     private
