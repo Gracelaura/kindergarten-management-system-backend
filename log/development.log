@@ -4908,3 +4908,190 @@ app/controllers/students_controller.rb:33: syntax error, unexpected ')', expecti
 app/controllers/students_controller.rb:40: syntax error, unexpected ':', expecting =>
 app/controllers/students_controller.rb:40: syntax error, unexpected '}', expecting `end'
 app/controllers/students_controller.rb:42: syntax error, unexpected end-of-input, expecting `end'
+Started POST "/classrooms" for 127.0.0.1 at 2023-01-12 11:38:01 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+AbstractController::ActionNotFound (The action 'create' could not be found for ClassroomsController):
+  
+actionpack (7.0.4) lib/abstract_controller/base.rb:146:in `process'
+actionpack (7.0.4) lib/action_controller/metal.rb:188:in `dispatch'
+actionpack (7.0.4) lib/action_controller/metal.rb:251:in `dispatch'
+actionpack (7.0.4) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (7.0.4) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (7.0.4) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (7.0.4) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (7.0.4) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (7.0.4) lib/action_dispatch/routing/route_set.rb:852:in `call'
+rack (2.2.5) lib/rack/etag.rb:27:in `call'
+rack (2.2.5) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.5) lib/rack/head.rb:12:in `call'
+activerecord (7.0.4) lib/active_record/migration.rb:603:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.4) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.4) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.4) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.4) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (7.0.4) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (7.0.4) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (7.0.4) lib/rails/rack/logger.rb:25:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.5) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.5) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (7.0.4) lib/rails/engine.rb:530:in `call'
+puma (5.6.5) lib/puma/configuration.rb:252:in `call'
+puma (5.6.5) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.5) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.5) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.5) lib/puma/server.rb:443:in `process_client'
+puma (5.6.5) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started POST "/login" for 127.0.0.1 at 2023-01-12 11:38:12 +0300
+Processing by AuthController#create as */*
+  Parameters: {"email"=>"timothy@gmail.com", "password"=>"[FILTERED]", "auth"=>{"email"=>"timothy@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mTeacher Load (0.3ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."email" = ? LIMIT ?[0m  [["email", "timothy@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:6:in `create'
+Completed 500 Internal Server Error in 353ms (ActiveRecord: 1.3ms | Allocations: 41436)
+
+
+  
+SyntaxError (/Users/Mithamo/moringa_projects/kindergarten-management-system-backend/app/serializers/teacher_login_serializer.rb:5: syntax error, unexpected `end', expecting end-of-input):
+  
+app/serializers/teacher_login_serializer.rb:5: syntax error, unexpected `end', expecting end-of-input
+app/serializers/teacher_login_serializer.rb:5: syntax error, unexpected `end', expecting end-of-input
+app/controllers/auth_controller.rb:9:in `create'
+Started POST "/login" for 127.0.0.1 at 2023-01-12 11:38:44 +0300
+Processing by AuthController#create as */*
+  Parameters: {"email"=>"timothy@gmail.com", "password"=>"[FILTERED]", "auth"=>{"email"=>"timothy@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mTeacher Load (0.4ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."email" = ? LIMIT ?[0m  [["email", "timothy@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:6:in `create'
+[active_model_serializers]   [1m[36mClassroom Load (0.3ms)[0m  [1m[34mSELECT "classrooms".* FROM "classrooms" WHERE "classrooms"."teacher_id" = ? LIMIT ?[0m  [["teacher_id", 23], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/auth_controller.rb:9:in `create'
+[active_model_serializers]   [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."classroom_id" = ?[0m  [["classroom_id", 6]]
+[active_model_serializers]   ↳ app/controllers/auth_controller.rb:9:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (77.46ms)
+Completed 202 Accepted in 400ms (Views: 76.5ms | ActiveRecord: 5.4ms | Allocations: 57858)
+
+
+Started POST "/login" for 127.0.0.1 at 2023-01-12 11:39:34 +0300
+Processing by AuthController#create as */*
+  Parameters: {"email"=>"timothy@gmail.com", "password"=>"[FILTERED]", "auth"=>{"email"=>"timothy@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mTeacher Load (0.3ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."email" = ? LIMIT ?[0m  [["email", "timothy@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:6:in `create'
+[active_model_serializers]   [1m[36mClassroom Load (0.1ms)[0m  [1m[34mSELECT "classrooms".* FROM "classrooms" WHERE "classrooms"."teacher_id" = ? LIMIT ?[0m  [["teacher_id", 23], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/auth_controller.rb:9:in `create'
+[active_model_serializers]   [1m[36mStudent Load (0.6ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."classroom_id" = ?[0m  [["classroom_id", 6]]
+[active_model_serializers]   ↳ app/controllers/auth_controller.rb:9:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (52.02ms)
+Completed 202 Accepted in 378ms (Views: 50.2ms | ActiveRecord: 5.4ms | Allocations: 22387)
+
+
+Started GET "/classroom" for 127.0.0.1 at 2023-01-12 11:40:09 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/classroom"):
+  
+Started GET "/classrooms" for 127.0.0.1 at 2023-01-12 11:40:14 +0300
+Processing by ClassroomsController#index as */*
+  Parameters: {"email"=>"timothy@gmail.com", "password"=>"[FILTERED]", "classroom"=>{}}
+  [1m[36mClassroom Load (0.3ms)[0m  [1m[34mSELECT "classrooms".* FROM "classrooms"[0m
+  ↳ app/controllers/classrooms_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mStudent Load (0.5ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."classroom_id" = ?[0m  [["classroom_id", 5]]
+[active_model_serializers]   ↳ app/controllers/classrooms_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/classrooms_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."classroom_id" = ?[0m  [["classroom_id", 6]]
+[active_model_serializers]   ↳ app/controllers/classrooms_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."id" = ? LIMIT ?[0m  [["id", 23], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/classrooms_controller.rb:4:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (54.78ms)
+Completed 200 OK in 66ms (Views: 61.9ms | ActiveRecord: 5.0ms | Allocations: 21014)
+
+
+Started GET "/classrooms" for 127.0.0.1 at 2023-01-12 11:40:53 +0300
+Processing by ClassroomsController#index as */*
+  Parameters: {"classroom"=>{}}
+  [1m[36mTeacher Load (0.6ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."id" = ? LIMIT ?[0m  [["id", 23], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+  [1m[36mClassroom Load (0.2ms)[0m  [1m[34mSELECT "classrooms".* FROM "classrooms"[0m
+  ↳ app/controllers/classrooms_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."classroom_id" = ?[0m  [["classroom_id", 5]]
+[active_model_serializers]   ↳ app/controllers/classrooms_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/classrooms_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."classroom_id" = ?[0m  [["classroom_id", 6]]
+[active_model_serializers]   ↳ app/controllers/classrooms_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mCACHE Teacher Load (0.0ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."id" = ? LIMIT ?[0m  [["id", 23], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/classrooms_controller.rb:4:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (19.08ms)
+Completed 200 OK in 31ms (Views: 28.8ms | ActiveRecord: 1.6ms | Allocations: 6344)
+
+
+Started GET "/classrooms" for 127.0.0.1 at 2023-01-12 11:40:53 +0300
+Processing by ClassroomsController#index as */*
+  Parameters: {"classroom"=>{}}
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."id" = ? LIMIT ?[0m  [["id", 23], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+  [1m[36mClassroom Load (0.3ms)[0m  [1m[34mSELECT "classrooms".* FROM "classrooms"[0m
+  ↳ app/controllers/classrooms_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."classroom_id" = ?[0m  [["classroom_id", 5]]
+[active_model_serializers]   ↳ app/controllers/classrooms_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mTeacher Load (0.3ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/classrooms_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."classroom_id" = ?[0m  [["classroom_id", 6]]
+[active_model_serializers]   ↳ app/controllers/classrooms_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mCACHE Teacher Load (0.0ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."id" = ? LIMIT ?[0m  [["id", 23], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/classrooms_controller.rb:4:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (21.23ms)
+Completed 200 OK in 30ms (Views: 27.9ms | ActiveRecord: 1.3ms | Allocations: 6124)
+
+
+Started GET "/classrooms" for 127.0.0.1 at 2023-01-12 11:40:56 +0300
+Processing by ClassroomsController#index as */*
+  Parameters: {"classroom"=>{}}
+  [1m[36mTeacher Load (0.3ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."id" = ? LIMIT ?[0m  [["id", 23], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+  [1m[36mClassroom Load (0.3ms)[0m  [1m[34mSELECT "classrooms".* FROM "classrooms"[0m
+  ↳ app/controllers/classrooms_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."classroom_id" = ?[0m  [["classroom_id", 5]]
+[active_model_serializers]   ↳ app/controllers/classrooms_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mTeacher Load (0.3ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/classrooms_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."classroom_id" = ?[0m  [["classroom_id", 6]]
+[active_model_serializers]   ↳ app/controllers/classrooms_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mCACHE Teacher Load (0.6ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."id" = ? LIMIT ?[0m  [["id", 23], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/classrooms_controller.rb:4:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (40.27ms)
+Completed 200 OK in 50ms (Views: 47.4ms | ActiveRecord: 1.8ms | Allocations: 6141)
+
+
+Started GET "/classrooms" for 127.0.0.1 at 2023-01-12 11:40:57 +0300
+Processing by ClassroomsController#index as */*
+  Parameters: {"classroom"=>{}}
+  [1m[36mTeacher Load (0.3ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."id" = ? LIMIT ?[0m  [["id", 23], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:28:in `current_user'
+  [1m[36mClassroom Load (0.2ms)[0m  [1m[34mSELECT "classrooms".* FROM "classrooms"[0m
+  ↳ app/controllers/classrooms_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."classroom_id" = ?[0m  [["classroom_id", 5]]
+[active_model_serializers]   ↳ app/controllers/classrooms_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/classrooms_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."classroom_id" = ?[0m  [["classroom_id", 6]]
+[active_model_serializers]   ↳ app/controllers/classrooms_controller.rb:4:in `index'
+[active_model_serializers]   [1m[36mCACHE Teacher Load (0.0ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."id" = ? LIMIT ?[0m  [["id", 23], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/classrooms_controller.rb:4:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (30.26ms)
+Completed 200 OK in 49ms (Views: 47.1ms | ActiveRecord: 1.1ms | Allocations: 6125)
+
+
