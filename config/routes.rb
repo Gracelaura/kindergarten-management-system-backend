@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   resources :attendances, only: [:index,:create]
   resources :disciplines,only: [:index, :show, :create, :destroy]
-  resources :parent_students, only: [:index]
+  resources :parent_students, only: [:index, :create]
   resources :parents,only: [:index, :show, :create]
   resources :students
   resources :teachers,only: [:index, :show, :create]
