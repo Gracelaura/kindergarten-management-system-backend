@@ -15,7 +15,7 @@ class TeachersController < ApplicationController
     end
 
     def profile
-        render json: @teacher, serializer: TeacherLoginSerializer
+        render json: [@teacher]
     end
 
     def show
