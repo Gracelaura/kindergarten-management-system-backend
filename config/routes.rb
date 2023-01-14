@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   resources :classrooms
   post '/login', to: 'auth#create'
   post '/parent_login', to: 'parent_auth#create'
+  get '/profile', to: 'teachers#profile'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")

@@ -25,7 +25,7 @@ class ApplicationController < ActionController::API
     def current_user
       if decoded_token
         teacher_id = decoded_token[0]['teacher_id']
-        teacher = Teacher.find_by(id: teacher_id)
+        @teacher = Teacher.find_by(id: teacher_id)
       end
     end
     def current_parent
