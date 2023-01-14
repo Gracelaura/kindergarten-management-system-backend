@@ -203,33 +203,28 @@ teacher3 = Teacher.create(
 
     disciplines = Discipline.create([{
         student_id: student1.id,
-        title: "Theft",
-        date: "11/3/2022",
-        description: "The student has been stealing pens from others."
+        title: "Student",
+        description: "Excellent",
     },
     {
         student_id: student2.id,
-        title: "Noise making",
-        date: "7/1/2023",
-        description: "Student refused to remain quite in class and was sent to detention."
+        title: "Student",
+        description: "Average",
     },
     {
         student_id: student3.id,
-        title: "Poor Grade",
-        date: "10/1/2023",
-        description: "Student got 20% in the final math examination."
+        title: "Student",
+        description: "Excellent",
     },
     {
         student_id: student4.id,
-        title: "Skipping class",
-        date: "1/12/2022",
-        description: "Student skipped several class to play."
+        title: "Student",
+        description: "Very good",
     },
     {
         student_id: student3.id,
-        title: "Cheating in Exam",
-        date: "11/3/2022",
-        description: "Student was found with answers in the exam hall and was suspended"
+        title: "Student",
+        description: "Excellent",
     }])
 
     puts "Seeding is Complete"
