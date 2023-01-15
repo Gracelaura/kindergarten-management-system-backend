@@ -10,13 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_01_07_162905) do
+ActiveRecord::Schema[7.0].define(version: 2023_01_13_130643) do
   create_table "attendances", force: :cascade do |t|
     t.integer "classroom_id"
     t.integer "student_id"
     t.string "student_name"
     t.string "status"
-    t.integer "date"
+    t.string "date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
