@@ -13,6 +13,11 @@ class TeachersController < ApplicationController
         token = encode_token({teacher_id: teacher.id})
         render json: [TeacherSerializer.new(teacher), {token: token}], status: :created
     end
+
+    def profile
+        render json: [@teacher]
+    end
+
     def show
         teacher = Teacher.find(params[:id])
           render json: teacher,  status: :ok
