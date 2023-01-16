@@ -162,14 +162,14 @@ teacher3 = Teacher.create(
         student_name: "Glory Sparks",
         student_id: student1.id,
         status: "Present",
-        date: 1142022,
+        date: "1142022",
     )
     attendance2 = Attendance.create(
        classroom_id: classroom1.id,
         student_name: "James Martins",
         student_id: student2.id,
         status: "Present",
-        date: 1142022,
+        date: "1142022",
 
     )
     attendance3 = Attendance.create(
@@ -177,28 +177,28 @@ teacher3 = Teacher.create(
         student_name: "Adams Smith",
         student_id: student3.id,
         status: "Present",
-        date: 1042022,
+        date: "1042022",
     )
     attendance4 = Attendance.create(
         classroom_id: classroom1.id,
         student_name: "Aisha Barracks",
         student_id: student4.id,
         status: "Present",
-        date: 1142022,
+        date: "1142022",
     )
     attendance5 = Attendance.create(
         classroom_id: classroom1.id,
         student_name: "Dan Daniels",
         student_id: student3.id,
         status: "Present",
-        date: 1142022,
+        date: "1142022",
     )
     attendance6 = Attendance.create(
         classroom_id: classroom1.id,
         student_name: "Angie Angel",
         student_id: student2.id,
         status: "Present",
-        date: 1142022,
+        date: "1142022",
     )
 
     disciplines = Discipline.create([{
