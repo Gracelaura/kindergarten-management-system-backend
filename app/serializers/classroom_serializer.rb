@@ -3,4 +3,5 @@ class ClassroomSerializer < ActiveModel::Serializer
   has_many :attendances
   has_many :students
   belongs_to :teacher
+  has_many :parents
 end

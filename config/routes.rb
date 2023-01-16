@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   post '/login', to: 'auth#create'
   post '/parent_login', to: 'parent_auth#create'
   get '/profile', to: 'teachers#profile'
+  get 'teacher/parent/', to: 'teachers#classroom_parents'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")

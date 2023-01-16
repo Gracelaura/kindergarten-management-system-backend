@@ -7,5 +7,8 @@ class Teacher < ApplicationRecord
     validates :phone_number, length: {maximum: 10}
     validates :gender, presence: true
     has_one :classroom
-    has_many :students, through: :classroom
+    has_many :students, through: :classroom 
+
+
+
 end
