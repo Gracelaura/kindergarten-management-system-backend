@@ -25,7 +25,7 @@ teacher1 = Teacher.create(
     last_name: "Shaw",
     career_name: "TR.luke",
     password: "3456766",
-    phone_number: "07867465376",
+    phone_number: "0786746537",
     email: "lukeshaw@gmail.com",
     gender: "male",
     
@@ -121,7 +121,7 @@ teacher6 = Teacher.create(
 
     student1 = Student.create(
         first_name: "Faith",
-        second_name: "shahh",
+        second_name: "shahhh",
         surname: "Martind",
         age: 3,
         description: " Faith is is an active learner who loves to get hands-on and throw herself into a task with enthusiasm",
