@@ -23,7 +23,7 @@ puts "Seeding..."
 teacher1 = Teacher.create(
     first_name: "Luke",
     last_name: "Shaw",
-    career_name: "English",
+    career_name: "TR.luke",
     password: "3456766",
     phone_number: "07867465376",
     email: "lukeshaw@gmail.com",
@@ -33,7 +33,7 @@ teacher1 = Teacher.create(
 teacher2 = Teacher.create(
     first_name: "Darwin",
     last_name: "Ken",
-    career_name: "Play group leader",
+    career_name: "TR.darwin",
     password: "125346",
     phone_number: "0754372656",
     email: "lewisdarwin@gmail.com",
@@ -43,7 +43,7 @@ teacher2 = Teacher.create(
 teacher3 = Teacher.create(
     first_name: "Timothy",
     last_name: "Rogers",
-    career_name: "Math",
+    career_name: "TR.timothy",
     password: "mkjr12",
     phone_number: "0754372656",
     email: "timothy@gmail.com",
@@ -51,21 +51,69 @@ teacher3 = Teacher.create(
     
 )
 
+teacher4 = Teacher.create(
+    first_name: "Geoffrey",
+    last_name: "Mokua",
+    career_name: "TR.geoffrey",
+    password: "grtef12",
+    phone_number: "0754543123",
+    email: "jeffmokua@gmail.com",
+    gender: "male",
+    
+)
+teacher5 = Teacher.create(
+    first_name: "Nicholas",
+    last_name: "Njeru",
+    career_name: "TR.nicholas",
+    password: "1267th",
+    phone_number: "0710678890",
+    email: "nicholas@gmail.com",
+    gender: "male",
+    
+)
+teacher6 = Teacher.create(
+    first_name: "Grace",
+    last_name: "Heggry",
+    career_name: "TR.grace",
+    password: "tyre234",
+    phone_number: "0756342123",
+    email: "grace@gmail.com",
+    gender: "female",
+    
+)
     classroom1 = Classroom.create(
-    name: "PP1",
+    name: "PP1E",
     teacher_id: teacher1.id,
     )
 
-
     classroom2 = Classroom.create(
-    name: "PP2",
+    name: "PP1W",
     teacher_id: teacher2.id,
     )  
 
     classroom3 = Classroom.create(
-    name: "PP3",
+    name: "PP2E",
     teacher_id: teacher3.id
     )
+
+    classroom4 = Classroom.create(
+    name: "PP2W",
+    teacher_id: teacher4.id
+    )
+
+    classroom5 = Classroom.create(
+    name: "PP3E",
+    teacher_id: teacher5.id
+    )
+
+    classroom6 = Classroom.create(
+    name: "PP3W",
+    teacher_id: teacher6.id
+    )
+   
+
+
+   
    
 
 
@@ -117,8 +165,76 @@ teacher3 = Teacher.create(
         classroom_id: classroom3.id
         
     )
-   
-
+    student5 = Student.create(
+        first_name: "grace",
+        second_name: "Njugush",
+        surname: "Hagg",
+        age: 3,
+        description: " Grace is an average and perfoms well in class",
+        admission_number: 4572,
+        classroom_id: classroom3.id
+        
+    )
+    student6 = Student.create(
+        first_name: "Timo",
+        second_name: "Kennedy",
+        surname: "Fury",
+        age: 5,
+        description: " Timo is hradworking",
+        admission_number: 4576,
+        classroom_id: classroom4.id
+        
+    )
+     student7 = Student.create(
+        first_name: "Ronald",
+        second_name: "Kibet",
+        surname: "Chebosi",
+        age: 4,
+        description: " Ronald is an average and humble student",
+        admission_number: 4573,
+        classroom_id: classroom4.id
+        
+    )
+     student8 = Student.create(
+        first_name: "Ivan",
+        second_name: "Nguyo",
+        surname: "James",
+        age: 4,
+        description: " Ivan is a good leader in class",
+        admission_number: 4574,
+        classroom_id: classroom6.id
+        
+    )
+     student9 = Student.create(
+        first_name: "Dennis",
+        second_name: "Sonny",
+        surname: "Ouma",
+        age: 4,
+        description: " Dennis is an average student",
+        admission_number: 4575,
+        classroom_id: classroom4.id
+        
+    )
+     student10 = Student.create(
+        first_name: "Nice",
+        second_name: "Angel",
+        surname: "Danis",
+        age: 4,
+        description: " Nice is a good leader in class",
+        admission_number: 4576,
+        classroom_id: classroom3.id
+        
+    )
+     student11 = Student.create(
+        first_name: "Michael",
+        second_name: "Herry",
+        surname: "Donniry",
+        age: 4,
+        description: " Michael is a good leader in class",
+        admission_number: 4577,
+        classroom_id: classroom2.id
+        
+    )
    
     parent1 = Parent.create(
         first_name: "Jancy",
@@ -154,6 +270,27 @@ teacher3 = Teacher.create(
         last_name: "Havey",
         phone_number: "7107896457",
         password: "65487835",
+        
+    )
+    parent6 = Parent.create(
+        first_name: "Nicholas",
+        last_name: "Mjeru",
+        phone_number: "7107896453",
+        password: "65486578",
+        
+    )
+    parent7 = Parent.create(
+        first_name: "Timothy",
+        last_name: "Kibet",
+        phone_number: "7107896890",
+        password: "65487001",
+        
+    )
+    parent8 = Parent.create(
+        first_name: "Rona",
+        last_name: "Chebosi",
+        phone_number: "7107896127",
+        password: "65487873",
         
     )
 
@@ -226,7 +363,43 @@ teacher3 = Teacher.create(
         description: "Student skipped several class to play."
     },
     {
-        student_id: student3.id,
+        student_id: student5.id,
+        title: "Fighting class",
+        date: "1/12/2022",
+        description: "Student engages in small fights."
+    },
+    {
+        student_id: student6.id,
+        title: "Missed assignment",
+        date: "1/12/2022",
+        description: "Student missed to do assignments."
+    },
+    {
+        student_id: student7.id,
+        title: "Skipping class",
+        date: "1/12/2022",
+        description: "Student disturbs others while in class."
+    },
+    {
+        student_id: student8.id,
+        title: "Coming late",
+        date: "1/12/2022",
+        description: "Student comes late to school."
+    },
+    {
+        student_id: student9.id,
+        title: "Disturbance in class",
+        date: "1/12/2022",
+        description: "Student disturbs others while in class."
+    },
+    {
+        student_id: student10.id,
+        title: "Skipping class",
+        date: "1/12/2022",
+        description: "Student disturbs others while in class."
+    },
+    {
+        student_id: student11.id,
         title: "Cheating in Exam",
         date: "11/3/2022",
         description: "Student was found with answers in the exam hall and was suspended"
@@ -244,10 +417,6 @@ teacher3 = Teacher.create(
         student_id: student2.id
     },
     {
-        parent_id: parent1.id,
-        student_id: student1.id
-    },
-    {
         parent_id: parent3.id,
         student_id: student3.id
     },
@@ -257,6 +426,18 @@ teacher3 = Teacher.create(
     },
     {
         parent_id: parent5.id,
-        student_id: student3.id
+        student_id: student5.id
+    },
+    {
+        parent_id: parent6.id,
+        student_id: student6.id
+    },
+    {
+        parent_id: parent7.id,
+        student_id: student7.id
+    },
+    {
+        parent_id: parent8.id,
+        student_id: student8.id
     }
     ])
