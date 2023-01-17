@@ -121,7 +121,7 @@ teacher6 = Teacher.create(
 
     student1 = Student.create(
         first_name: "Faith",
-        second_name: "shahh",
+        second_name: "shahhh",
         surname: "Martind",
         age: 3,
         description: " Faith is is an active learner who loves to get hands-on and throw herself into a task with enthusiasm",
