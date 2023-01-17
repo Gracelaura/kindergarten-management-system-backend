@@ -25,7 +25,7 @@ teacher1 = Teacher.create(
     last_name: "Shaw",
     career_name: "English",
     password: "3456766",
-    phone_number: "07867465376",
+    phone_number: "0786746537",
     email: "lukeshaw@gmail.com",
     gender: "male",
     
@@ -51,6 +51,27 @@ teacher3 = Teacher.create(
     
 )
 
+teacher4 = Teacher.create(
+    first_name: "Nicholas",
+    last_name: "Njeru",
+    career_name: "tr.nic",
+    password: "12345",
+    phone_number: "0726555838",
+    email: "nic@gmail.com",
+    gender: "male",
+    
+)
+teacher5 = Teacher.create(
+    first_name: "stephen",
+    last_name: "itimbi",
+    career_name: "tr.itimbi",
+    password: "1234567",
+    phone_number: "0754380656",
+    email: "itimbi@gmail.com",
+    gender: "male",
+    
+)
+
     classroom1 = Classroom.create(
     name: "PP1",
     teacher_id: teacher1.id,
@@ -67,8 +88,11 @@ teacher3 = Teacher.create(
     teacher_id: teacher3.id
     )
    
-
-
+    classroom4 = Classroom.create(
+        name: "PP3",
+        teacher_id: teacher4.id
+        )
+       
     
 
     student1 = Student.create(
