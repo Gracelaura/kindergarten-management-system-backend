@@ -1,5 +1,6 @@
 class DisciplinesController < ApplicationController
-     rescue_from ActiveRecord::RecordInvalid, with: :not_found_message
+    rescue_from ActiveRecord::RecordInvalid, with: :record_invalid
+    rescue_from ActiveRecord::RecordNotFound, with: :not_found_message
     
     def index
         render json: Discipline.all
@@ -33,6 +34,10 @@ class DisciplinesController < ApplicationController
     def find_by_id
         Discipline.find(params[:id])
      end
+
+    def record_invalid invalid
+        render json: {errors: invalid.record.errors.full_messages}, status: :unprocessable_entity
+    end
 
      def not_found_message
         render json: {error: "Discipline Not Found"}, status: :not_found

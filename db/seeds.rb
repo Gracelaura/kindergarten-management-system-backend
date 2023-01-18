@@ -127,8 +127,7 @@ teacher6 = Teacher.create(
         description: " Faith is is an active learner who loves to get hands-on and throw herself into a task with enthusiasm",
         admission_number: 4567,
         
-        classroom_id: classroom1.id
-        
+        classroom_id: classroom1.id  
         
     )
     
@@ -162,7 +161,7 @@ teacher6 = Teacher.create(
         age: 4,
         description: " James is an average and humble student",
         admission_number: 4570,
-        classroom_id: classroom3.id
+        classroom_id: classroom4.id
         
     )
     student5 = Student.create(
@@ -172,7 +171,7 @@ teacher6 = Teacher.create(
         age: 3,
         description: " Grace is an average and perfoms well in class",
         admission_number: 4572,
-        classroom_id: classroom3.id
+        classroom_id: classroom5.id
         
     )
     student6 = Student.create(
@@ -182,7 +181,7 @@ teacher6 = Teacher.create(
         age: 5,
         description: " Timo is hradworking",
         admission_number: 4576,
-        classroom_id: classroom4.id
+        classroom_id: classroom6.id
         
     )
      student7 = Student.create(
@@ -192,7 +191,7 @@ teacher6 = Teacher.create(
         age: 4,
         description: " Ronald is an average and humble student",
         admission_number: 4573,
-        classroom_id: classroom4.id
+        classroom_id: classroom1.id
         
     )
      student8 = Student.create(
@@ -202,7 +201,7 @@ teacher6 = Teacher.create(
         age: 4,
         description: " Ivan is a good leader in class",
         admission_number: 4574,
-        classroom_id: classroom6.id
+        classroom_id: classroom1.id
         
     )
      student9 = Student.create(
@@ -212,7 +211,7 @@ teacher6 = Teacher.create(
         age: 4,
         description: " Dennis is an average student",
         admission_number: 4575,
-        classroom_id: classroom4.id
+        classroom_id: classroom1.id
         
     )
      student10 = Student.create(
@@ -222,7 +221,7 @@ teacher6 = Teacher.create(
         age: 4,
         description: " Nice is a good leader in class",
         admission_number: 4576,
-        classroom_id: classroom3.id
+        classroom_id: classroom1.id
         
     )
      student11 = Student.create(
@@ -232,7 +231,7 @@ teacher6 = Teacher.create(
         age: 4,
         description: " Michael is a good leader in class",
         admission_number: 4577,
-        classroom_id: classroom2.id
+        classroom_id: classroom1.id
         
     )
    
@@ -294,49 +293,49 @@ teacher6 = Teacher.create(
         
     )
 
-    attendance1 = Attendance.create(
-        classroom_id: classroom1.id,
-        student_name: "Glory Sparks",
-        student_id: student1.id,
-        status: "Present",
-        date: "1142022",
-    )
-    attendance2 = Attendance.create(
-       classroom_id: classroom1.id,
-        student_name: "James Martins",
-        student_id: student2.id,
-        status: "Present",
-        date: "1142022",
+    # attendance1 = Attendance.create(
+    #     classroom_id: classroom1.id,
+    #     student_name: "Glory Sparks",
+    #     student_id: student1.id,
+    #     status: "Present",
+    #     date: "1142022",
+    # )
+    # attendance2 = Attendance.create(
+    #    classroom_id: classroom2.id,
+    #     student_name: "James Martins",
+    #     student_id: student2.id,
+    #     status: "Present",
+    #     date: "1142022",
 
-    )
-    attendance3 = Attendance.create(
-        classroom_id: classroom1.id,
-        student_name: "Adams Smith",
-        student_id: student3.id,
-        status: "Present",
-        date: "1042022",
-    )
-    attendance4 = Attendance.create(
-        classroom_id: classroom1.id,
-        student_name: "Aisha Barracks",
-        student_id: student4.id,
-        status: "Present",
-        date: "1142022",
-    )
-    attendance5 = Attendance.create(
-        classroom_id: classroom1.id,
-        student_name: "Dan Daniels",
-        student_id: student3.id,
-        status: "Present",
-        date: "1142022",
-    )
-    attendance6 = Attendance.create(
-        classroom_id: classroom1.id,
-        student_name: "Angie Angel",
-        student_id: student2.id,
-        status: "Present",
-        date: "1142022",
-    )
+    # )
+    # attendance3 = Attendance.create(
+    #     classroom_id: classroom3.id,
+    #     student_name: "Adams Smith",
+    #     student_id: student3.id,
+    #     status: "Present",
+    #     date: "1042022",
+    # )
+    # attendance4 = Attendance.create(
+    #     classroom_id: classroom4.id,
+    #     student_name: "Aisha Barracks",
+    #     student_id: student4.id,
+    #     status: "Present",
+    #     date: "1142022",
+    # )
+    # attendance5 = Attendance.create(
+    #     classroom_id: classroom5.id,
+    #     student_name: "Dan Daniels",
+    #     student_id: student5.id,
+    #     status: "Present",
+    #     date: "1142022",
+    # )
+    # attendance6 = Attendance.create(
+    #     classroom_id: classroom5.id,
+    #     student_name: "Angie Angel",
+    #     student_id: student2.id,
+    #     status: "Present",
+    #     date: "1142022",
+    # )
 
     disciplines = Discipline.create([{
         student_id: student1.id,

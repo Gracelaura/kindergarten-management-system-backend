@@ -20,7 +20,7 @@ class TeachersController < ApplicationController
 
     def show
         teacher = Teacher.find(params[:id])
-        render json: teacher,include: ['classroom','classroom.students','classroom.parents'], serializer: TeacherSerializer ,status: :ok    
+        render json: teacher,include: ['classroom','classroom.students','classroom.parents','classroom.disciplines'], serializer: TeacherSerializer ,status: :ok    
     end 
 
     private
