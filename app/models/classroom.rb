@@ -3,4 +3,5 @@ class Classroom < ApplicationRecord
     has_many :students, dependent: :destroy
     has_many :attendances, dependent: :destroy 
     has_many :parents, through: :students
+    validates :teacher_id, presence: true
 end

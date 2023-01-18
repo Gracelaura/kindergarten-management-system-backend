@@ -1,7 +1,6 @@
 class StudentsController < ApplicationController
     rescue_from ActiveRecord::RecordNotFound, with: :not_found_message
     rescue_from ActiveRecord::RecordInvalid, with: :record_invalid
-    # skip_before_action authorize:, only: [:index]
     def index
         students = Student.all
         render json: students, status: :created
